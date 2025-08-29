@@ -1,0 +1,214 @@
+---
+// src/pages/fa/pricing.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '../../utils/i18n.js';
+
+const lang = "fa";
+const dir = isRTL(lang) ? "rtl" : "ltr";
+const t = (key) => getTranslation(lang, key);
+---
+
+<MainLayout title="قیمت‌گذاری - اسطرلاب" lang={lang} dir={dir}>
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">قیمت‌گذاری ساده و شفاف</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          طرحی را که برای شما مناسب‌تر است انتخاب کنید. تمام طرح‌ها شامل ویژگی‌های اصلی منجمی ما هستند.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Basic Plan -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">پایه</h2>
+            <div class="mb-4">
+              <span class="text-4xl font-bold text-gray-900 dark:text-white">۰</span>
+              <span class="text-gray-600 dark:text-gray-300">تومان/ماه</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">برای مبتدیانی که دارند با منجمی آشنا می‌شوند</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">تولید چرت ناتال</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">تفسیر چرت پایه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">فال هفتگی</span>
+            </li>
+            <li class="flex items-start opacity-50">
+              <svg class="w-5 h-5 text-gray-400 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              <span class="text-gray-400 dark:text-gray-500">تحلیل گذرها</span>
+            </li>
+            <li class="flex items-start opacity-50">
+              <svg class="w-5 h-5 text-gray-400 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              <span class="text-gray-400 dark:text-gray-500">مقایسات سناستری</span>
+            </li>
+            <li class="flex items-start opacity-50">
+              <svg class="w-5 h-5 text-gray-400 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              <span class="text-gray-400 dark:text-gray-500">چرتهای پیشرفت یافته</span>
+            </li>
+          </ul>
+          
+          <button class="w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white font-medium py-3 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
+            شروع کار
+          </button>
+        </div>
+        
+        <!-- Pro Plan (Featured) -->
+        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white relative transform scale-105">
+          <div class="absolute top-0 left-0 bg-yellow-400 text-gray-900 text-xs font-bold px-4 py-1 rounded-br-lg rounded-tl-2xl">
+            محبوب‌ترین
+          </div>
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold mb-2">حرفه‌ای</h2>
+            <div class="mb-4">
+              <span class="text-4xl font-bold">۴۹۰٬۰۰۰</span>
+              <span class="text-indigo-100">تومان/ماه</span>
+            </div>
+            <p class="text-indigo-100">برای علاقه‌مندان جدی به منجمی</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>همه چیز در طرح پایه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل گذرها</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>مقایسات سناستری</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>چرتهای پیشرفت یافته</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>فال ماهانه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ذخیره چرت (۵ چرت)</span>
+            </li>
+          </ul>
+          
+          <button class="w-full bg-white text-indigo-600 font-medium py-3 px-4 rounded-lg hover:bg-indigo-50 transition-colors duration-200 shadow-lg">
+            شروع دوره آزمایشی
+          </button>
+        </div>
+        
+        <!-- Premium Plan -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">پیشرفته</h2>
+            <div class="mb-4">
+              <span class="text-4xl font-bold text-gray-900 dark:text-white">۹۹۰٬۰۰۰</span>
+              <span class="text-gray-600 dark:text-gray-300">تومان/ماه</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300">برای منجمان حرفه‌ای و علاقه‌مندان پیشرفته</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">همه چیز در طرح حرفه‌ای</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">ذخیره نامحدود چرت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">ابزارهای پیشرفته مقایسه چرت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">دسترسی به داده‌های اپمیریس</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">پشتیبانی مشتریان با اولویت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-white">دسترسی زودهنگام به ویژگی‌های جدید</span>
+            </li>
+          </ul>
+          
+          <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium py-3 px-4 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
+            شروع دوره آزمایشی
+          </button>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">سؤالات متداول</h2>
+        <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">آیا می‌توانم طرح‌ها را تغییر دهم؟</h3>
+            <p class="text-gray-600 dark:text-gray-300">بله، می‌توانید طرح خود را در هر زمان ارتقا، کاهش یا لغو کنید.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">آیا بازپرداخت انجام می‌دهید؟</h3>
+            <p class="text-gray-600 dark:text-gray-300">ما ضمانت بازگشت وجه ۳۰ روزه برای تمام طرح‌های پولی ارائه می‌دهیم.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">آیا دوره آزمایشی رایگان دارید؟</h3>
+            <p class="text-gray-600 dark:text-gray-300">بله، تمام طرح‌های پولی با ۱۴ روز دوره آزمایشی رایگان ارائه می‌شوند.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">چگونه اشتراک خود را لغو کنم؟</h3>
+            <p class="text-gray-600 dark:text-gray-300">می‌توانید در هر زمان از تنظیمات حساب خود اشتراک را لغو کنید.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,83 @@
+---
+// src/components/LanguageSelector.astro
+const { currentLang, lang = "en", dir = "ltr" } = Astro.props;
+
+const languages = [
+  { code: "en", name: "English", flag: "/images/states.png" },
+  { code: "fa", name: "فارسی", flag: "/images/iran.png" }
+];
+---
+
+<div class="relative group" x-data="{ open: false }" @click.outside="open = false" @keydown.escape.window="open = false">
+  <!-- Desktop Language Switcher -->
+  <div class="hidden md:flex items-center relative">
+    <button 
+      class="flex items-center space-x-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg pl-3 pr-6 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-indigo-400 transition-all duration-200"
+      @click="open = !open"
+      aria-haspopup="true"
+      :aria-expanded="open"
+    >
+      <img src={languages.find(l => l.code === currentLang)?.flag || "/images/states.png"} alt={currentLang} class="w-5 h-5 object-contain mx-2" />
+      <span>{currentLang.toUpperCase()}</span>
+      <svg class="ml-2 w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+    
+    <!-- Dropdown Menu -->
+    <div 
+      x-show="open"
+      x-transition:enter="transition ease-out duration-100"
+      x-transition:enter-start="transform opacity-0 scale-95"
+      x-transition:enter-end="transform opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-75"
+      x-transition:leave-start="transform opacity-100 scale-100"
+      x-transition:leave-end="transform opacity-0 scale-95"
+      class="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-[60] transform"
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="language-dropdown-button"
+      @click.outside="open = false"
+    >
+      {languages.map((language) => (
+        <a
+          href={language.code === "en" ? "/" : `/${language.code}/`}
+          class={`flex items-center px-4 py-2 text-sm ${currentLang === language.code ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'} transition-colors duration-150`}
+          role="menuitem"
+          @click="open = false"
+        >
+          <img src={language.flag} alt={language.code} class="w-5 h-5 object-contain mx-2" />
+          <span>{language.name}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+  
+  <!-- Mobile Language Switcher -->
+  <div class="md:hidden">
+    <div class="relative">
+      <select 
+        class="w-full appearance-none bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg pl-12 pr-6 py-3 text-base font-medium text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-indigo-400 transition-all duration-200"
+        onchange="window.location.href = this.value"
+        aria-label="Select language"
+      >
+        {languages.map((language) => (
+          <option 
+            value={language.code === "en" ? "/" : `/${language.code}/`} 
+            selected={currentLang === language.code}
+          >
+            {language.name}
+          </option>
+        ))}
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3">
+        <img src={languages.find(l => l.code === currentLang)?.flag || "/images/states.png"} alt={currentLang} class="w-5 h-5 object-contain" />
+      </div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-700 dark:text-gray-300">
+        <svg class="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

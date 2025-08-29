@@ -1,0 +1,571 @@
+---
+// src/pages/fa/features.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '../../utils/i18n.js';
+import { Image } from 'astro:assets';
+
+// Import images
+import image16 from '../../../public/images/16.jpg';
+import image17 from '../../../public/images/17.jpg';
+import image18 from '../../../public/images/18.jpg';
+import image10 from '../../../public/images/10.jpg';
+import image2 from '../../../public/images/2.jpg';
+import image3 from '../../../public/images/3.jpg';
+import image4 from '../../../public/images/4.jpg';
+import image11 from '../../../public/images/11.jpg';
+import image6 from '../../../public/images/6.jpg';
+import image7 from '../../../public/images/7.jpg';
+import image8 from '../../../public/images/8.jpg';
+import image9 from '../../../public/images/9.jpg';
+import image1 from '../../../public/images/1.jpg';
+
+const lang = "fa";
+const dir = isRTL(lang) ? "rtl" : "ltr";
+const t = (key) => getTranslation(lang, key);
+---
+<MainLayout title="ویژگی‌ها - اسطرلاب" lang={lang} dir={dir}>
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">ویژگی‌های قدرتمند منجمی</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          مجموعه جامع ابزارها و ویژگی‌هایی را کشف کنید که اسطرلاب را به پلتفرم منجمی نهایی تبدیل می‌کند
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center mb-5">
+            <span class="text-2xl">🌟</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">محاسبات نیتال چارت</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            محاسبات دقیق موقعیت‌های سیاره‌ای در زمان تولد با تفسیرهای دقیق برای همه دوازده خانه.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image16} 
+              alt="Natal Chart" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>موقعیت‌های دقیق سیاره‌ها</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>محاسبات سیستم خانه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل اسپکت</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تحلیل ترانزیت</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            حرکات سیاره‌ای فعلی را دنبال کنید و تأثیرات آنها بر زندگی روزمره و چرخه‌های بلندمدت را درک کنید.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image17} 
+              alt="Transit Analysis" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>موقعیت‌های سیاره‌ای در زمان واقعی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل اسپکت ترانزیت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>هشدارهای ترانزیت مهم</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">مقایسه‌های سیناستری</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            چارت‌ها را مقایسه کنید تا روابط، سازگاری و دینامیک‌های بین فردی را با بینش‌های دقیق درک کنید.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image18} 
+              alt="Synastry Comparisons" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>سازگاری روابط</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>مقایسه اسپکت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>دینامیک‌های روابط</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">چارت‌های پروگرس</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            رشد و توسعه شخصی خود را از طریق پروگرس ثانویه و تفسیرهای آنها کشف کنید.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image11} 
+              alt="Progressed Charts" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پروگرس ثانویه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>چارت‌های بازگشت خورشیدی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>چارت‌های بازگشت ماهی</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تفسیرهای هوروسکوپ</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            هوروسکوپ‌های روزانه، هفتگی و ماهانه با بینش‌های شخصی‌سازی شده بر اساس چارت منحصر به فرد شما.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image2} 
+              alt="Horoscope Interpretations" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>هوروسکوپ‌های روزانه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیش‌بینی‌های هفتگی و ماهانه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>بینش‌های شخصی‌سازی شده</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">ابزارهای پیشرفته</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            ابزارهای حرفه‌ای برای منجمان شامل افرمرید، مقایسه چارت و موارد بیشتر.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image1} 
+              alt="Advanced Tools" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>داده‌های افرمرید</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ابزارهای مقایسه چارت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>گزارش‌های قابل سفارشی‌سازی</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">مراحل قمری و ردیابی ماه</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            ردیابی دقیق مراحل قمری با بینش‌های شخصی‌سازی شده بر اساس نشانه قمری و ترانزیت‌های فعلی شما.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image4} 
+              alt="Lunar Phases" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>اطلاعات مرحله قمری فعلی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تفسیرهای نشانه قمری</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>زمان‌های ماه بدون دوره</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">منجمی انتخابی</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            زمان‌های اخترشناسی مطلوب‌ترین را برای رویدادهای مهم مانند عروسی‌ها، راه‌اندازی کسب‌وکار و غیره انتخاب کنید.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image10} 
+              alt="Electional Astrology" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>توصیه‌های زمان‌بندی رویداد</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>معیارهای انتخاب قابل سفارشی‌سازی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ادغام تقویم</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">گزارش‌های اخترشناسی</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            گزارش‌های جامع و قابل سفارشی اخترشناسی که می‌توانید برای مشتریان یا استفاده شخصی ذخیره، به اشتراک بگذارید یا چاپ کنید.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image6} 
+              alt="Astrological Reports" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>گزارش‌های با کیفیت حرفه‌ای</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>قابلیت صادرات PDF</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>قالب‌های قابل سفارشی‌سازی</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">نقشه‌برداری اختری</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            کشف کنید که چگونه انرژی‌های سیاره‌ای بر مکان‌های مختلف در سراسر جهان با ابزار منجمی جابجایی ما تأثیر می‌گذارند.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image7} 
+              alt="Astro-Mapping" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>محاسبات چارت جابجایی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>نقشه جهانی تعاملی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تفسیرهای مبتنی بر مکان</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تکنیک‌های زمان‌بندی</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            روش‌های پیشرفته زمان‌بندی شامل پیشرفت‌ها، جهت‌ها و قوس‌های خورشیدی برای پیش‌بینی روندها و رویدادهای آینده.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image8} 
+              alt="Timing Techniques" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>جهت‌های قوس خورشیدی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>جهت‌های اولیه</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>فیرداریا و سایر سیستم‌های زمان‌بندی</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-lime-100 dark:bg-lime-900/30 flex items-center justify-center mb-5">
+            <svg class="w-8 h-8 text-lime-600 dark:text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">مجموعه‌های چارت</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            چندین چارت را برای خود، خانواده، مشتریان یا شخصیت‌های عمومی در مجموعه‌های شخصی‌سازی شده ذخیره و سازماندهی کنید.
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={image9} 
+              alt="Chart Collections" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ذخیره‌سازی نامحدود چارت</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>سازماندهی پوشه سفارشی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>مشاهده‌های مقایسه سریع</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">آماده کشف نقشه کیهانی خود هستید؟</h2>
+          <p class="text-xl text-indigo-100 mb-8">
+            به هزاران علاقه‌مند به منجمی بپیوندید که قدرت اسطرلاب را کشف کرده‌اند
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-indigo-900 font-medium px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors duration-300 shadow-lg">
+              چارت خود را ایجاد کنید
+            </button>
+            <button class="bg-transparent border-2 border-white text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
+              مشاهده نسخه ی نمایشی
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

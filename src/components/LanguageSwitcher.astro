@@ -1,0 +1,32 @@
+---
+// src/components/LanguageSwitcher.astro
+const { currentLang } = Astro.props;
+
+const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'fa', name: 'فارسی' }
+];
+
+const getLocalizedPath = (lang, path) => {
+  if (lang === 'en') {
+    return path;
+  }
+  return `/${lang}${path}`;
+};
+---
+
+<div class="lang-switcher">
+  <select 
+    onchange="window.location.href = this.value"
+    aria-label="Select language"
+  >
+    {languages.map((lang) => (
+      <option 
+        value={getLocalizedPath(lang.code, Astro.url.pathname.replace(/^\/[a-z]{2}\//, '/'))}
+        selected={lang.code === currentLang}
+      >
+        {lang.name}
+      </option>
+    ))}
+  </select>
+</div>

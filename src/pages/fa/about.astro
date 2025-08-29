@@ -1,0 +1,192 @@
+---
+// src/pages/fa/about.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import { getTranslation, isRTL } from '../../utils/i18n.js';
+import image17 from '../../../public/images/17.jpg';
+import { Image } from 'astro:assets';
+
+const lang = "fa";
+const dir = isRTL(lang) ? "rtl" : "ltr";
+const t = (key) => getTranslation(lang, key);
+
+// Team members data
+const teamMembers = [
+  {
+    name: "الکس مورگان",
+    role: "منجم ارشد",
+    bio: "بیش از ۲۰ سال تجربه در تفسیر منجمی و تحلیل جدول‌ها.",
+    avatar: "ام"
+  },
+  {
+    name: "سام ریورا",
+    role: "توسعه‌دهنده ارشد",
+    bio: "توسعه‌دهنده فول‌استک علاقه‌مند به ایجاد ابزارهای منجمی بصری.",
+    avatar: "سر"
+  },
+  {
+    name: "جردن پاتل",
+    role: "طراح UX",
+    bio: "متخصص در ایجاد رابط‌های زیبا و قابل دسترس برای داده‌های پیچیده.",
+    avatar: "جو"
+  },
+  {
+    name: "تیلور کیم",
+    role: "مدیر انجمن",
+    bio: "عاشق منجمی که بر ایجاد تجربه‌های جذاب انجمنی تمرکز دارد.",
+    avatar: "تی"
+  }
+];
+---
+
+<MainLayout title={t('aboutTitle')} lang={lang} dir={dir}>
+  <!-- Hero Section -->
+  <section class="relative py-12 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pattern-bg"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">{t('aboutTitle')}</h1>
+        <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-8">
+          کهن‌ترین حکمت منجمی را با دقت مدرن کشف کنید
+        </p>
+        <!-- Hero Image -->
+        <div class="mt-8 rounded-xl overflow-hidden shadow-lg">
+          <Image 
+            src={image17} 
+            alt="منجمی" 
+            class="w-full h-auto object-cover"
+            width="1200" 
+            height="400"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="card">
+          <div class="card-content">
+            <div class="prose prose-lg max-w-none">
+              <p class="text-lg text-gray-700 mb-8">{t('aboutDescription')}</p>
+              
+              <h2 class="text-3xl font-bold text-gray-900 mt-12 mb-6">ماموریت ما</h2>
+              <p class="text-gray-700 mb-6">
+                اسطرلاب تلاش دارد منجمی را برای همه قابل دسترسی کند و محاسبات دقیق و تفسیرهای بینشمندانه‌ای ارائه دهد و در عین حال به حکمت سنتی این هنر باستانی احترام گذاشته شود. ما معتقدیم که درک نفوذ آسمانی می‌تواند بینش‌های ارزشمندی در مورد زندگی ما فراهم کند و به ما کمک کند تا در مسیر رشد شخصی خود حرکت کنیم.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10">
+                <div class="bg-indigo-50 p-6 rounded-xl text-center dark:bg-gray-700">
+                  <div class="w-16 h-16 rounded-full bg-indigo-500 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">دقت</h3>
+                  <p class="text-gray-600 dark:text-gray-200">محاسبات دقیق بر اساس داده‌های نجومی</p>
+                </div>
+                
+                <div class="bg-purple-50 p-6 rounded-xl text-center dark:bg-gray-700">
+                  <div class="w-16 h-16 rounded-full bg-purple-500 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">انجمن</h3>
+                  <p class="text-gray-600 dark:text-gray-200">ایجاد ارتباطات میان علاقه‌مندان به منجمی</p>
+                </div>
+                
+                <div class="bg-pink-50 p-6 rounded-xl text-center dark:bg-gray-700">
+                  <div class="w-16 h-16 rounded-full bg-pink-500 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">آموزش</h3>
+                  <p class="text-gray-600 dark:text-gray-200">کمک به کاربران برای درک مفاهیم منجمی</p>
+                </div>
+              </div>
+              
+              <h2 class="text-3xl font-bold text-gray-900 mt-16 mb-6">منبع باز</h2>
+              <p class="text-gray-700 mb-6">
+                به عنوان یک پروژه منبع باز، ما به شفافیت و همکاری انجمن اعتقاد داریم. کد ما در GitHub برای هر کسی که بخواهد در دسترس است تا در آن مشارکت داشته باشد، مرور کند یا انشعاب بگیرد. ما از مشارکت توسعه‌دهندگان، منجمان و علاقه‌مندانی که چشمانمان را در مورد قابل دسترسی کردن منجمی برای همه به اشتراک می‌گذارند، استقبال می‌کنیم.
+              </p>
+              
+              <div class="mt-8">
+                <button class="btn-outline inline-flex items-center">
+                  <svg class="w-5 h-5 mx-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                  </svg>
+                  مشاهده در گیت هاب
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-16 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">تیم ما</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          افراد متعهدی که به ارائه بهترین ابزارهای منجمی به شما اختصاص داده‌اند
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamMembers.map((member) => (
+          <div class="card text-center bg-white dark:bg-gray-800">
+            <div class="card-content">
+              <div class="relative mx-auto mb-6">
+                <div class="w-24 h-24 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mx-auto">
+                  <span class="text-2xl font-bold text-white">{member.avatar}</span>
+                </div>
+                <div class="absolute inset-0 rounded-full overflow-hidden">
+                  <img 
+                    src={`https://picsum.photos/200/200?random=${Math.floor(Math.random() * 100)}`} 
+                    alt={member.name} 
+                    class="w-full h-full object-cover opacity-0"
+                  />
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">{member.name}</h3>
+              <p class="text-indigo-600 dark:text-indigo-400 mb-3">{member.role}</p>
+              <p class="text-gray-600 dark:text-gray-300">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <Testimonials locale="fa" />
+
+  <!-- CTA Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="card">
+          <div class="card-content">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">به انجمن ما بپیوندید</h2>
+            <p class="text-xl text-gray-600 mb-8">
+              با علاقه‌مندان و متخصصان منجمی به ارتباط بپردازید
+            </p>
+            <button class="btn-primary inline-flex items-center">
+              پیوستن به انجمن
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

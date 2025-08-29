@@ -1,0 +1,36 @@
+{
+  "name": "astrolabe",
+  "version": "1.0.0",
+  "description": "An open-source astrology tool",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build --experimental-assets",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [
+    "astrology",
+    "astro",
+    "open-source"
+  ],
+  "author": "Astrolabe Team",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@astrojs/db": "^0.17.1",
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/tailwind": "^6.0.2",
+    "@builder.io/partytown": "^0.10.3",
+    "alpinejs": "^3.14.9",
+    "astro": "^5.13.4",
+    "sharp": "^0.34.3",
+    "unsplash-js": "^7.0.19"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.10"
+  }
+}

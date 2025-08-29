@@ -1,0 +1,43 @@
+---
+// src/components/PlanetaryPositions.astro
+const planets = [
+  { name: "Sun", symbol: "☉", sign: "Leo", degree: "15°", house: "5th" },
+  { name: "Moon", symbol: "☽", sign: "Scorpio", degree: "22°", house: "8th" },
+  { name: "Mercury", symbol: "☿", sign: "Virgo", degree: "8°", house: "6th" },
+  { name: "Venus", symbol: "♀", sign: "Leo", degree: "3°", house: "5th" },
+  { name: "Mars", symbol: "♂", sign: "Cancer", degree: "27°", house: "4th" },
+  { name: "Jupiter", symbol: "♃", sign: "Gemini", degree: "12°", house: "3rd" },
+  { name: "Saturn", symbol: "♄", sign: "Pisces", degree: "18°", house: "12th" },
+  { name: "Uranus", symbol: "♅", sign: "Taurus", degree: "7°", house: "2nd" },
+  { name: "Neptune", symbol: "♆", sign: "Aries", degree: "25°", house: "1st" },
+  { name: "Pluto", symbol: "♇", sign: "Capricorn", degree: "14°", house: "11th" }
+];
+---
+
+<section class="my-8">
+  <h2 class="text-3xl font-bold font-serif mb-6 text-center">Planetary Positions</h2>
+  <div class="card overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+      <thead class="bg-gray-50 sticky top-0">
+        <tr>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Planet</th>
+          <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Symbol</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sign</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Degree</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">House</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        {planets.map(planet => (
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{planet.name}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-xl text-center text-gray-500">{planet.symbol}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{planet.sign}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{planet.degree}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{planet.house}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

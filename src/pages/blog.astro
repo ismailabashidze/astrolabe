@@ -1,0 +1,338 @@
+---
+// src/pages/blog.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { getTranslation, isRTL } from '../utils/i18n.js';
+
+const lang = "en";
+const dir = isRTL(lang) ? "rtl" : "ltr";
+const t = (key) => getTranslation(lang, key);
+
+// Sample blog posts data with images
+const blogPosts = [
+  {
+    id: 1,
+    title: "Understanding Your Sun Sign: A Guide to the 12 Zodiac Signs",
+    excerpt: "Discover the unique characteristics, strengths, and challenges of each zodiac sign and how they influence your personality.",
+    date: "2023-08-15",
+    author: "Sarah Johnson",
+    category: "Zodiac Signs",
+    readTime: "5 min read",
+    image: "/images/zodiac.jpg",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "The Power of Mercury Retrograde: What It Means for You",
+    excerpt: "Learn how Mercury retrograde affects communication, technology, and travel, and how to navigate this cosmic phenomenon.",
+    date: "2023-07-22",
+    author: "Michael Rodriguez",
+    category: "Planetary Movements",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 3,
+    title: "Synastry: The Art of Relationship Astrology",
+    excerpt: "Explore how comparing birth charts can reveal the dynamics, compatibility, and potential challenges in relationships.",
+    date: "2023-06-30",
+    author: "Emma Chen",
+    category: "Relationships",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 4,
+    title: "The Lunar Nodes: Your Karmic Path in This Lifetime",
+    excerpt: "Understand the significance of the North and South Nodes and how they guide your spiritual journey and life purpose.",
+    date: "2023-05-18",
+    author: "David Thompson",
+    category: "Advanced Astrology",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 5,
+    title: "House Systems in Astrology: Which One Is Right for You?",
+    excerpt: "A comprehensive guide to the different house systems and how they affect the interpretation of your birth chart.",
+    date: "2023-04-25",
+    author: "Lisa Anderson",
+    category: "Chart Interpretation",
+    readTime: "9 min read",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 6,
+    title: "Eclipses in Astrology: Celestial Events and Their Significance",
+    excerpt: "Discover how solar and lunar eclipses impact your life and what to expect during eclipse seasons.",
+    date: "2023-03-12",
+    author: "Robert Kim",
+    category: "Celestial Events",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  }
+];
+
+// Separate featured post from regular posts
+const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0];
+const regularPosts = blogPosts.filter(post => !post.featured);
+---
+
+<MainLayout title="Blog - Astrolabe" lang={lang} dir={dir}>
+  <!-- Hero Section with Background Image -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/90 to-purple-900/90"></div>
+    <div class="absolute inset-0 pattern-bg opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Astrology Blog</h1>
+        <p class="text-xl text-indigo-100 max-w-2xl mx-auto mb-10">
+          Explore the latest insights, interpretations, and discoveries in the world of astrology
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Astrology Insights</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Zodiac Guides</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Celestial Events</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <!-- Featured Post -->
+      <div class="mb-16">
+        <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 card-hover">
+          <div class="md:flex">
+            <div class="md:w-1/2 flex justify-start">
+              <div class="h-64 md:h-full w-full overflow-hidden flex items-center">
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title} 
+                  class="w-full h-auto object-contain transition-transform duration-700 hover:scale-105"
+                  onerror="this.src='/images/placeholder-blog.jpg'"
+                />
+              </div>
+            </div>
+            <div class="md:w-1/2 p-8">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-sm font-medium text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 dark:text-indigo-300 px-3 py-1 rounded-full">{featuredPost.category}</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full">Featured</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 dark:text-white mb-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">
+                <a href={`/blog/${featuredPost.id}`}>{featuredPost.title}</a>
+              </h2>
+              <p class="text-gray-600 dark:text-gray-300 mb-6">{featuredPost.excerpt}</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mr-3">
+                    <span class="text-sm font-bold text-white">{featuredPost.author.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-900 dark:text-white">{featuredPost.author}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{new Date(featuredPost.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })} · {featuredPost.readTime}</p>
+                  </div>
+                </div>
+                <a href={`/blog/${featuredPost.id}`} class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium flex items-center transition-colors duration-200">
+                  Read More
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-8">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6">Latest Articles</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {regularPosts.map(post => (
+              <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-hover">
+                <!-- Featured Image -->
+                <div class="h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    onerror="this.src='/images/placeholder-blog.jpg'"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-medium text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 dark:text-indigo-300 px-3 py-1 rounded-full">{post.category}</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{post.readTime}</span>
+                  </div>
+                  <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">
+                    <a href={`/blog/${post.id}`}>{post.title}</a>
+                  </h2>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mr-2">
+                        <span class="text-xs font-bold text-white">{post.author.charAt(0)}</span>
+                      </div>
+                      <span class="text-sm text-gray-700 dark:text-gray-300">{post.author}</span>
+                    </div>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          
+          <!-- Pagination -->
+          <div class="flex justify-center mt-12">
+            <nav class="flex items-center space-x-2">
+              <a href="#" class="px-4 py-2 rounded-md bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg transition-all duration-300">1</a>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">2</a>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">3</a>
+              <span class="px-4 py-2 text-gray-500 dark:text-gray-400">...</span>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">10</a>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/3">
+          <!-- Categories -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 mb-8 card">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Categories</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    Zodiac Signs
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(12)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    Planetary Movements
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(8)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    Relationships
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(6)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    Advanced Astrology
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(10)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    Chart Interpretation
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(7)</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                    Celestial Events
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(5)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Popular Posts -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 mb-8 card">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Popular Posts</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="group flex items-start">
+                  <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
+                      alt="The Complete Guide to Your Natal Chart" 
+                      class="w-full h-full object-cover"
+                      onerror="this.src='/images/placeholder-blog.jpg'"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">The Complete Guide to Your Natal Chart</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">March 15, 2023 · 10 min read</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-start">
+                  <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
+                      alt="How to Read Your Transit Chart" 
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">How to Read Your Transit Chart</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">February 28, 2023 · 8 min read</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-start">
+                  <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
+                      alt="The Influence of the Moon in Your Life" 
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">The Influence of the Moon in Your Life</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">January 10, 2023 · 6 min read</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Newsletter Signup - Full Width Row -->
+      <div class="mt-12">
+        <NewsletterSignup lang={lang} />
+      </div>
+    </div>
+  </section>
+</MainLayout>

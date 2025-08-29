@@ -1,0 +1,55 @@
+---
+// src/components/AstroChart.astro
+const { chartData } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+  <div class="px-6 py-5 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-purple-50">
+    <h3 class="text-2xl font-bold text-gray-900">Natal Chart</h3>
+  </div>
+  <div class="p-6">
+    <div class="flex justify-center items-center min-h-[300px] bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl mb-8 relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-indigo-500"></div>
+        <div class="absolute bottom-1/3 right-1/3 w-24 h-24 rounded-full bg-purple-500"></div>
+        <div class="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-pink-500"></div>
+      </div>
+      
+      <!-- Chart visualization placeholder -->
+      <div class="text-center z-10 relative">
+        <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-white shadow-lg mb-4">
+                      <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center">
+              <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-12 h-12" />
+            </div>
+        </div>
+        <h4 class="text-xl font-bold text-gray-900 mb-2">Celestial Map</h4>
+        <p class="text-gray-600 max-w-md">
+          Your personalized natal chart based on birth date, time, and location
+        </p>
+      </div>
+    </div>
+    
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+      <h4 class="text-xl font-bold text-gray-900 mb-4">Planetary Positions</h4>
+      <ul class="space-y-3">
+        {chartData?.planets?.map((planet, index) => (
+          <li class="flex items-center justify-between pb-3 border-b border-gray-100 last:border-0 last:pb-0">
+            <div class="flex items-center">
+              <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                <span class="text-indigo-800 font-bold">{planet.name.charAt(0)}</span>
+              </div>
+              <div>
+                <h5 class="font-medium text-gray-900">{planet.name}</h5>
+                <p class="text-sm text-gray-500">{planet.house} House</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <p class="font-medium text-gray-900">{planet.position}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>

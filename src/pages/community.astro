@@ -1,0 +1,163 @@
+---
+// src/pages/community.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '../utils/i18n.js';
+
+const lang = "en";
+const dir = isRTL(lang) ? "rtl" : "ltr";
+const t = (key) => getTranslation(lang, key);
+---
+
+<MainLayout title="Community - Astrolabe" lang={lang} dir={dir}>
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">Join Our Community</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Connect with fellow astrology enthusiasts, share insights, and grow together in your astrological journey
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Community Forum</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Our community forum is the heart of Astrolabe's social experience. Here you can:
+          </p>
+          
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-gray-300">Discuss astrological interpretations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-gray-300">Share chart readings and insights</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-gray-300">Ask questions and get help</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-gray-900 dark:text-gray-300">Connect with like-minded individuals</span>
+            </li>
+          </ul>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium px-6 py-3 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
+              Join the Forum
+            </button>
+            <button class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium px-6 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+              View Recent Posts
+            </button>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg p-8 text-white">
+          <h2 class="text-2xl font-bold mb-4">Community Events</h2>
+          <p class="text-indigo-100 mb-6">
+            Participate in live events, workshops, and discussions with astrologers and enthusiasts.
+          </p>
+          
+          <div class="space-y-4 mb-6">
+            <div class="bg-white/10 rounded-lg p-4">
+              <h3 class="font-bold mb-1">New Moon Meditation Circle</h3>
+              <p class="text-indigo-100 text-sm">Every New Moon · Online</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4">
+              <h3 class="font-bold mb-1">Astrology Workshop: House Meanings</h3>
+              <p class="text-indigo-100 text-sm">June 15 · 2:00 PM EST</p>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4">
+              <h3 class="font-bold mb-1">Mercury Retrograde Survival Guide</h3>
+              <p class="text-indigo-100 text-sm">June 28 · 7:00 PM EST</p>
+            </div>
+          </div>
+          
+          <button class="w-full bg-white text-indigo-600 font-medium py-3 px-4 rounded-lg hover:bg-indigo-50 transition-colors duration-200">
+            View All Events
+          </button>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 text-center">
+          <div class="w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Member Count</h3>
+          <p class="text-3xl font-bold text-indigo-600 mb-2">12,542</p>
+          <p class="text-gray-600 dark:text-gray-400">Active community members</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 text-center">
+          <div class="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Forum Posts</h3>
+          <p class="text-3xl font-bold text-purple-600 mb-2">89,321</p>
+          <p class="text-gray-600 dark:text-gray-400">Community discussions</p>
+        </div>
+        
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700 text-center">
+          <div class="w-16 h-16 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mx-auto mb-6">
+            <svg class="w-8 h-8 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Daily Visitors</h3>
+          <p class="text-3xl font-bold text-pink-600 mb-2">2,876</p>
+          <p class="text-gray-600 dark:text-gray-400">Engaging daily</p>
+        </div>
+      </div>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Community Guidelines</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-3">Respectful Communication</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Treat all community members with respect and kindness. Disagreements are natural, but personal attacks are not tolerated.
+            </p>
+            
+            <h3 class="font-bold text-gray-900 dark:text-white mb-3">Constructive Discussions</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Share your insights thoughtfully and back up your opinions with reasoning or experience when possible.
+            </p>
+          </div>
+          
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-3">Privacy & Safety</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Never share personal information about yourself or others. Report any suspicious activity to moderators.
+            </p>
+            
+            <h3 class="font-bold text-gray-900 dark:text-white mb-3">Inclusive Environment</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Our community welcomes people of all backgrounds, beliefs, and experience levels. Discrimination of any kind is prohibited.
+            </p>
+          </div>
+        </div>
+        
+        <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <p class="text-gray-600 dark:text-gray-300">
+            By participating in our community, you agree to follow these guidelines. Violations may result in warnings, temporary bans, or permanent removal from the community.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
