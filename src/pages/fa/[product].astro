@@ -11,7 +11,7 @@ import image2 from '@public/images/2.jpg';
 import image3 from '@public/images/3.jpg';
 import image4 from '@public/images/4.jpg';
 import image5 from '@public/images/5.jpg';
-import image6 from '@public/images/6.jpg';
+import image6 from '@public/images/6.png';
 import image7 from '@public/images/7.jpg';
 import image8 from '@public/images/8.jpg';
 import image9 from '@public/images/9.jpg';
@@ -33,7 +33,7 @@ const imageMap = {
   '3.jpg': image3,
   '4.jpg': image4,
   '5.jpg': image5,
-  '6.jpg': image6,
+  '6.png': image6,
   '7.jpg': image7,
   '8.jpg': image8,
   '9.jpg': image9,
@@ -540,19 +540,19 @@ const techFeatures = [
       </div>
 
       <!-- CTA Section with Gradient Overlay -->
-      <div class={`bg-gradient-to-r from-${color}-600 to-${color}-700 rounded-2xl p-8 md:p-12 text-white mb-16 relative overflow-hidden`}>
+      <div class={`bg-gradient-to-r from-${color}-600 to-${color}-700 rounded-2xl p-8 md:p-12 light:text-black dark:text-white mb-16 relative overflow-hidden`}>
         <div class="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern.svg')] opacity-10"></div>
         <div class="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">سفر رابطه خود را دگرگون کنید</h2>
-          <p class="text-xl text-white/90 mb-8">
-            به هزاران زوجی که با راه‌حل‌های هوشمند ما پیوندهای خود را تقویت کرده‌اند بپیوندید.
+          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">سفر روانی خود را دگرگون کنید</h2>
+          <p class="text-xl light:text-black dark:text-white mb-8">
+            به هزاران نفری که با راه‌حل‌های هوشمند ما وضعیت خود را بهتر کرده‌اند بپیوندید.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-white text-gray-900 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg transform hover:scale-105">
-              شروع سفر رابطه‌ای شما
+            <button class="bg-white text-gray-900 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg transform hover:scale-105 light:text-black dark:text-white">
+              شروع سفر شما
             </button>
-            <button class="bg-transparent border-2 border-white text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
-              صحبت با متخصصان رابطه
+            <button class="bg-transparent border-2 border-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-all duration-300 transform hover:scale-105 light:text-black dark:text-white">
+              صحبت با متخصصان 
             </button>
           </div>
         </div>

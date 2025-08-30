@@ -123,8 +123,8 @@ export const persianBlogPosts = [
     image: "/images/1.jpg",
     featured: true
   },
-    {
-    id: "4",
+  {
+    id: "2",
     title: "Introducing Zehna: An AI Platform for Mental Health",
     excerpt: "Zehna is the first Persian-language AI platform for mental health, designed to provide accessible and continuous mental health therapy services.",
     content: `
@@ -155,8 +155,7 @@ export const persianBlogPosts = [
     category: "Platform Introduction",
     readTime: "8 min read",
     image: "/images/8.jpg"
-  }
-];,
+  },
   {
     id: "3",
     title: "هم‌پای مادر: سکوی ترکیبی هوش مصنوعی و روانشناسی انسانی",
@@ -210,7 +209,7 @@ export const persianBlogPosts = [
     author: "تیم توسعه ذهنا",
     category: "محصولات",
     readTime: "۶ دقیقه مطالعه",
-    image: "/images/6.jpg"
+    image: "/images/6.png"
   },
   {
     id: "5",

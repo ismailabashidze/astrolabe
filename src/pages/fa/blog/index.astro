@@ -1,5 +1,5 @@
 ---
-// src/pages/fa/blog.astro
+// src/pages/fa/blog/index.astro
 import MainLayout from '@layouts/MainLayout.astro';
 import NewsletterSignup from '@components/NewsletterSignup.astro';
 import { getTranslation, isRTL } from '@utils/i18n.js';
@@ -13,6 +13,7 @@ const t = (key) => getTranslation(lang, key);
 // Separate featured post from regular posts
 const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0];
 const regularPosts = blogPosts.filter(post => !post.featured);
+---
 
 <MainLayout title="بلاگ - ذهنا" lang={lang} dir={dir}>
   <!-- Hero Section with Background Image -->
@@ -247,7 +248,7 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                 <a href="#" class="group flex items-start">
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
                     <Image 
-                      src="/images/6.jpg" 
+                      src="/images/6.png" 
                       alt="تأثیر ماه در زندگی شما" 
                       class="w-full h-full object-cover"
                       width={200}
@@ -274,3 +275,4 @@ const regularPosts = blogPosts.filter(post => !post.featured);
     </div>
   </section>
 </MainLayout>
+---
