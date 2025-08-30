@@ -1,6 +1,6 @@
-# Contributing to Astrolabe
+# Contributing to Zehna
 
-Thank you for your interest in contributing to Astrolabe! We welcome contributions from the community to help improve the project.
+Thank you for your interest in contributing to Zehna! We welcome contributions from the community to help improve the project.
 
 
 ## Getting Started

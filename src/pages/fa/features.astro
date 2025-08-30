@@ -1,51 +1,47 @@
 ---
 // src/pages/fa/features.astro
-import MainLayout from '../../layouts/MainLayout.astro';
-import { getTranslation, isRTL } from '../../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 import { Image } from 'astro:assets';
 
 // Import images
-import image16 from '../../../public/images/16.jpg';
-import image17 from '../../../public/images/17.jpg';
-import image18 from '../../../public/images/18.jpg';
-import image10 from '../../../public/images/10.jpg';
-import image2 from '../../../public/images/2.jpg';
-import image3 from '../../../public/images/3.jpg';
-import image4 from '../../../public/images/4.jpg';
-import image11 from '../../../public/images/11.jpg';
-import image6 from '../../../public/images/6.jpg';
-import image7 from '../../../public/images/7.jpg';
-import image8 from '../../../public/images/8.jpg';
-import image9 from '../../../public/images/9.jpg';
-import image1 from '../../../public/images/1.jpg';
+import hamdelImage from '@public/images/1.jpg';
+import hammasirImage from '@public/images/6.jpg';
+import hampayeMadarImage from '@public/images/4.jpg';
+import bahamImage from '@public/images/7.jpg';
+import darmanaImage from '@public/images/2.jpg';
+import kanapeImage from '@public/images/3.jpg';
+import synapseImage from '@public/images/11.jpg';
+import khebrehImage from '@public/images/10.jpg';
 
 const lang = "fa";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 ---
-<MainLayout title="ویژگی‌ها - اسطرلاب" lang={lang} dir={dir}>
+<MainLayout title="محصولات ذهنا" lang={lang} dir={dir}>
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">ویژگی‌های قدرتمند منجمی</h1>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">محصولات ذهنا</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          مجموعه جامع ابزارها و ویژگی‌هایی را کشف کنید که اسطرلاب را به پلتفرم منجمی نهایی تبدیل می‌کند
+          مجموعه جامع ابزارهای هوش مصنوعی برای هر جنبه از زندگی روانی و اجتماعی شما
         </p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Hamdel -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center mb-5">
-            <span class="text-2xl">🌟</span>
+          <div class="w-16 h-16 rounded-full bg-red-50 dark:bg-gray-700 flex items-center justify-center mb-5">
+            <span class="text-2xl">❤️</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">محاسبات نیتال چارت</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">همدل</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            محاسبات دقیق موقعیت‌های سیاره‌ای در زمان تولد با تفسیرهای دقیق برای همه دوازده خانه.
+            هوش مصنوعی برای حمایت عاطفی و روانی در مواقع بحران و استرس
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image16} 
-              alt="Natal Chart" 
+              src={hamdelImage} 
+              alt="همدل" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -58,209 +54,68 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>موقعیت‌های دقیق سیاره‌ها</span>
+              <span>حمایت ۲۴/۷ در مواقع بحران</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>محاسبات سیستم خانه</span>
+              <span>تشخیص احساسات و هیجانات</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>تحلیل اسپکت</span>
+              <span>تکنیک‌های مدیریت استرس</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تشخیص الگوهای رفتاری ناسازگار</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ارائه راهکارهای شخصی‌سازی‌شده</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیگیری پیشرفت روانی کاربر</span>
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+            <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">محصولات کلیدی</h4>
+            <p class="text-blue-700 dark:text-blue-300 text-sm">
+              همدل با استفاده از الگوریتم‌های پیشرفته هوش مصنوعی، ۲۴ ساعته و ۷ روز هفته آماده ارائه حمایت عاطفی است. این سیستم می‌تواند الگوهای رفتاری و احساسی کاربر را تشخیص داده و راهکارهای شخصی‌سازی‌شده ارائه دهد. با قابلیت‌های یادگیری ماشین، همدل به طور مداوم درک خود از پروفایل روانی هر کاربر را بهبود می‌بخشد.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/hamdel" class="inline-block bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
         </div>
         
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تحلیل ترانزیت</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            حرکات سیاره‌ای فعلی را دنبال کنید و تأثیرات آنها بر زندگی روزمره و چرخه‌های بلندمدت را درک کنید.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image17} 
-              alt="Transit Analysis" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>موقعیت‌های سیاره‌ای در زمان واقعی</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>تحلیل اسپکت ترانزیت</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>هشدارهای ترانزیت مهم</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">مقایسه‌های سیناستری</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            چارت‌ها را مقایسه کنید تا روابط، سازگاری و دینامیک‌های بین فردی را با بینش‌های دقیق درک کنید.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image18} 
-              alt="Synastry Comparisons" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>سازگاری روابط</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>مقایسه اسپکت</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>دینامیک‌های روابط</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">چارت‌های پروگرس</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            رشد و توسعه شخصی خود را از طریق پروگرس ثانویه و تفسیرهای آنها کشف کنید.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image11} 
-              alt="Progressed Charts" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>پروگرس ثانویه</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>چارت‌های بازگشت خورشیدی</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>چارت‌های بازگشت ماهی</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تفسیرهای هوروسکوپ</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            هوروسکوپ‌های روزانه، هفتگی و ماهانه با بینش‌های شخصی‌سازی شده بر اساس چارت منحصر به فرد شما.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image2} 
-              alt="Horoscope Interpretations" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>هوروسکوپ‌های روزانه</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>پیش‌بینی‌های هفتگی و ماهانه</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>بینش‌های شخصی‌سازی شده</span>
-            </li>
-          </ul>
-        </div>
-        
+        <!-- Hammasir -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
+            <span class="text-2xl">💍</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">ابزارهای پیشرفته</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">هم‌مسیر</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            ابزارهای حرفه‌ای برای منجمان شامل افرمرید، مقایسه چارت و موارد بیشتر.
+            هوش مصنوعی و حمایت روانشناس برای روابط عاشقانه، ازدواج و همسان‌سازی
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image1} 
-              alt="Advanced Tools" 
+              src={hammasirImage} 
+              alt="هم‌مسیر" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -273,38 +128,364 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>داده‌های افرمرید</span>
+              <span>تحلیل سازگاری زناشویی</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>ابزارهای مقایسه چارت</span>
+              <span>حل تعارضات روابطی</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>گزارش‌های قابل سفارشی‌سازی</span>
+              <span>همسان‌سازی علمی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ارزیابی شخصیت و ارزش‌های زندگی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>آموزش مهارت‌های ارتباط مؤثر</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>مشاوره پیش از ازدواج</span>
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+            <h4 class="font-bold text-green-800 dark:text-green-200 mb-2">مزایای کلیدی</h4>
+            <p class="text-green-700 dark:text-green-300 text-sm">
+              هم‌مسیر با ترکیب هوش مصنوعی و تخصص روانشناسی، فرآیند آشنایی و ازدواج را به یک مسیر ساختارمند و علمی تبدیل می‌کند. این سیستم به جای تمرکز صرف بر جذابیت بیرونی، بر سازگاری عمیق روانی و ارزشی تأکید دارد. این پلتفرم شامل ماژول‌های مشاوره پیش از ازدواج و ابزارهای پشتیبانی از رابطه برای اطمینان از موفقیت بلندمدت است.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-[#3CAC88] hover:bg-[#99D2B4] text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/hammasir" class="inline-block bg-white hover:bg-gray-100 text-[#3CAC88] border border-[#3CAC88] font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
         </div>
         
+        <!-- TogetherMama (TogetherMama) -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🤱</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">هم‌پای مادر</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            هوش مصنوعی و حمایت روانشناس برای والدین و پرورش فرزندان
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={hampayeMadarImage} 
+              alt="هم‌پای مادر" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>راهنمایی در پرورش فرزندان</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>حل چالش‌های والدینی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>حمایت روانی برای مادران</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>غربالگری اولیه مشکلات رشدی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ارائه برنامه‌های شخصی‌سازی‌شده</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیگیری پیشرفت کودک و مادر</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-pink-50 dark:bg-pink-900/20 rounded-lg">
+            <h4 class="font-bold text-pink-800 dark:text-pink-200 mb-2">مزایای منحصربه‌فرد</h4>
+            <p class="text-pink-700 dark:text-pink-300 text-sm">
+              هم‌پای مادر با ترکیب هوش مصنوعی ۲۴/۷ و حمایت روانشناس انسانی، مادران را در مسیر پرورش کودکان خود همراهی می‌کند. این سیستم می‌تواند مشکلات رشدی کودک را در مراحل اولیه شناسایی کرده و راهکارهای عملی ارائه دهد. این پلتفرم همچنین ابزارهای پشتیبانی اجتماعی ارائه می‌دهد که والدین می‌توانند با دیگران با چالش‌های مشابه ارتباط برقرار کنند و یک شبکه حمایتی بسازند.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/hampaye-madar" class="inline-block bg-white hover:bg-gray-100 text-pink-600 border border-pink-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
+        </div>
+        
+        <!-- Baham -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🛒</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">با هم</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            پلتفرم برای خرید گروهی و کاهش هزینه‌های روزمره
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={bahamImage} 
+              alt="با هم" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>خرید گروهی کالاها</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>کاهش هزینه‌های زندگی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>شبکه اجتماعی خریداران</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل الگوهای مصرفی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیشنهادات شخصی‌سازی‌شده</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>مدیریت بودجه خانوادگی</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+            <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">مزایای اقتصادی</h4>
+            <p class="text-blue-700 dark:text-blue-300 text-sm">
+              با هم با ایجاد شبکه خریداران، قدرت مذاکره جمعی را برای کاهش قیمت کالاها به کار می‌گیرد. این پلتفرم می‌تواند الگوهای مصرفی کاربران را تحلیل کرده و پیشنهادات شخصی‌سازی‌شده ارائه دهد. با ابزارهایی مانند ردیابی قیمت و هشدارهای پیشنهاد، کاربران می‌توانند حداکثر صرفه‌جویی را داشته باشند.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/baham" class="inline-block bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
+        </div>
+        
+        <!-- Darmana -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🏥</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">درمانا</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            هوش مصنوعی برای تشخیص روان‌شناسی بر اساس DSM-5 و PDM-2
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={darmanaImage} 
+              alt="درمانا" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تشخیص اختلالات روانی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیشنهادات درمانی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیگیری پیشرفت درمان</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل الگوهای رفتاری</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تشخیص زمانی اختلالات</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیشنهادات دارویی (با نظارت پزشک)</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+            <h4 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">دقت تشخیصی</h4>
+            <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+              درمانا با استفاده از استانداردهای بین‌المللی DSM-5 و PDM-2، تشخیصات دقیق روان‌شناختی ارائه می‌دهد. این سیستم می‌تواند الگوهای رفتاری کاربر را تحلیل کرده و زمان‌های بروز اختلالات را پیش‌بینی کند. با ابزارهای جامع ارزیابی و ردیابی پیشرفت، درمانا به عنوان یک منبع ارزشمند برای متخصصان سلامت روان و افرادی که به دنبال درک سلامت روانی خود هستند، عمل می‌کند.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/darmana" class="inline-block bg-white hover:bg-gray-100 text-yellow-600 border border-yellow-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
+        </div>
+        
+        <!-- Kanape -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🎭</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">کاناپه</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            هوش مصنوعی به عنوان نقش‌آفرینی برای یادگیری مهارت‌های روان‌درمانی
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={kanapeImage} 
+              alt="کاناپه" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تمرین مهارت‌های درمانی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>شبیه‌سازی جلسات درمانی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>بازخورد هوش مصنوعی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل زبان بدن و لحن صدا</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ارائه سناریوهای متنوع درمانی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیگیری پیشرفت مهارت‌ها</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+            <h4 class="font-bold text-green-800 dark:text-green-200 mb-2">آموزش تعاملی</h4>
+            <p class="text-green-700 dark:text-green-300 text-sm">
+              کاناپه با استفاده از سناریوهای متنوع درمانی، مهارت‌های روان‌درمانی را به صورت تعاملی آموزش می‌دهد. این سیستم می‌تواند زبان بدن و لحن صدا را تحلیل کرده و بازخورد دقیقی در مورد عملکرد کاربر ارائه دهد. با مدل‌سازی پیشرفته هوش مصنوعی، کاناپه محیطی ایمن برای تمرین مهارت‌ها قبل از کار با مشتریان واقعی فراهم می‌کند.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/kanape" class="inline-block bg-white hover:bg-gray-100 text-green-600 border border-green-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
+        </div>
+        
+        <!-- Synapse -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path>
-            </svg>
+            <span class="text-2xl">🏢</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">مراحل قمری و ردیابی ماه</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">سیناپس</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            ردیابی دقیق مراحل قمری با بینش‌های شخصی‌سازی شده بر اساس نشانه قمری و ترانزیت‌های فعلی شما.
+            هوش مصنوعی برای کمک به منابع انسانی و استخدام
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image4} 
-              alt="Lunar Phases" 
+              src={synapseImage} 
+              alt="سیناپس" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -317,37 +498,68 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>اطلاعات مرحله قمری فعلی</span>
+              <span>تحلیل شخصیت متقاضیان</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>تفسیرهای نشانه قمری</span>
+              <span>پیشنهادات استخدام</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>زمان‌های ماه بدون دوره</span>
+              <span>بهینه‌سازی تیم‌ها</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل سازگاری تیمی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ارائه گزارش‌های روان‌سنجی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>پیش‌بینی عملکرد کارکنان</span>
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
+            <h4 class="font-bold text-red-800 dark:text-red-200 mb-2">مدیریت منابع انسانی</h4>
+            <p class="text-red-700 dark:text-red-300 text-sm">
+              سیناپس با تحلیل روان‌سنجی متقاضیان، فرآیند استخدام را بهبود می‌بخشد. این سیستم می‌تواند سازگاری تیمی را تحلیل کرده و گزارش‌های دقیقی در مورد پتانسیل عملکرد کارکنان ارائه دهد. با ابزارهایی مانند پیش‌بینی نگه‌داری و تحلیل سازگاری فرهنگی، سیناپس به سازمان‌ها کمک می‌کند تا تیم‌های قوی‌تر و منسجم‌تری بسازند.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/synapse" class="inline-block bg-white hover:bg-gray-100 text-red-600 border border-red-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
+          </div>
         </div>
         
+        <!-- Khebreh -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
-            </svg>
+            <span class="text-2xl">📰</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">منجمی انتخابی</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">خبره</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            زمان‌های اخترشناسی مطلوب‌ترین را برای رویدادهای مهم مانند عروسی‌ها، راه‌اندازی کسب‌وکار و غیره انتخاب کنید.
+            هوش مصنوعی برای جمع‌آوری اخبار، بینش‌ها و تأثیرات اجتماعی
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image10} 
-              alt="Electional Astrology" 
+              src={khebrehImage} 
+              alt="خبره" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -360,209 +572,97 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>توصیه‌های زمان‌بندی رویداد</span>
+              <span>تحلیل اخبار روان‌شناسی</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>معیارهای انتخاب قابل سفارشی‌سازی</span>
+              <span>شناسایی روندهای اجتماعی</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>ادغام تقویم</span>
+              <span>پیش‌بینی تأثیرات اجتماعی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>تحلیل احساسات جمعی</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>شناسایی الگوهای رسانه‌ای</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>ارائه گزارش‌های تحلیلی</span>
             </li>
           </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-            </svg>
+          <div class="mt-6 p-4 bg-teal-50 dark:bg-teal-900/20 rounded-lg">
+            <h4 class="font-bold text-teal-800 dark:text-teal-200 mb-2">تحلیل رسانه‌ای</h4>
+            <p class="text-teal-700 dark:text-teal-300 text-sm">
+              خبره با تحلیل الگوهای رسانه‌ای و احساسات جمعی، درک عمیقی از روندهای اجتماعی ارائه می‌دهد. این سیستم می‌تواند تأثیرات اجتماعی رویدادهای مختلف را پیش‌بینی کرده و گزارش‌های تحلیلی جامعی تهیه کند. با قابلیت‌های نظارت بلادرنگ و سیستم‌های هشدار قابل تنظیم، خبره به سازمان‌ها کمک می‌کند تا نسبت به تغییرات نظر عمومی پیش‌بینی کنند و واکنش مناسب داشته باشند.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">گزارش‌های اخترشناسی</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            گزارش‌های جامع و قابل سفارشی اخترشناسی که می‌توانید برای مشتریان یا استفاده شخصی ذخیره، به اشتراک بگذارید یا چاپ کنید.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image6} 
-              alt="Astrological Reports" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              مشاهده پروژه
+            </a>
+            <a href="/khebreh" class="inline-block bg-white hover:bg-gray-100 text-teal-600 border border-teal-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              جزئیات بیشتر
+            </a>
           </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>گزارش‌های با کیفیت حرفه‌ای</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>قابلیت صادرات PDF</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>قالب‌های قابل سفارشی‌سازی</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">نقشه‌برداری اختری</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            کشف کنید که چگونه انرژی‌های سیاره‌ای بر مکان‌های مختلف در سراسر جهان با ابزار منجمی جابجایی ما تأثیر می‌گذارند.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image7} 
-              alt="Astro-Mapping" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>محاسبات چارت جابجایی</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>نقشه جهانی تعاملی</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>تفسیرهای مبتنی بر مکان</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تکنیک‌های زمان‌بندی</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            روش‌های پیشرفته زمان‌بندی شامل پیشرفت‌ها، جهت‌ها و قوس‌های خورشیدی برای پیش‌بینی روندها و رویدادهای آینده.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image8} 
-              alt="Timing Techniques" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>جهت‌های قوس خورشیدی</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>جهت‌های اولیه</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>فیرداریا و سایر سیستم‌های زمان‌بندی</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-lime-100 dark:bg-lime-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-lime-600 dark:text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">مجموعه‌های چارت</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            چندین چارت را برای خود، خانواده، مشتریان یا شخصیت‌های عمومی در مجموعه‌های شخصی‌سازی شده ذخیره و سازماندهی کنید.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image9} 
-              alt="Chart Collections" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>ذخیره‌سازی نامحدود چارت</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>سازماندهی پوشه سفارشی</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>مشاهده‌های مقایسه سریع</span>
-            </li>
-          </ul>
         </div>
       </div>
       
-      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white">
+      <div class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] rounded-2xl p-8 md:p-12 text-white mb-16">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">آماده کشف نقشه کیهانی خود هستید؟</h2>
-          <p class="text-xl text-indigo-100 mb-8">
-            به هزاران علاقه‌مند به منجمی بپیوندید که قدرت اسطرلاب را کشف کرده‌اند
+          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">آیا ایده‌ای برای توسعه دارید؟</h2>
+          <p class="text-xl text-white/90 mb-8">
+            ما می‌توانیم برای شما هم ابزار هوش مصنوعی بسازیم. با ما تماس بگیرید تا ایده شما را به واقعیت تبدیل کنیم.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-white text-indigo-900 font-medium px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors duration-300 shadow-lg">
-              چارت خود را ایجاد کنید
+            <button class="bg-white text-[#3CAC88] font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+              تماس با ما
             </button>
             <button class="bg-transparent border-2 border-white text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-              مشاهده نسخه ی نمایشی
+              درباره ذهنا
             </button>
+          </div>
+          <div class="mt-12 p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+            <h3 class="text-2xl font-bold mb-4">توسعه راهکارهای سفارشی</h3>
+            <p class="text-white/90 mb-4">
+              تیم ذهنا توانایی طراحی و پیاده‌سازی ابزارهای هوش مصنوعی اختصاصی برای نیازهای خاص شما را دارد. 
+              از سیستم‌های پشتیبانی تصمیم‌گیری تا پلتفرم‌های تحلیل داده، ما می‌توانیم راهکارهای نوآورانه‌ای 
+              برای چالش‌های منحصر به فرد شما ارائه دهیم.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div class="bg-white/10 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">تحلیل نیازها</h4>
+                <p class="text-white/90 text-sm">
+                  بررسی دقیق نیازهای کسب‌وکار شما و طراحی راهکارهای متناسب
+                </p>
+              </div>
+              <div class="bg-white/10 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">پیاده‌سازی</h4>
+                <p class="text-white/90 text-sm">
+                  توسعه و پیاده‌سازی سریع با استفاده از آخرین فناوری‌ها
+                </p>
+              </div>
+              <div class="bg-white/10 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">پشتیبانی</h4>
+                <p class="text-white/90 text-sm">
+                  پشتیبانی مستمر و به‌روزرسانی‌های مداوم
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

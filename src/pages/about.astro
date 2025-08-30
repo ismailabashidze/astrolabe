@@ -1,61 +1,57 @@
 ---
 // src/pages/about.astro
-import MainLayout from '../layouts/MainLayout.astro';
-import Testimonials from '../components/Testimonials.astro';
-import { getTranslation, isRTL } from '../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import Testimonials from '@components/Testimonials.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 
 const lang = "en";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 
-// Team members data
+// Team members data based on docs
 const teamMembers = [
   {
-    name: "Alex Morgan",
-    role: "Chief Astrologer",
-    bio: "20+ years of experience in astrological interpretation and chart analysis.",
-    avatar: "AM",
-    image: "1.jpg"
+    name: "Dr. Hadi Bahrami Ehsan",
+    role: "Founder & CEO",
+    bio: "Full Professor at University of Tehran, leading the development of Zehna as a national digital mental health platform.",
+    avatar: "HB"
   },
   {
-    name: "Sam Rivera",
-    role: "Lead Developer",
-    bio: "Full-stack developer passionate about creating intuitive astrological tools.",
-    avatar: "SR",
-    image: "2.jpg"
+    name: "Kamran Kabiri",
+    role: "Technology Director",
+    bio: "Director of Information and Communication Technology at Banian Barakat Foundation, supporting national AI initiatives.",
+    avatar: "KK"
   },
   {
-    name: "Jordan Patel",
-    role: "UX Designer",
-    bio: "Specializes in creating beautiful, accessible interfaces for complex data.",
-    avatar: "JP",
-    image: "3.jpg"
+    name: "AI Psychology Team",
+    role: "Clinical Psychology Experts",
+    bio: "Specialists in CBT, DBT, ACT, Mindfulness and Interpersonal Therapy providing oversight to our AI models.",
+    avatar: "AP"
   },
   {
-    name: "Taylor Kim",
-    role: "Community Manager",
-    bio: "Astrology enthusiast focused on building engaging community experiences.",
-    avatar: "TK",
-    image: "4.jpg"
+    name: "Development Team",
+    role: "AI & Software Engineers",
+    bio: "Experts in artificial intelligence, machine learning, and full-stack development building our platforms.",
+    avatar: "DT"
   }
 ];
 ---
 
-<MainLayout title={t('aboutTitle')} lang={lang} dir={dir}>
+<MainLayout title="About Zehna" lang={lang} dir={dir}>
   <!-- Hero Section -->
   <section class="relative py-12 md:py-20 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 pattern-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-light via-secondary-light to-pink-50 pattern-bg"></div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">{t('aboutTitle')}</h1>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">About Zehna</h1>
         <p class="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-8">
-          Discover the ancient wisdom of astrology with modern precision
+          Iran's First AI-Powered Mental Health Platform
         </p>
         <!-- Hero Image -->
         <div class="mt-8 rounded-xl overflow-hidden shadow-lg">
           <img 
             src="/images/zodiac.jpg" 
-            alt="Astrology" 
+            alt="Psychology" 
             class="w-full h-auto object-cover"
             width="1200" 
             height="400"
@@ -72,14 +68,24 @@ const teamMembers = [
         <div class="card">
           <div class="card-content">
             <div class="prose prose-lg max-w-none">
-              <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">{t('aboutDescription')}</p>
-              
-              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-6">Our Mission</h2>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Astrolabe aims to make astrology accessible to everyone, providing accurate calculations and insightful interpretations 
-                while respecting the traditional wisdom of this ancient art. We believe that understanding the celestial influences 
-                can provide valuable insights into our lives and help us navigate our personal growth journey.
+              <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+                Zehna is Iran's pioneering AI-powered mental health platform, developed through a collaboration between the University of Tehran and leading technology experts. Our platform combines cutting-edge artificial intelligence with evidence-based psychological therapies to provide accurate and insightful tools for improving your daily life.
               </p>
+              
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-6">Our Academic Foundation</h2>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                Zehna was founded by Dr. Hadi Bahrami Ehsan, a Full Professor at the University of Tehran, bringing decades of academic expertise in psychology to our platform. Our team includes clinical psychology specialists in CBT, DBT, ACT, Mindfulness, and Interpersonal Therapy who provide oversight to our AI models. This strong academic foundation ensures that our AI systems deliver scientifically validated mental health support.
+              </p>
+              
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-6">Our Values</h2>
+              <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-6">
+                <li class="mb-2"><strong>Genuine Empathy:</strong> Designing AI systems that interact with users in a human, compassionate, and non-judgmental way.</li>
+                <li class="mb-2"><strong>Complete Privacy:</strong> All user data is protected with high-security standards, encrypted, and strictly following privacy policies.</li>
+                <li class="mb-2"><strong>Accessibility for All:</strong> Removing time, location, and financial barriers to accessing mental health services.</li>
+                <li class="mb-2"><strong>Academic Excellence:</strong> Maintaining rigorous scientific standards through continuous collaboration with university researchers.</li>
+                <li class="mb-2"><strong>Technological Innovation:</strong> Leveraging the latest advances in AI and machine learning for mental health applications.</li>
+                <li class="mb-2"><strong>Supportive Community:</strong> Creating a safe environment for user interactions, experience sharing, and mutual support.</li>
+              </ul>
               
               <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10">
                 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 text-center">
@@ -88,8 +94,8 @@ const teamMembers = [
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                   </div>
-                  <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Accuracy</h3>
-                  <p class="text-gray-600 dark:text-gray-300">Precise calculations based on astronomical data</p>
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Scientific Rigor</h3>
+                  <p class="text-gray-600 dark:text-gray-300">University-backed research and evidence-based approaches</p>
                 </div>
                 
                 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 text-center">
@@ -99,7 +105,7 @@ const teamMembers = [
                     </svg>
                   </div>
                   <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Community</h3>
-                  <p class="text-gray-600 dark:text-gray-300">Building connections among astrology enthusiasts</p>
+                  <p class="text-gray-600 dark:text-gray-300">Building connections among psychology enthusiasts</p>
                 </div>
                 
                 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 text-center">
@@ -109,24 +115,37 @@ const teamMembers = [
                     </svg>
                   </div>
                   <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Education</h3>
-                  <p class="text-gray-600 dark:text-gray-300">Helping users understand astrological concepts</p>
+                  <p class="text-gray-600 dark:text-gray-300">Helping users understand psychological concepts</p>
                 </div>
               </div>
               
-              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-16 mb-6">Open Source</h2>
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-16 mb-6">Innovation & Technology</h2>
               <p class="text-gray-700 dark:text-gray-300 mb-6">
-                As an open-source project, we believe in transparency and community collaboration. Our code is available on GitHub 
-                for anyone to contribute, review, or fork. We welcome contributions from developers, astrologers, and enthusiasts 
-                who share our vision of making astrology more accessible.
+                Zehna represents the cutting edge of AI mental health technology in Iran. Our platform combines modern psychological wisdom with state-of-the-art artificial intelligence to provide accurate and insightful tools for improving daily life. Our AI-powered therapeutic sessions offer 24/7 support using evidence-based approaches including Cognitive Behavioral Therapy (CBT), Dialectical Behavior Therapy (DBT), Acceptance and Commitment Therapy (ACT), Mindfulness, Interpersonal Therapy, and Compassion-Focused Therapy.
               </p>
               
-              <div class="mt-8">
-                <button class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-white font-medium px-6 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-                  </svg>
-                  View on GitHub
-                </button>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                Our development team consists of experts in artificial intelligence, machine learning, and full-stack development who are building the next generation of mental health platforms. We continuously update our AI infrastructure and add more advanced therapeutic capabilities, ensuring that our users have access to the most advanced mental health technology available.
+              </p>
+              
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mt-16 mb-6">Our Culture</h2>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                At Zehna, we foster a culture of academic excellence, social responsibility, and technological innovation. Our team is dedicated to bridging the gap in mental health services in Iran by developing culturally relevant, secure, and accessible digital solutions. We prioritize:
+              </p>
+              <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-6">
+                <li class="mb-2">Collaboration with leading universities and research institutions</li>
+                <li class="mb-2">Continuous learning and improvement through academic partnerships</li>
+                <li class="mb-2">Cultural and religious alignment with Iranian-Islamic values</li>
+                <li class="mb-2">Secure storage of sensitive user data on domestic servers</li>
+                <li class="mb-2">Bridging the gap in psychological services across all socio-economic levels</li>
+                <li class="mb-2">Promoting mental health awareness through education and outreach</li>
+              </ul>
+              
+              <div class="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+                <h3 class="text-2xl font-bold text-blue-800 dark:text-blue-200 mb-4">Our Commitment to Excellence</h3>
+                <p class="text-blue-700 dark:text-blue-300">
+                  Zehna is proud to be at the forefront of digital mental health transformation in Iran. Through our strong academic partnerships, cutting-edge technology, and commitment to accessibility, we're making high-quality mental health support available to all Iranians, regardless of their location or economic status. Our platform represents a new era in mental health care - one that combines the best of human expertise with the power of artificial intelligence.
+                </p>
               </div>
             </div>
           </div>
@@ -139,9 +158,9 @@ const teamMembers = [
   <section class="py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-900">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">Our Team</h2>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">Our Leadership & Experts</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Passionate individuals dedicated to bringing you the best astrological tools
+          Dedicated professionals driving Iran's digital mental health transformation
         </p>
       </div>
       
@@ -149,12 +168,12 @@ const teamMembers = [
         {teamMembers.map((member, index) => (
           <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 text-center">
             <div class="relative mx-auto mb-6">
-                <div class="w-24 h-24 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mx-auto">
+                <div class="w-24 h-24 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mx-auto">
                   <span class="text-2xl font-bold text-white">{member.avatar}</span>
                 </div>
                 <div class="absolute inset-0 rounded-full overflow-hidden">
                   <img 
-                    src={`/images/${member.image}`} 
+                    src={`https://picsum.photos/200/200?random=${Math.floor(Math.random() * 100)}`} 
                     alt={member.name} 
                     class="w-full h-full object-cover"
                   />
@@ -177,12 +196,12 @@ const teamMembers = [
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Join Our Community</h2>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Join Our National Initiative</h2>
           <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Connect with fellow astrology enthusiasts and practitioners
+            Be part of Iran's digital mental health transformation with Zehna
           </p>
-          <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 dark:hover:from-indigo-500 dark:hover:to-purple-500">
-            Join Community
+          <button class="bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-4 rounded-xl hover:from-primary-dark hover:to-secondary-dark transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+            Get Started with Zehna
             <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>

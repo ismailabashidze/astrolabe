@@ -1,70 +1,61 @@
 ---
 // src/pages/fa/index.astro
-import MainLayout from '../../layouts/MainLayout.astro';
-import AstroChart from '../../components/AstroChart.astro';
-import ZodiacSigns from '../../components/ZodiacSigns.astro';
-import Testimonials from '../../components/Testimonials.astro';
-import NewsletterSignup from '../../components/NewsletterSignup.astro';
-import Statistics from '../../components/Statistics.astro';
-import { getTranslation, isRTL } from '../../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import Testimonials from '@components/Testimonials.astro';
+import NewsletterSignup from '@components/NewsletterSignup.astro';
+import Statistics from '@components/Statistics.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 import { Image } from 'astro:assets';
 
 // Import images directly
-import heroImage from '../../../public/images/8.jpg';
-import natalChartImage from '../../../public/images/1.jpg';
-import transitsImage from '../../../public/images/6.jpg';
-import synastryImage from '../../../public/images/4.jpg';
-import progressionsImage from '../../../public/images/7.jpg';
+import heroImage from '@public/images/8.jpg';
+import hamdelImage from '@public/images/1.jpg';
+import hammasirImage from '@public/images/6.jpg';
+import hampayeMadarImage from '@public/images/4.jpg';
+import bahamImage from '@public/images/7.jpg';
+import darmanaImage from '@public/images/2.jpg';
+import kanapeImage from '@public/images/3.jpg';
+import synapseImage from '@public/images/11.jpg';
+import khebrehImage from '@public/images/10.jpg';
 
 const lang = "fa";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
-
-// Sample chart data
-const chartData = {
-  planets: [
-    { name: "خورشید", position: "15° اسد", house: "5ام" },
-    { name: "ماه", position: "22° عقرب", house: "8ام" },
-    { name: "عطارد", position: "8° سنبله", house: "6ام" },
-    { name: "زهره", position: "3° اسد", house: "5ام" },
-    { name: "مریخ", position: "27° سرطان", house: "4ام" }
-  ]
-};
 ---
 
-<MainLayout title={t('welcome')} lang={lang} dir={dir}>
+<MainLayout title="ذهنا - نرم افزار روان‌شناسی هوش مصنوعی با قابلیت توسعه راهکارهای سفارشی" lang={lang} dir={dir}>
   <!-- Hero Section -->
-  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 text-white mb-20 shadow-2xl">
+  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3CAC88] via-[#99D2B4] to-[#3CAC88] text-white mb-20 shadow-2xl">
     <div class="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat opacity-5"></div>
     <!-- Enhanced animated background elements -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-      <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
+      <div class="absolute -top-40 -left-40 w-80 h-80 bg-[#3CAC88] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-[#99D2B4] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-[#5AC5A0] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
     </div>
     <div class="relative container mx-auto px-4 lg:pr-12 py-16 md:py-24">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="text-center lg:text-right">
           <div class="flex items-center justify-center lg:justify-start mb-6">
-            <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mr-4 shadow-xl">
-              <img src="/images/logo.svg" alt="نشان اسطرلاب" class="w-16 h-16" />
+            <div class="w-15 h-15 rounded-full bg-white flex items-center justify-center mx-4 shadow-xl">
+              <img src="/images/logo.svg" alt="نشان ذهنا" class="w-16 h-16" />
             </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-['Cinzel'] font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200">
-              {lang === "fa" ? "اسطرلاب" : t('welcome')}
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-['Cinzel'] font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80 rtl:lg:text-right ltr:lg:text-left">
+              ذهنا
             </h1>
           </div>
-          <p class="text-xl md:text-2xl text-indigo-100 mb-6 max-w-2xl mx-auto lg:mx-0">
-            {lang === "fa" ? "ابزار منجمی متن‌باز شما برای کشف کیهان" : t('description')}
+          <p class="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl mx-auto lg:mx-0">
+            نرم افزار روان‌شناسی هوش مصنوعی برای زندگی بهتر
           </p>
-          <p class="text-lg text-indigo-200 mb-10 max-w-2xl mx-auto lg:mx-0">
-            رازهای جهان را با محاسبات دقیق سماوی و حکمت باستانی کشف کنید
+          <p class="text-lg text-white/80 mb-10 max-w-2xl mx-auto lg:mx-0">
+            مجموعه‌ای جامع از ابزارهای هوش مصنوعی برای حمایت عاطفی، روابط، والدین، سلامت روان و بیشتر - با قابلیت توسعه راهکارهای سفارشی برای نیازهای خاص شما
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end">
-            <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group">
-              <span class="relative z-10">شروع کار</span>
+            <button class="bg-white text-[#3CAC88]  font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group">
+              <span class="relative z-10 dark:text-black">شروع کار</span>
               <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
             </button>
-            <button class="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
+            <button class="bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-4 rounded-xl hover:from-primary-dark hover:to-secondary-dark transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group">
               <span class="relative z-10">اطلاعات بیشتر</span>
               <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
             </button>
@@ -73,13 +64,13 @@ const chartData = {
         <div class="flex justify-center">
           <div class="relative">
             <!-- Enhanced floating animation elements -->
-            <div class="absolute -top-8 -left-8 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob"></div>
-            <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-indigo-500 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob animation-delay-2000"></div>
+            <div class="absolute -top-8 -left-8 w-40 h-40 bg-[#3CAC88] rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob"></div>
+            <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-[#99D2B4] rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob animation-delay-2000"></div>
             <div class="relative rounded-3xl overflow-hidden border-8 border-white/20 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
               <Image 
                 src={heroImage} 
-                alt="نمودار  منجمی" 
+                alt="ذهنا" 
                 class="w-full h-auto object-cover relative z-10"
                 width={600} 
                 height={400}
@@ -87,14 +78,14 @@ const chartData = {
                 loading="lazy"
               />
               <!-- Decorative elements -->
-              <div class="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                <img src="/images/logo.svg" alt="نشان اسطرلاب" class="w-6 h-6" />
+              <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                <img src="/images/logo.svg" alt="نشان ذهنا" class="w-6 h-6" />
               </div>
               <!-- Floating elements -->
-              <div class="absolute bottom-6 right-6 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center animate-pulse shadow-lg">
+              <div class="absolute bottom-6 left-6 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center animate-pulse shadow-lg">
                 <div class="w-2 h-2 rounded-full bg-white"></div>
               </div>
-              <div class="absolute top-1/3 right-1/4 w-6 h-6 rounded-full bg-purple-300/40 backdrop-blur-sm flex items-center justify-center animate-ping shadow-lg">
+              <div class="absolute top-1/3 left-1/4 w-6 h-6 rounded-full bg-[#99D2B4]/40 backdrop-blur-sm flex items-center justify-center animate-ping shadow-lg">
                 <div class="w-1 h-1 rounded-full bg-white"></div>
               </div>
             </div>
@@ -104,24 +95,24 @@ const chartData = {
     </div>
     
     <!-- Decorative stars -->
-    <div class="absolute top-10 right-10 w-2 h-2 rounded-full bg-white animate-pulse"></div>
-    <div class="absolute top-20 left-20 w-1 h-1 rounded-full bg-white animate-pulse animation-delay-1000"></div>
-    <div class="absolute bottom-20 right-1/3 w-1.5 h-1.5 rounded-full bg-white animate-pulse animation-delay-2000"></div>
-    <div class="absolute bottom-10 left-10 w-2 h-2 rounded-full bg-white animate-pulse animation-delay-500"></div>
+    <div class="absolute top-10 left-10 w-2 h-2 rounded-full bg-white animate-pulse"></div>
+    <div class="absolute top-20 right-20 w-1 h-1 rounded-full bg-white animate-pulse animation-delay-1000"></div>
+    <div class="absolute bottom-20 left-1/3 w-1.5 h-1.5 rounded-full bg-white animate-pulse animation-delay-2000"></div>
+    <div class="absolute bottom-10 right-10 w-2 h-2 rounded-full bg-white animate-pulse animation-delay-500"></div>
   </section>
 
-  <!-- What is Astrolabe Section -->
+  <!-- About Zehna Section -->
   <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl mb-20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div class="flex items-center justify-center mb-6">
-          <div class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mr-4 shadow-lg">
-            <img src="/images/logo.svg" alt="نشان اسطرلاب" class="w-12 h-12" />
+          <div class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mx-4 shadow-lg">
+            <img src="/images/logo.svg" alt="نشان ذهنا" class="w-12 h-12" />
           </div>
-          <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900 dark:text-white">اسطرلاب چیست؟</h2>
+          <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900 dark:text-white">ذهنا چیست؟</h2>
         </div>
         <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          اسطرلاب یک پلتفرم منجمی متن‌باز است که حکمت باستانی را با فناوری مدرن ترکیب می‌کند تا تفسیرهای دقیق و بینش‌گر منجمی ارائه دهد.
+          ذهنا یک نرم افزار روان‌شناسی هوش مصنوعی است که ترکیبی از حکمت روان‌شناسی مدرن و قدرت هوش مصنوعی را فراهم می‌کند تا ابزارهای دقیق و بینش‌گری برای بهبود زندگی روزمره شما ارائه دهد. اولین پلتفرم جامع سلامت روان در ایران است که بینش‌های روان‌شناسی را با فناوری مدرن ترکیب می‌کند.
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -131,125 +122,279 @@ const chartData = {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">محاسبات دقیق</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">حمایت عاطفی</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              ما از اپمیریس سوئیسی استفاده می‌کنیم، استاندارد طلایی در محاسبات منجمی، برای اطمینان از بالاترین دقت در تمام محاسبات منجمی ما.
+              دسترسی ۲۴/۷ به حمایت عاطفی هوش مصنوعی برای کمک در مواقع بحران و استرس با رویکردهای علمی.
             </p>
           </div>
           
           <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4 mx-auto">
               <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">متن‌باز</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">روابط</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              به عنوان یک پروژه متن‌باز، کد ما شفاف و مبتنی بر جامعه است، که امکان بهبود مستمر و بازبینی همتا را فراهم می‌کند.
+              بهبود روابط عاشقانه و زناشویی با ابزارهای تخصصی برای درک بهتر و همسان‌سازی علمی.
             </p>
           </div>
           
           <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 mx-auto">
               <svg class="w-6 h-6 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">تمرکز بر جامعه</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">رشد شخصی</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              ما در حال ساخت یک جامعه از علاقه‌مندان، متخصصان و توسعه‌دهندگان منجمی هستیم که با هم برای پیشرفت درک منجمی کار می‌کنند.
+              ابزارهای رشد شخصی برای تقویت مهارت‌های زندگی، مدیریت استرس و بهبود سلامت روان با بینش‌های هوش مصنوعی.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">حمایت از والدین</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              حمایت جامع از مادران و والدین در تربیت فرزندان با کمک هوش مصنوعی و نظارت روانشناس انسانی.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">بهبود اعتیاد</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              سیستم‌های نظارت و حمایت هوشمند برای بهبود اعتیاد با پتانسیل کاهش عود تا ۴۰٪.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">جامعه و بحران</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              قابلیت‌های مداخله بحران ۲۴/۷ با تشخیص هوشمند موقعیت‌های بحرانی و حمایت فوری.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">استخدام و منابع انسانی</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              کمک هوش مصنوعی برای منابع انسانی شامل استخدام هوشمند، بهینه‌سازی تیم و سازگاری فرهنگی.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">بینش داده‌ها</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              تحلیل پیشرفته الگوهای رفتاری و بینش‌های روان‌شناختی برای پژوهشگران و متخصصان.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">راهکارهای سفارشی</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              راهکارهای روان‌شناختی هوش مصنوعی سفارشی برای سازمان‌ها، پژوهشگران و کاربردهای خاص با انطباق کامل.
             </p>
           </div>
         </div>
         
-        <div class="mt-12 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 max-w-3xl mx-auto">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">ماموریت ما</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
-            اسطرلاب تلاش دارد ابزارهای منجمی با کیفیت بالا را برای همه، صرف‌نظر از سطح تجربه‌شان، در دسترس قرار دهد. 
-            ما باور داریم که درک کیهان می‌تواند بینش‌های ارزشمندی در مورد شخصیت، روابط و مسیرهای زندگی ما ارائه دهد.
-          </p>
-          <p class="text-gray-700 dark:text-gray-300">
-            با ترکیب دقت منجمی مدرن با حکمت منجمی سنتی، ما یک پل بین 
-            دانش باستانی و فناوری معاصر ایجاد می‌کنیم، که به افراد امکان می‌دهد با اطمینان الگوی سماوی خود را کشف کنند.
-          </p>
+        <div class="mt-12 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">ماموریت ما</h3>
+            <div class="w-20 h-1 bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] mx-auto rounded-full"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left Column -->
+            <div class="space-y-6">
+              <div class="bg-gradient-to-br from-[#3CAC88]/20 to-[#99D2B4]/20 dark:from-[#3CAC88]/20 dark:to-[#99D2B4]/20 p-6 rounded-xl border border-[#3CAC88]/20 dark:border-[#3CAC88]/30">
+                <h4 class="font-bold text-lg text-[#3CAC88] dark:text-[#99D2B4] mb-3 flex items-center">
+                  <svg class="w-5 h-5 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  ماموریت اصلی
+                </h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  ذهنا تلاش دارد تا دسترسی به ابزارهای روان‌شناسی با کیفیت بالا را برای همه، صرف‌نظر از سطح درآمد یا موقعیت جغرافیایی، فراهم کند. ما با ارائه راهکارهای مقرون به صرفه و انطباق فرهنگی، شکاف حیاتی در خدمات سلامت روان در ایران را پر می‌کنیم.
+                </p>
+                <div class="bg-white dark:bg-gray-700/50 p-4 rounded-lg border border-[#3CAC88]/20 dark:border-[#99D2B4]/30">
+                  <p class="text-gray-700 dark:text-gray-300 italic text-sm">
+                    "با ترکیب قدرت هوش مصنوعی با رویکردهای علمی روان‌شناسی، ما یک پل بین دانش روان‌شناسی مدرن و نیازهای روزمره انسان‌ها ایجاد می‌کنیم که به افراد امکان می‌دهد با اطمینان مسیر زندگی خود را شکل دهند."
+                  </p>
+                </div>
+              </div>
+              
+              <div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 p-6 rounded-xl border border-cyan-100 dark:border-cyan-900/30">
+                <h4 class="font-bold text-lg text-cyan-800 dark:text-cyan-200 mb-3 flex items-center">
+                  <svg class="w-5 h-5 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  تمایزات کلیدی
+                </h4>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mx-2">✓</span>
+                    <span>مبتنی بر استانداردهای علمی روان‌شناسی (DSM-5، PDM-2)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mx-2">✓</span>
+                    <span>زیرساخت با تمام سرورهای واقع در ایران</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mx-2">✓</span>
+                    <span>انطباق فرهنگی برای جامعه ایرانی-اسلامی</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mx-2">✓</span>
+                    <span>حفاظت از حریم خصوصی و امنیت داده‌ها</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="space-y-6">
+              <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                <h4 class="font-bold text-lg text-amber-800 dark:text-amber-200 mb-3 flex items-center">
+                  <svg class="w-5 h-5 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                  دیدگاه و تأثیر
+                </h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  تبدیل شدن به مورد اعتمادترین و جامع‌ترین پلتفرم سلامت روان دیجیتال در دنیای فارسی‌زبان با ارائه خدمات روان‌شناختی قابل دسترس، مقرون به صرفه و مرتبط با فرهنگ.
+                </p>
+                <div class="space-y-3">
+                  <div class="flex items-center p-3 bg-white dark:bg-gray-700/50 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
+                      <span class="text-white text-xs font-bold">۱۲T</span>
+                    </div>
+                    <p class="mx-3 text-gray-700 dark:text-gray-300 text-sm">
+                      <span class="font-semibold">۱۲,۰۰۰ میلیارد تومان</span> کاهش هزینه‌های بهداشتی در ۵ سال
+                    </p>
+                  </div>
+                  <div class="flex items-center p-3 bg-white dark:bg-gray-700/50 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
+                      <span class="text-white text-xs font-bold">۱۰۰K</span>
+                    </div>
+                    <p class="mx-3 text-gray-700 dark:text-gray-300 text-sm">
+                      <span class="font-semibold">۱۰۰,۰۰۰ کاربر</span> دسترسی عادلانه در سال اول
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 p-6 rounded-xl border border-emerald-100 dark:border-emerald-900/30">
+                <h4 class="font-bold text-lg text-emerald-800 dark:text-emerald-200 mb-3 flex items-center">
+                  <svg class="w-5 h-5 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                  </svg>
+                  نوآوری و فناوری
+                </h4>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mx-2">✓</span>
+                    <span>مدل‌های پیشرفته هوش مصنوعی آموزش دیده با زبان و فرهنگ فارسی</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mx-2">✓</span>
+                    <span>ادغام با سیستم‌های دولتی (کمیته امداد، وزارت بهداشت)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mx-2">✓</span>
+                    <span>مدیریت هوشمند بحران با نظارت ۲۴/۷</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mx-2">✓</span>
+                    <span>قابلیت توسعه راهکارهای سفارشی</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 bg-gradient-to-r from-primary to-secondary rounded-xl p-5 text-white text-center">
+            <p class="text-sm font-medium">
+              پلتفرم ما کاملاً روی خاک ایران ساخته شده است که وابستگی به سرویس‌های ابری خارجی را از بین می‌برد و امنیت داده‌های کاربران را تضمین می‌کند. 
+              ما قبلاً تأثیر قابل توجهی با ماژول "هم‌توان" خود نشان داده‌ایم که هزینه‌های عود اعتیاد را تا ۴۰٪ کاهش داده است.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Statistics Section -->
-  <Statistics lang={lang} />
-
-  <!-- Features Section -->
+  <!-- Zehna Products Section -->
   <section class="mb-24">
     <div class="text-center mb-20">
       <div class="flex items-center justify-center mb-4">
         <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mx-3">
-          <span class="text-3xl">🔮</span>
+          <span class="text-3l">🧠</span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900">بینش‌های منجمی قدرتمند</h2>
+        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900">محصولات و خدمات ذهنا</h2>
       </div>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-        حکمت باستانی منجمی را با دقت مدرن کشف کنید
+        مجموعه‌ای جامع از ابزارهای هوش مصنوعی برای هر جنبه از زندگی روان‌شناختی و اجتماعی شما، به همراه توسعه راهکارهای سفارشی برای نیازهای خاص شما
       </p>
-      <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+      <div class="w-24 h-1 bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] mx-auto rounded-full"></div>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Hamdel -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🌟</span>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">چرتهای ناتال</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">
-          محاسبات نمودار تولد با جزئیات دقیق موقعیت‌های سیاره‌ای
-        </p>
-        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
-          <Image 
-            src={natalChartImage} 
-            alt="نمودار ناتال" 
-            class="w-full h-auto object-cover"
-            width={300} 
-            height={200}
-            format="webp"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🌑</span>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">گذرها</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">
-          حرکات سیاره‌ای فعلی و تأثیرات آنها بر زندگی خود را دنبال کنید
-        </p>
-        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
-          <Image 
-            src={transitsImage} 
-            alt="گذرها" 
-            class="w-full h-auto object-cover"
-            width={300} 
-            height={200}
-            format="webp"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
           <span class="text-3xl">❤️</span>
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">سناستری</h3>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">همدل</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          چرتها را مقایسه کنید تا روابط و سازگاری را درک کنید
+          هوش مصنوعی برای حمایت عاطفی و کمک روان‌شناختی در مواقع بحران و استرس
         </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>دسترسی ۲۴/۷ به حمایت عاطفی هوش مصنوعی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>جلسات درمانی مبتنی بر رویکردهای علمی روان‌شناسی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تحلیل الگوهای رفتاری و هیجانی</span>
+          </li>
+        </ul>
         <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
           <Image 
-            src={synastryImage} 
-            alt="سناستری" 
+            src={hamdelImage} 
+            alt="همدل" 
             class="w-full h-auto object-cover"
             width={300} 
             height={200}
@@ -259,18 +404,33 @@ const chartData = {
         </div>
       </div>
       
+      <!-- Hammasir -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">📈</span>
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">💍</span>
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">پیشرفت‌ها</h3>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">هم‌مسیر</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          رشد شخصی خود را از طریق پیشرفت‌های ثانویه کشف کنید
+          هوش مصنوعی و حمایت روانشناس برای روابط عاشقانه، ازدواج و همسان‌سازی علمی
         </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>ارزیابی روانشناختی جامع قبل از ازدواج</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>آموزش مهارت‌های زندگی زناشویی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>همسان‌سازی علمی بر اساس سازگاری شخصیتی و ارزشی</span>
+          </li>
+        </ul>
         <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
           <Image 
-            src={progressionsImage} 
-            alt="پیشرفت‌ها" 
+            src={hammasirImage} 
+            alt="هم‌مسیر" 
             class="w-full h-auto object-cover"
             width={300} 
             height={200}
@@ -279,239 +439,425 @@ const chartData = {
           />
         </div>
       </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- Sample Chart Section -->
-  <section class="mb-20">
-    <div class="text-center mb-12">
-      <div class="flex items-center justify-center mb-4">
-        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-3">
-          <img src="/images/logo.svg" alt="نشان اسطرلاب" class="w-8 h-8" />
+      
+      <!-- TogetherMama (TogetherMama) -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🤱</span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900 dark:text-white">نمودار ناتال نمونه</h2>
-      </div>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        تحلیل منجمی جامع ارائه شده توسط اسطرلاب را کشف کنید
-      </p>
-      <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-6"></div>
-    </div>
-    
-    <div class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700">
-      <div class="px-6 py-5 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30">
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">تحلیل نمودار ناتال</h3>
-      </div>
-      <div class="p-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="flex justify-center items-center min-h-[400px] bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl relative overflow-hidden">
-            <!-- Decorative elements -->
-            <div class="absolute inset-0 opacity-10 dark:opacity-5">
-              <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-indigo-500"></div>
-              <div class="absolute bottom-1/3 right-1/3 w-24 h-24 rounded-full bg-purple-500"></div>
-              <div class="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-pink-500"></div>
-            </div>
-            
-            <!-- Chart visualization placeholder -->
-            <div class="text-center z-10 relative">
-              <div class="inline-flex items-center justify-center w-32 h-32 rounded-full bg-white dark:bg-gray-700 shadow-lg mb-6">
-                <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center">
-                  <img src="/images/logo.svg" alt="نشان اسطرلاب" class="w-12 h-12" />
-                </div>
-              </div>
-              <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">نقشه سماوی</h4>
-              <p class="text-gray-600 dark:text-gray-300 max-w-md">
-                نمودار شخصی شما بر اساس تاریخ، زمان و مکان تولد
-              </p>
-            </div>
-          </div>
-          
-          <div>
-            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">جزئیات چرت</h4>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">مشتری</span>
-                <span class="font-medium text-gray-900 dark:text-white">اسد ♌</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">ماه</span>
-                <span class="font-medium text-gray-900 dark:text-white">عقرب ♏</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">جهت‌گیر (ASC)</span>
-                <span class="font-medium text-gray-900 dark:text-white">میزان ♎</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">عطارد</span>
-                <span class="font-medium text-gray-900 dark:text-white">سنبله ♍</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">زهره</span>
-                <span class="font-medium text-gray-900 dark:text-white">اسد ♌</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600 dark:text-gray-300">مریخ</span>
-                <span class="font-medium text-gray-900 dark:text-white">سرطان ♋</span>
-              </div>
-            </div>
-            
-            <div class="mt-8">
-              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">جنبه‌های کلیدی</h4>
-              <ul class="space-y-2">
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-600 dark:text-gray-300">مشتری در اسد در جنبه سه‌گانه با ماه در عقرب - بیان احساسی خلاقانه</span>
-                </li>
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-600 dark:text-gray-300">عطارد در سنبله در جنبه مربع با مریخ در سرطان - ارتباط تحلیلی اما حساس</span>
-                </li>
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-600 dark:text-gray-300">زهره در اسد در کنیونکشن با مشتری - محبت گرم و بخشنده</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-xl p-6">
-          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">خلاصه تفسیر</h4>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
-            این نمودار فردی با مشتری در اسد و ماه در عقرب را نشان می‌دهد، که ترکیبی جذاب از اعتماد به نفس بیرونی و 
-            شدت احساسی عمیق ایجاد می‌کند. جهت‌گیر میزان تعادل‌جویی اضافه می‌کند که بین این 
-            نیروهای قدرتمند میانجی‌گری می‌کند.
-          </p>
-          <p class="text-gray-700 dark:text-gray-300">
-            با زهره در کنیونکشن با مشتری در اسد، این فرد محبت را به صورت بخشنده بیان می‌کند و در روابط به تحسین جستجو می‌کند. 
-            عطارد سنبله نشان‌دهنده ذهنی دقیق و تحلیلی است، در حالی که مریخ در سرطان نشان‌دهنده غریزه‌های محافظتی و 
-            واکنش‌های احساسی به درگیری است.
-          </p>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">هم‌پای مادر</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          پلتفرم ترکیبی هوش مصنوعی و روانشناسی برای حمایت جامع از مادران در مسائل تربیتی کودکان
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>پشتیبانی ۲۴/۷ با دستیار مجازی هوش مصنوعی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>نظارت روانشناس انسانی بر پیشرفت کودک و مادر</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>محتوای آموزشی شخصی‌سازی شده بر اساس چالش‌های خاص</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={hampayeMadarImage} 
+            alt="هم‌پای مادر" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
         </div>
       </div>
-    </div>
-    
-    <div class="mt-12 text-center">
-      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        این تحلیل دقیق فقط پیش‌نمایشی از چیزی است که با خوانش نمودار ناتال کامل از اسطرلاب دریافت خواهید کرد. 
-        گزارش‌های جامع ما شامل تفسیر برای تمام سیاره‌ها، خانه‌ها، جنبه‌ها و موارد بیشتر است.
-      </p>
-      <div class="mt-8">
-        <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 dark:hover:from-indigo-500 dark:hover:to-purple-500">
-          نمودار کامل خود را ایجاد کنید
-        </button>
+      
+      <!-- Baham -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🛒</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">با هم</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          پلتفرم برای خرید گروهی و کاهش هزینه‌های روزمره
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تجمیع خریدهای مشابه برای کاهش قیمت</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>دسترسی به کالاهای با کیفیت با قیمت مناسب</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>پلتفرم امن برای خرید جمعی خانواده‌ها و همسایه‌ها</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={bahamImage} 
+            alt="با هم" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      
+      <!-- Darmana -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🏥</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">درمانا</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          هوش مصنوعی برای تشخیص روان‌شناختی بر اساس DSM-5، PDM-2 و رویکردهای روان‌درمانی
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تشخیص مبتنی بر استانداردهای جهانی DSM-5 و PDM-2</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تحلیل جامع الگوهای رفتاری و هیجانی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>پیشنهادات درمانی شخصی‌سازی شده</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={darmanaImage} 
+            alt="درمانا" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      
+      <!-- Kanape -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🎭</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">کاناپه</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          هوش مصنوعی به عنوان نقش‌آفرینی برای یادگیری مهارت‌های روان‌درمانی
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تمرین مهارت‌های درمانی در محیط ایمن و کنترل شده</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>بازخورد فوری و شخصی‌سازی شده از جلسات</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>آموزش مبتنی بر سناریوهای واقعی درمانی</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={kanapeImage} 
+            alt="کاناپه" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      
+      <!-- Synapse -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🏢</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">سیناپس</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          هوش مصنوعی برای کمک به منابع انسانی و استخدام
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تحلیل رزومه و مصاحبه‌های هوشمند</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>ارزیابی سازگاری فرهنگی و مهارتی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>پیشنهادات بهینه‌سازی تیم</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={synapseImage} 
+            alt="سیناپس" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      
+      <!-- Khebreh -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">📰</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">خبره</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          هوش مصنوعی برای جمع‌آوری اخبار، بینش‌ها و تأثیرات اجتماعی
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>تحلیل هوشمند اخبار و رسانه‌ها</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>شناسایی الگوهای اجتماعی و تأثیرات روانی</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mx-2">✓</span>
+            <span>بینش‌های شخصی‌سازی شده بر اساس علایق کاربر</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={khebrehImage} 
+            alt="خبره" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <Testimonials locale="fa" />
-
-  <!-- FAQ Section -->
-  <section class="mb-24">
-    <div class="text-center mb-20">
-      <div class="flex items-center justify-center mb-4">
-        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-3">
-          <img src="/images/logo.svg" alt="نشان اسطرلاب" class="w-10 h-10" />
-        </div>
-        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900">سؤالات متداول</h2>
+  
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] rounded-3xl p-12 md:p-16 text-white mb-20 shadow-2xl">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="flex items-center justify-center mb-6">
+        <h2 class="text-3xl md:text-5xl font-['Cinzel'] font-extrabold">آغاز مسیر بهتر زندگی</h2>
       </div>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-        هر چیزی که باید درباره اسطرلاب بدانید
+      <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto">
+        به هزاران کاربر بپیوندید که با ابزارهای مبتنی بر هوش مصنوعی ذهنا، سلامت روان خود را بهبود داده‌اند
       </p>
-      <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-    </div>
-    
-    <div x-data="faqAccordion()" class="max-w-3xl mx-auto">
-      <div class="space-y-6">
-        <div class="faq-item bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl">
-          <div @click="toggle(0)" class="faq-question flex justify-between items-center p-8 cursor-pointer">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">نمودار ناتال چیست؟</h3>
-            <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" :class="{ 'rotate-180': openIndex === 0 }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-          <div x-show="openIndex === 0" x-transition class="faq-answer px-8 pb-8">
-            <p class="text-gray-600 dark:text-gray-300 text-lg">
-              نمودار ناتال، که به آن نمودار تولد نیز گفته می‌شود، نقشه‌ای از آسمان در لحظه و مکان دقیق تولد شماست. 
-              این نمودار موقعیت مشتری، ماه و سیاره‌ها را در نشانه‌ها و خانه‌های زودیاک نشان می‌دهد، که منجمان از آن برای 
-              درک شخصیت، نقاط قوت، چالش‌ها و مسیر زندگی شما استفاده می‌کنند.
-            </p>
-          </div>
+      
+      <!-- Trust Indicators -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+          <span class="text-white font-medium">معتبر سازمانی</span>
         </div>
-        
-        <div class="faq-item bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl">
-          <div @click="toggle(1)" class="faq-question flex justify-between items-center p-8 cursor-pointer">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">محاسبات شما چقدر دقیق است؟</h3>
-            <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" :class="{ 'rotate-180': openIndex === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-          <div x-show="openIndex === 1" x-transition class="faq-answer px-8 pb-8">
-            <p class="text-gray-600 dark:text-gray-300 text-lg">
-              محاسبات ما از اپمیریس سوئیسی استفاده می‌کند، که یکی از دقیق‌ترین الگوریتم‌های منجمی موجود است. 
-              ما پیش‌روندها، نوسانات و سایر عوامل منجمی را در نظر می‌گیریم تا موقعیت‌های سیاره‌ای دقیق ارائه دهیم. 
-              برای دقیق‌ترین چرت، توصیه می‌کنیم از زمان و مکان تولد دقیق خود استفاده کنید.
-            </p>
-          </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+          <span class="text-white font-medium">امنیت بانکی</span>
         </div>
-        
-        <div class="faq-item bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl">
-          <div @click="toggle(2)" class="faq-question flex justify-between items-center p-8 cursor-pointer">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">آیا منجمی به طور علمی اثبات شده است؟</h3>
-            <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" :class="{ 'rotate-180': openIndex === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-          <div x-show="openIndex === 2" x-transition class="faq-answer px-8 pb-8">
-            <p class="text-gray-600 dark:text-gray-300 text-lg">
-              منجمی توسط جامعه علمی به عنوان علم در نظر گرفته نمی‌شود، چون از روش علمی پیروی نمی‌کند 
-              و پیش‌بینی‌های آن به طور مداوم از طریق مطالعات کنترل‌شده تأیید نشده‌اند. با این حال، بسیاری از مردم 
-              ارزش منجمی را به عنوان ابزاری برای خودآگاهی، درک الگوها و کسب بینش در مورد شخصیت و روابط خود می‌یابند.
-            </p>
-          </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          <span class="text-white font-medium">۱۰۰هزار کاربر فعال</span>
         </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <button class="bg-white text-[#3CAC88] font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+          <svg class="w-5 h-5 mx-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+          <span class="relative z-10">شروع کار با ذهنا</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
+        </button>
+        <button class="bg-transparent border-2 border-white text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+          <span class="relative z-10">مشاهده نسخه ی نمایشی</span>
+          <svg class="w-5 h-5 mx-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
+        </button>
+      </div>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-6">
+        <p class="text-white/80 text-sm flex items-center">
+          <svg class="w-4 h-4 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          دوره آزمایشی رایگان ۱۴ روزه
+        </p>
+        <p class="text-white/80 text-sm flex items-center">
+          <svg class="w-4 h-4 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+          </svg>
+          نیازی به کارت اعتباری نیست
+        </p>
+        <p class="text-white/80 text-sm flex items-center">
+          <svg class="w-4 h-4 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+          هر زمان لغو کنید
+        </p>
       </div>
     </div>
   </section>
 
-  <script is:inline>
-    function faqAccordion() {
-      return {
-        openIndex: null,
-        toggle(index) {
-          if (this.openIndex === index) {
-            this.openIndex = null;
-          } else {
-            this.openIndex = index;
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- CTA Section -->
-  <section class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-12 md:p-16 text-white mb-20 shadow-2xl">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="flex items-center justify-center mb-6">
-        <h2 class="text-3xl md:text-5xl font-['Cinzel'] font-extrabold">سفر منجمی خود را آغاز کنید</h2>
-      </div>
-      <p class="text-xl md:text-2xl text-indigo-100 mb-12 max-w-2xl mx-auto">
-        رازهای کیهان را با ابزارهای قدرتمند اسطرلاب کشف کنید
-      </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <button class="bg-white text-indigo-900 font-bold px-10 py-4 rounded-xl hover:bg-indigo-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-          نمودار خود را ایجاد کنید
-        </button>
-        <button class="bg-transparent border-2 border-white text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          مشاهده نسخه ی نمایشی
-        </button>
+  <!-- Custom Solutions CTA -->
+  <section class="py-16 bg-gradient-to-br from-[#3CAC88] to-[#99D2B4] rounded-3xl mb-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-white mb-6">
+          نیاز به راهکارهای سفارشی دارید؟
+        </h2>
+        <p class="text-xl text-white mb-6 max-w-3xl mx-auto">
+          ذهنا می‌تواند راهکارهای هوش مصنوعی متناسب با نیازهای خاص شما توسعه دهد. بیایید ایده‌های شما را به واقعیت تبدیل کنیم.
+        </p>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10 mb-12">
+          <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30">
+            <div class="flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl text-white mb-2">۵۰+</h3>
+            <p class="text-white/90">پروژه سفارشی تحویل داده شده</p>
+          </div>
+          
+          <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30">
+            <div class="flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl text-white mb-2">۲۰۰+</h3>
+            <p class="text-white/90">مشتری سازمانی</p>
+          </div>
+          
+          <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30">
+            <div class="flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl text-white mb-2">۹۸٪</h3>
+            <p class="text-white/90">رضایت مشتریان</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10">
+          <div class="bg-white/90 dark:bg-gray-800/90 p-6 rounded-xl shadow-md border border-white/20 dark:border-gray-700 text-right">
+            <div class="flex items-center mb-4">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white mx-2">چه کسانی می‌توانند از راهکارهای سفارشی ما بهره‌مند شوند؟</h3>
+              <svg class="w-6 h-6 text-[#3CAC88]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-3">
+              <li class="flex items-start">
+                <span class="text-green-500 mx-2 mt-1">✓</span>
+                <span>سازمان‌ها و شرکت‌هایی که نیاز به راهکارهای روان‌شناختی دارند</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mx-2 mt-1">✓</span>
+                <span>متخصصان روان‌شناسی برای توسعه ابزارهای کمک آموزشی</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mx-2 mt-1">✓</span>
+                <span>پژوهشگران حوزه سلامت روان برای تحلیل داده‌ها</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mx-2 mt-1">✓</span>
+                <span>توسعه‌دهندگان نرم‌افزار برای ادغام راهکارهای روان‌شناسی</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 text-right">
+            <div class="flex items-center mb-4">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white mx-2">فرآیند توسعه راهکار سفارشی</h3>
+              <svg class="w-6 h-6 text-[#3CAC88]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+            </div>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-3">
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] mx-2 mt-1 font-bold">۱</span>
+                <span>بررسی نیازهای شما و تحلیل پروژه</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] mx-2 mt-1 font-bold">۲</span>
+                <span>طراحی معماری راهکار و تعیین فناوری‌های مورد نیاز</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] mx-2 mt-1 font-bold">۳</span>
+                <span>توسعه و آزمون راهکار با مشارکت شما</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] mx-2 mt-1 font-bold">۴</span>
+                <span>تحویل، آموزش و پشتیبانی پس از استقرار</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <button class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] text-white font-bold px-8 py-4 rounded-xl hover:from-[#99D2B4] hover:to-[#3CAC88] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+            <span class="relative z-10">درخواست راهکار سفارشی</span>
+            <svg class="w-5 h-5 mx-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
+          </button>
+          <button class="bg-white dark:bg-gray-800 border-2 border-[#3CAC88] text-[#3CAC88] dark:text-[#99D2B4] font-bold px-8 py-4 rounded-xl hover:bg-[#3CAC88]/10 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+            <span class="relative z-10">مشاهده نمونه پروژه‌ها</span>
+            <svg class="w-5 h-5 mx-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right"></div>
+          </button>
+        </div>
+        
+        <div class="mt-10 p-4 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30 inline-flex items-center">
+          <svg class="w-6 h-6 text-white mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+          </svg>
+          <p class="text-white font-medium">
+            🚀 پیشنهاد ویژه: ۲۰٪ تخفیف برای راهکارهای سفارشی برای مؤسسات آموزشی
+          </p>
+        </div>
       </div>
     </div>
   </section>

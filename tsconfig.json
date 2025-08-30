@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@fonts/*": ["./src/fonts/*"],
+      "@scripts/*": ["./src/scripts/*"],
+      "@content/*": ["./src/content/*"],
+      "@i18n/*": ["./src/i18n/*"],
+      "@public/*": ["./public/*"]
+    }
+  },
+  "include": ["src/**/*", "astro.config.mjs"]
+}

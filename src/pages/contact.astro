@@ -1,20 +1,20 @@
 ---
 // src/pages/contact.astro
-import MainLayout from '../layouts/MainLayout.astro';
-import { getTranslation, isRTL } from '../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 
 const lang = "en";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 ---
 
-<MainLayout title="Contact Us - Astrolabe" lang={lang} dir={dir}>
+<MainLayout title="Contact Us - Zehna" lang={lang} dir={dir}>
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h1 class="text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">Contact Us</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Have questions or feedback? We'd love to hear from you.
+          Have questions about Zehna or our mental health platforms? We'd love to hear from you.
         </p>
       </div>
       
@@ -33,7 +33,7 @@ const t = (key) => getTranslation(lang, key);
                 </div>
                 <div>
                   <h3 class="text-lg font-bold text-gray-900 dark:text-white">Phone</h3>
-                  <p class="text-gray-600 dark:text-gray-300 mt-1">+1 (555) 123-4567</p>
+                  <p class="text-gray-600 dark:text-gray-300 mt-1">+98 21 6111 7480</p>
                 </div>
               </div>
               
@@ -45,7 +45,7 @@ const t = (key) => getTranslation(lang, key);
                 </div>
                 <div>
                   <h3 class="text-lg font-bold text-gray-900 dark:text-white">Email</h3>
-                  <p class="text-gray-600 dark:text-gray-300 mt-1">support@astrolabe.example.com</p>
+                  <p class="text-gray-600 dark:text-gray-300 mt-1">info@zehna.ir</p>
                 </div>
               </div>
               
@@ -58,7 +58,7 @@ const t = (key) => getTranslation(lang, key);
                 </div>
                 <div>
                   <h3 class="text-lg font-bold text-gray-900 dark:text-white">Office</h3>
-                  <p class="text-gray-600 dark:text-gray-300 mt-1">123 Astro Street<br>San Francisco, CA 94103</p>
+                  <p class="text-gray-600 dark:text-gray-300 mt-1">Psychology Department<br>University of Tehran<br>Kardan St., Tehran, Iran</p>
                 </div>
               </div>
               
@@ -69,16 +69,16 @@ const t = (key) => getTranslation(lang, key);
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-bold text-gray-900 dark:text-white">Business Hours</h3>
-                  <p class="text-gray-600 dark:text-gray-300 mt-1">Monday - Friday: 9AM - 5PM<br>Saturday: 10AM - 2PM</p>
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white">Support Hours</h3>
+                  <p class="text-gray-600 dark:text-gray-300 mt-1">Sunday - Thursday: 9AM - 5PM<br>Friday: Closed<br>Saturday: 10AM - 2PM</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-lg p-8 mt-8 text-white">
-            <h2 class="text-2xl font-bold mb-4">Follow Us</h2>
-            <p class="text-indigo-100 mb-6">Stay connected with our latest updates and astrological insights.</p>
+          <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl shadow-lg p-8 mt-8 text-white">
+            <h2 class="text-2xl font-bold mb-4">Follow Our Journey</h2>
+            <p class="text-indigo-100 mb-6">Stay connected with our latest updates on mental health and AI innovation.</p>
             <div class="flex space-x-4">
               <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors duration-200">
                 <span class="sr-only">Twitter</span>
@@ -98,6 +98,31 @@ const t = (key) => getTranslation(lang, key);
                   <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
                 </svg>
               </a>
+            </div>
+          </div>
+          
+          <!-- Map Section -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mt-8 border border-gray-100 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Find Us</h2>
+            <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.528876547303!2d51.42130531517477!3d35.70724898018828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQyJzI2LjEiTiA1McKwMjUnMTYuNyJF!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full rounded-lg"
+                title="University of Tehran Psychology Campus Location">
+              </iframe>
+            </div>
+            <div class="mt-4 text-center">
+              <p class="text-gray-600 dark:text-gray-300">
+                <strong>University of Tehran Psychology Department</strong><br/>
+                Kardan St., Tehran, Iran<br/>
+                Postal Code: 14155-6451
+              </p>
             </div>
           </div>
         </div>
@@ -139,7 +164,7 @@ const t = (key) => getTranslation(lang, key);
                   id="subject" 
                   name="subject" 
                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:text-white transition-all duration-200"
-                  placeholder="What is this regarding?"
+                  placeholder="How can we help you? (General inquiry, Technical support, Partnership, etc.)"
                   required
                 />
               </div>
@@ -159,7 +184,7 @@ const t = (key) => getTranslation(lang, key);
               <div>
                 <button 
                   type="submit" 
-                  class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium py-3 px-4 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg"
+                  class="w-full bg-gradient-to-r from-primary to-secondary text-white font-medium py-3 px-4 rounded-lg hover:from-primary-dark hover:to-secondary-dark transition-all duration-200 shadow-md hover:shadow-lg"
                 >
                   Send Message
                 </button>

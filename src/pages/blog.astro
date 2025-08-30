@@ -1,8 +1,8 @@
 ---
 // src/pages/blog.astro
-import MainLayout from '../layouts/MainLayout.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
-import { getTranslation, isRTL } from '../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import NewsletterSignup from '@components/NewsletterSignup.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 
 const lang = "en";
 const dir = isRTL(lang) ? "rtl" : "ltr";
@@ -12,62 +12,62 @@ const t = (key) => getTranslation(lang, key);
 const blogPosts = [
   {
     id: 1,
-    title: "Understanding Your Sun Sign: A Guide to the 12 Zodiac Signs",
-    excerpt: "Discover the unique characteristics, strengths, and challenges of each zodiac sign and how they influence your personality.",
+    title: "How AI Can Improve Your Emotional Support",
+    excerpt: "In this article, we explore how Zehna products like Hamdel can help you during crises and stress. Hamdel uses advanced algorithms to detect your emotions and provide personalized strategies to reduce stress and improve your mood.",
     date: "2023-08-15",
-    author: "Sarah Johnson",
-    category: "Zodiac Signs",
+    author: "Dr. Mary Johnson",
+    category: "Emotional Support",
     readTime: "5 min read",
-    image: "/images/zodiac.jpg",
+    image: "/images/1.jpg",
     featured: true
   },
   {
     id: 2,
-    title: "The Power of Mercury Retrograde: What It Means for You",
-    excerpt: "Learn how Mercury retrograde affects communication, technology, and travel, and how to navigate this cosmic phenomenon.",
+    title: "AI in Psychological Services: A Revolution in Access",
+    excerpt: "In this article, we explore how Zehna products reduce counseling costs and increase access to psychological services. With AI, millions of people can now benefit from high-quality psychological services anytime, anywhere. This transformation is especially important for underserved communities.",
     date: "2023-07-22",
-    author: "Michael Rodriguez",
-    category: "Planetary Movements",
+    author: "Dr. Michael Rodriguez",
+    category: "Psychological Services",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
   },
   {
     id: 3,
-    title: "Synastry: The Art of Relationship Astrology",
-    excerpt: "Explore how comparing birth charts can reveal the dynamics, compatibility, and potential challenges in relationships.",
+    title: "Improving Relationships with AI: Hammasir at Your Service",
+    excerpt: "In this article, we explore how to use AI to strengthen romantic and marital relationships with Hammasir. Hammasir combines advanced AI technology with psychological expertise to help you strengthen your relationships and better manage marital challenges. This product includes tools for improving communication, conflict resolution, and increasing intimacy.",
     date: "2023-06-30",
-    author: "Emma Chen",
+    author: "Dr. Emma Chen",
     category: "Relationships",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
   },
   {
     id: 4,
-    title: "The Lunar Nodes: Your Karmic Path in This Lifetime",
-    excerpt: "Understand the significance of the North and South Nodes and how they guide your spiritual journey and life purpose.",
+    title: "Parenting in the Digital Age: TogetherMama",
+    excerpt: "In this article, we explore the importance of AI assistance for parents and child-rearing with TogetherMama. TogetherMama helps mothers receive the necessary support on the challenging path of raising children. This system provides specialized solutions, educational content, and psychological support to help parents make better decisions and have healthier relationships with their children.",
     date: "2023-05-18",
-    author: "David Thompson",
-    category: "Advanced Astrology",
+    author: "Dr. Lisa Anderson",
+    category: "Parenting",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
   },
   {
     id: 5,
-    title: "House Systems in Astrology: Which One Is Right for You?",
-    excerpt: "A comprehensive guide to the different house systems and how they affect the interpretation of your birth chart.",
+    title: "Psychological Diagnosis Using AI: Darmana",
+    excerpt: "In this comprehensive guide, we explore using AI for diagnosing mental disorders with DSM-5 and PDM-2 standards. Darmana uses advanced algorithms and international diagnostic standards to help identify psychological disorders. This system can be used as an auxiliary tool for psychologists or as a self-assessment tool for individuals, providing initial guidance for treatment.",
     date: "2023-04-25",
-    author: "Lisa Anderson",
-    category: "Chart Interpretation",
+    author: "Dr. David Thompson",
+    category: "Psychological Diagnosis",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
   },
   {
     id: 6,
-    title: "Eclipses in Astrology: Celestial Events and Their Significance",
-    excerpt: "Discover how solar and lunar eclipses impact your life and what to expect during eclipse seasons.",
+    title: "Learning Psychotherapeutic Skills with Kanape",
+    excerpt: "In this article, we explore the impact of AI role-playing environments in learning psychotherapeutic skills for professionals. Kanape provides a safe and controlled environment for practicing psychotherapeutic skills. Psychology students and psychotherapists can interact with intelligent artificial characters in various formats and strengthen their skills. This system provides immediate feedback and analytical assessment of user performance.",
     date: "2023-03-12",
-    author: "Robert Kim",
-    category: "Celestial Events",
+    author: "Dr. Robert Kim",
+    category: "Psychotherapy",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
   }
@@ -78,21 +78,141 @@ const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0];
 const regularPosts = blogPosts.filter(post => !post.featured);
 ---
 
-<MainLayout title="Blog - Astrolabe" lang={lang} dir={dir}>
+<MainLayout title="Blog - Zehna" lang={lang} dir={dir}>
   <!-- Hero Section with Background Image -->
   <section class="relative py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/90 to-purple-900/90"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/90 to-secondary-dark/90"></div>
     <div class="absolute inset-0 pattern-bg opacity-30"></div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Astrology Blog</h1>
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">Zehna Blog</h1>
         <p class="text-xl text-indigo-100 max-w-2xl mx-auto mb-10">
-          Explore the latest insights, interpretations, and discoveries in the world of astrology
+          Explore the latest insights, research, and discoveries in the field of psychological AI and mental wellness. Here you'll find expert articles, practical guides, and in-depth analysis of Zehna's products and their applications in everyday life.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Astrology Insights</span>
-          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Zodiac Guides</span>
-          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Celestial Events</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Psychological Insights</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">AI Applications</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">Mental Wellness</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zehna Products Showcase Section -->
+  <section class="py-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">Zehna Products</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          A comprehensive suite of AI tools for every aspect of your psychological and social life. Each product is designed with the goal of improving quality of life, increasing well-being, and providing easy access to psychological services.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Hamdel -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">❤️</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Hamdel</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI for emotional support and psychological assistance during crises and stress. Hamdel helps you receive immediate support and expert guidance during life's difficult moments. This system uses advanced algorithms to detect your emotions and provide appropriate strategies to reduce stress and improve mood.
+          </p>
+        </div>
+        
+        <!-- Hammasir -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">💍</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Hammasir</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI and psychologist support for romantic relationships and marriage. Hammasir combines advanced AI technology with psychological expertise to help you strengthen your relationships and better manage marital challenges. This product includes tools for improving communication, conflict resolution, and increasing intimacy.
+          </p>
+        </div>
+        
+        <!-- TogetherMama -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🤱</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">TogetherMama</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI and psychologist support for parents and child-rearing. TogetherMama helps mothers receive the necessary support on the challenging path of raising children. This system provides specialized solutions, educational content, and psychological support to help parents make better decisions and have healthier relationships with their children.
+          </p>
+        </div>
+        
+        <!-- Baham -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🛒</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Baham</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            Platform for group buying to reduce everyday expenses. Baham creates a network of buyers to help you reduce the cost of daily purchases through collective cooperation. This intelligent platform analyzes collective needs and negotiates with suppliers to offer fairer prices for goods.
+          </p>
+        </div>
+        
+        <!-- Darmana -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🏥</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Darmana</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI for psychological diagnosis based on DSM-5 and PDM-2. Darmana uses advanced algorithms and international diagnostic standards to help identify psychological disorders. This system can be used as an auxiliary tool for psychologists or as a self-assessment tool for individuals, providing initial guidance for treatment.
+          </p>
+        </div>
+        
+        <!-- Kanape -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🎭</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Kanape</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI as role play for learning psychotherapeutic skills. Kanape provides a safe and controlled environment for practicing psychotherapeutic skills. Psychology students and psychotherapists can interact with intelligent artificial characters in various formats and strengthen their skills. This system provides immediate feedback and analytical assessment of user performance.
+          </p>
+        </div>
+        
+        <!-- Synapse -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🏢</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Synapse</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI for HR assistance in organizations and recruitment. Synapse analyzes resumes, conducts intelligent interviews, and evaluates skills to help organizations identify the best candidates. This system can also optimize existing teams, identify training needs, and improve the work environment.
+          </p>
+        </div>
+        
+        <!-- Khebreh -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">📰</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Khebreh</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            AI for collecting news, insights, and social impact. Khebreh analyzes a vast amount of news, articles, and social networks to identify social patterns and trends. This system helps policymakers, researchers, and organizations better understand the social impact of decisions and events, enabling better planning.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Custom Development CTA -->
+      <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white mb-16">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">Have an idea to improve lives?</h2>
+          <p class="text-lg md:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+            The Zehna team specializes in designing and developing custom AI solutions. If you have an idea to improve your life, your family's life, or your organization, contact us. We can develop solutions tailored to your specific needs. From helping with psychological decision-making to automating organizational processes, everything is possible.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="bg-white text-indigo-900 font-medium px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors duration-300 shadow-lg inline-block">
+              Contact Us
+            </a>
+            <a href="/features" class="bg-transparent border-2 border-white text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300 inline-block">
+              View All Products
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -125,7 +245,7 @@ const regularPosts = blogPosts.filter(post => !post.featured);
               <p class="text-gray-600 dark:text-gray-300 mb-6">{featuredPost.excerpt}</p>
               <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                  <div class="w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mr-3">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mr-3">
                     <span class="text-sm font-bold text-white">{featuredPost.author.charAt(0)}</span>
                   </div>
                   <div>
@@ -171,7 +291,7 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                   <p class="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
                   <div class="flex items-center justify-between">
                     <div class="flex items-center">
-                      <div class="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mr-2">
+                      <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mr-2">
                         <span class="text-xs font-bold text-white">{post.author.charAt(0)}</span>
                       </div>
                       <span class="text-sm text-gray-700 dark:text-gray-300">{post.author}</span>
@@ -186,7 +306,7 @@ const regularPosts = blogPosts.filter(post => !post.featured);
           <!-- Pagination -->
           <div class="flex justify-center mt-12">
             <nav class="flex items-center space-x-2">
-              <a href="#" class="px-4 py-2 rounded-md bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:shadow-lg transition-all duration-300">1</a>
+              <a href="#" class="px-4 py-2 rounded-md bg-gradient-to-r from-primary to-secondary text-white shadow-md hover:shadow-lg transition-all duration-300">1</a>
               <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">2</a>
               <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">3</a>
               <span class="px-4 py-2 text-gray-500 dark:text-gray-400">...</span>
@@ -211,10 +331,11 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                     <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                    Zodiac Signs
+                    Emotional Support
                   </span>
                   <span class="text-gray-500 dark:text-gray-400">(12)</span>
                 </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-7">Articles and guides related to using AI for emotional support during crises and stress</p>
               </li>
               <li>
                 <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
@@ -222,10 +343,11 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                     <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                    Planetary Movements
+                    Psychological Services
                   </span>
                   <span class="text-gray-500 dark:text-gray-400">(8)</span>
                 </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-7">Analysis of Zehna products' impact on reducing counseling costs and increasing access to psychological services</p>
               </li>
               <li>
                 <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
@@ -237,6 +359,7 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                   </span>
                   <span class="text-gray-500 dark:text-gray-400">(6)</span>
                 </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-7">Guides and techniques for using AI to strengthen romantic and marital relationships</p>
               </li>
               <li>
                 <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
@@ -244,10 +367,11 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                     <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                    Advanced Astrology
+                    Parenting
                   </span>
                   <span class="text-gray-500 dark:text-gray-400">(10)</span>
                 </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-7">AI solutions for helping parents and child-rearing with the TogetherMama product</p>
               </li>
               <li>
                 <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
@@ -255,10 +379,11 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                     <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                    Chart Interpretation
+                    Psychological Diagnosis
                   </span>
                   <span class="text-gray-500 dark:text-gray-400">(7)</span>
                 </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-7">Comprehensive guide on using AI for diagnosing mental disorders with DSM-5 and PDM-2 standards</p>
               </li>
               <li>
                 <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
@@ -266,10 +391,11 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                     <svg class="w-5 h-5 mr-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                    Celestial Events
+                    Psychotherapy
                   </span>
                   <span class="text-gray-500 dark:text-gray-400">(5)</span>
                 </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 ml-7">Impact of AI role-playing environments in learning psychotherapeutic skills for professionals</p>
               </li>
             </ul>
           </div>
@@ -283,14 +409,15 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
                     <img 
                       src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
-                      alt="The Complete Guide to Your Natal Chart" 
+                      alt="The Complete Guide to AI Emotional Support" 
                       class="w-full h-full object-cover"
                       onerror="this.src='/images/placeholder-blog.jpg'"
                     />
                   </div>
                   <div>
-                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">The Complete Guide to Your Natal Chart</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">March 15, 2023 · 10 min read</p>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">The Complete Guide to AI Emotional Support</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">In this comprehensive guide, we explore how to use AI for emotional support during crises and stress. This article includes practical strategies and real-world examples.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">March 15, 2023 · 10 min read</p>
                   </div>
                 </a>
               </li>
@@ -299,13 +426,14 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
                     <img 
                       src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
-                      alt="How to Read Your Transit Chart" 
+                      alt="How to Improve Your Relationships with Hammasir" 
                       class="w-full h-full object-cover"
                     />
                   </div>
                   <div>
-                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">How to Read Your Transit Chart</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">February 28, 2023 · 8 min read</p>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">How to Improve Your Relationships with Hammasir</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">In this article, we explore how the Hammasir product can help you strengthen your romantic and marital relationships. This article includes practical techniques for improving communication and conflict resolution.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">February 28, 2023 · 8 min read</p>
                   </div>
                 </a>
               </li>
@@ -314,13 +442,14 @@ const regularPosts = blogPosts.filter(post => !post.featured);
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
                     <img 
                       src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
-                      alt="The Influence of the Moon in Your Life" 
+                      alt="Parenting with TogetherMama" 
                       class="w-full h-full object-cover"
                     />
                   </div>
                   <div>
-                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">The Influence of the Moon in Your Life</h4>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">January 10, 2023 · 6 min read</p>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">Parenting with TogetherMama</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">In this article, we explore how the TogetherMama product can help parents receive the necessary support on the challenging path of raising children. This article includes practical strategies and educational content.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">January 10, 2023 · 6 min read</p>
                   </div>
                 </a>
               </li>

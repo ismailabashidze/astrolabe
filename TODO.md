@@ -1,21 +1,21 @@
-# Astrolabe - Theme Development Roadmap
+# Zehna - Theme Development Roadmap
 
 ## Design System Enhancements
 - [ ] Expand color palette with more thematic variations
-- [ ] Add gradient presets for celestial-themed backgrounds
-- [ ] Create custom icon set for astrological symbols
+- [ ] Add gradient presets for mental health-themed backgrounds
+- [ ] Create custom icon set for psychological wellness symbols
 - [ ] Implement animated transitions between themes
-- [ ] Add particle effects for starry backgrounds
+- [ ] Add particle effects for calming backgrounds
 
 ## Component Library
-- [ ] Develop reusable astrological chart components
-- [ ] Create interactive zodiac sign components
-- [ ] Build planetary position display components
+- [ ] Develop reusable mental health assessment components
+- [ ] Create interactive emotion tracking components
+- [ ] Build psychological insight display components
 - [ ] Design testimonial carousel with theme support
 - [ ] Create statistics display components with animations
 
 ## Layout & Structure
-- [ ] Implement flexible grid system for chart displays
+- [ ] Implement flexible grid system for data displays
 - [ ] Add responsive navigation with mobile menu
 - [ ] Create multi-column layouts for data visualization
 - [ ] Design card-based layout system with hover effects

@@ -24,6 +24,7 @@ const getLocalizedPath = (lang, path) => {
       <option 
         value={getLocalizedPath(lang.code, Astro.url.pathname.replace(/^\/[a-z]{2}\//, '/'))}
         selected={lang.code === currentLang}
+        class={lang.code === 'fa' ? 'persian-text' : ''}
       >
         {lang.name}
       </option>

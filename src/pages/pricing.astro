@@ -1,33 +1,33 @@
 ---
 // src/pages/pricing.astro
-import MainLayout from '../layouts/MainLayout.astro';
-import { getTranslation, isRTL } from '../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 
 const lang = "en";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 ---
 
-<MainLayout title="Pricing - Astrolabe" lang={lang} dir={dir}>
+<MainLayout title="Pricing - Zehna" lang={lang} dir={dir}>
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">Simple, Transparent Pricing</h1>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">Intelligent Mental Health Solutions</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Choose the plan that works best for you. All plans include our core astrology features.
+          A suite of AI-powered applications for mental wellness and better life. Choose the plan that works best for you.
         </p>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <!-- Basic Plan -->
+        <!-- Hamdel Plan -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
           <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Basic</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Hamdel</h2>
             <div class="mb-4">
               <span class="text-4xl font-bold text-gray-900 dark:text-white">$0</span>
               <span class="text-gray-600 dark:text-gray-300">/month</span>
             </div>
-            <p class="text-gray-600 dark:text-gray-300">Perfect for beginners exploring astrology</p>
+            <p class="text-gray-600 dark:text-gray-300">24/7 Emotional Support with AI</p>
           </div>
           
           <ul class="space-y-4 mb-8">
@@ -35,37 +35,31 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Natal chart generation</span>
+              <span class="text-gray-900 dark:text-white">24/7 AI-powered conversation based on Cognitive Behavioral Therapy (CBT)</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Basic chart interpretation</span>
+              <span class="text-gray-900 dark:text-white">Self-awareness exercises, mindful breathing, and guided meditation</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Weekly horoscope</span>
+              <span class="text-gray-900 dark:text-white">Mood tracking, sleep quality, stress levels, and daily energy monitoring</span>
             </li>
             <li class="flex items-start opacity-50">
               <svg class="w-5 h-5 text-gray-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
-              <span class="text-gray-400 dark:text-gray-500">Transit analysis</span>
+              <span class="text-gray-400 dark:text-gray-500">Sessions with professional psychologists (in paid plans)</span>
             </li>
             <li class="flex items-start opacity-50">
               <svg class="w-5 h-5 text-gray-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
-              <span class="text-gray-400 dark:text-gray-500">Synastry comparisons</span>
-            </li>
-            <li class="flex items-start opacity-50">
-              <svg class="w-5 h-5 text-gray-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-              <span class="text-gray-400 dark:text-gray-500">Progressed charts</span>
+              <span class="text-gray-400 dark:text-gray-500">Personalized analysis of behavioral and emotional patterns</span>
             </li>
           </ul>
           
@@ -74,18 +68,18 @@ const t = (key) => getTranslation(lang, key);
           </button>
         </div>
         
-        <!-- Pro Plan (Featured) -->
-        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white relative transform scale-105">
+        <!-- Hammasir Plan (Featured) -->
+        <div class="bg-gradient-to-br from-[#3CAC88] to-[#99D2B4] rounded-2xl shadow-xl p-8 text-white relative transform scale-105">
           <div class="absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-4 py-1 rounded-bl-lg rounded-tr-2xl">
             MOST POPULAR
           </div>
           <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold mb-2">Pro</h2>
+            <h2 class="text-2xl font-bold mb-2">Hammasir</h2>
             <div class="mb-4">
               <span class="text-4xl font-bold">$9</span>
               <span class="text-indigo-100">/month</span>
             </div>
-            <p class="text-indigo-100">For serious astrology enthusiasts</p>
+            <p class="text-indigo-100">Smart Marriage & Matchmaking Solution</p>
           </div>
           
           <ul class="space-y-4 mb-8">
@@ -93,37 +87,31 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-white mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Everything in Basic</span>
+              <span>Everything in Hamdel</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Transit analysis</span>
+              <span>Advanced psychological assessment</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Synastry comparisons</span>
+              <span>Life skills training for married couples</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Progressed charts</span>
+              <span>Scientific matchmaking with advanced algorithms</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Monthly horoscope</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-white mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Chart storage (5 charts)</span>
+              <span>Couples counseling sessions with psychologists</span>
             </li>
           </ul>
           
@@ -132,15 +120,15 @@ const t = (key) => getTranslation(lang, key);
           </button>
         </div>
         
-        <!-- Premium Plan -->
+        <!-- TogetherMama Plan -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
           <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Premium</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">TogetherMama</h2>
             <div class="mb-4">
               <span class="text-4xl font-bold text-gray-900 dark:text-white">$19</span>
               <span class="text-gray-600 dark:text-gray-300">/month</span>
             </div>
-            <p class="text-gray-600 dark:text-gray-300">For professional astrologers and enthusiasts</p>
+            <p class="text-gray-600 dark:text-gray-300">Psychological Support for Mothers</p>
           </div>
           
           <ul class="space-y-4 mb-8">
@@ -148,42 +136,69 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Everything in Pro</span>
+              <span class="text-gray-900 dark:text-white">Everything in Hammasir</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Unlimited chart storage</span>
+              <span class="text-gray-900 dark:text-white">24/7 specialized support for mothers</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Advanced chart comparison tools</span>
+              <span class="text-gray-900 dark:text-white">Parenting education for children 0-12 years</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Ephemeris data access</span>
+              <span class="text-gray-900 dark:text-white">Personalized parenting programs</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">Priority customer support</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-900 dark:text-white">Early access to new features</span>
+              <span class="text-gray-900 dark:text-white">Digital growth tracking journal for children</span>
             </li>
           </ul>
           
-          <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium py-3 px-4 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
+          <button class="w-full bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] text-white font-medium py-3 px-4 rounded-lg hover:from-[#3CAC88] hover:to-[#99D2B4] transition-all duration-200 shadow-md hover:shadow-lg">
             Start Free Trial
+          </button>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Other Specialized Solutions</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Darmana</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Psychological diagnosis based on global standards DSM-5 and PDM-2</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Kanape</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">Role-play AI for learning psychotherapeutic skills through interactive scenarios</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Synapse</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">AI for HR and organizational recruitment with psychological profiling</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">Khebreh</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">News analysis and social impact insights for understanding collective psychology</p>
+          </div>
+        </div>
+  
+        
+        <div class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-8 max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Custom Solution for Your Needs?</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            We can develop custom AI solutions for your organization, company, or specific requirements.
+          </p>
+          <button class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] text-white font-medium py-3 px-6 rounded-lg hover:from-[#3CAC88] hover:to-[#99D2B4] transition-all duration-200 shadow-md hover:shadow-lg">
+            Contact for Collaboration
           </button>
         </div>
       </div>

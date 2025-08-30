@@ -1,0 +1,467 @@
+---
+// src/pages/fa/blog.astro
+import MainLayout from '@layouts/MainLayout.astro';
+import NewsletterSignup from '@components/NewsletterSignup.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
+
+const lang = "fa";
+const dir = isRTL(lang) ? "rtl" : "ltr";
+const t = (key) => getTranslation(lang, key);
+
+// Sample blog posts data with images
+const blogPosts = [
+  {
+    id: 1,
+    title: "چگونه هوش مصنوعی می‌تواند حمایت عاطفی شما را بهبود بخشد",
+    excerpt: "در این مقاله بررسی می‌کنیم که چگونه محصولات ذهنا مانند همدل می‌توانند در مواقع بحران و استرس به شما کمک کنند. همدل با استفاده از الگوریتم‌های پیشرفته قادر است احساسات شما را تشخیص داده و راهکارهای شخصی‌سازی‌شده برای کاهش استرس و بهبود خلق و خو ارائه دهد.",
+    date: "2023-08-15",
+    author: "دکتر مریم رضوی",
+    category: "حمایت عاطفی",
+    readTime: "۵ دقیقه مطالعه",
+    image: "/images/1.jpg",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "هوش مصنوعی در خدمات روانشناسی: تحول در دسترسی",
+    excerpt: "در این مقاله تأثیر محصولات ذهنا در کاهش هزینه‌های مشاوره و افزایش دسترسی به خدمات روانشناختی را بررسی می‌کنیم. با استفاده از هوش مصنوعی، اکنون میلیون‌ها نفر می‌توانند از خدمات روانشناختی با کیفیت بالا در هر زمان و مکان بهره‌مند شوند. این تحول به ویژه برای جوامع کم‌برخوردار اهمیت زیادی دارد.",
+    date: "2023-07-22",
+    author: "دکتر حسین احمدی",
+    category: "خدمات روانشناسی",
+    readTime: "۷ دقیقه مطالعه",
+    image: "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 3,
+    title: "بهبود روابط با کمک هوش مصنوعی: هم‌مسیر در خدمت شما",
+    excerpt: "در این مقاله چگونگی استفاده از هوش مصنوعی برای تقویت روابط عاشقانه و زناشویی با محصول هم‌مسیر را بررسی می‌کنیم. هم‌مسیر با ترکیب تکنولوژی پیشرفته هوش مصنوعی و تخصص روانشناسان، به شما کمک می‌کند تا روابط خود را تقویت کرده و چالش‌های زناشویی را بهتر مدیریت کنید. این محصول شامل ابزارهایی برای بهبود ارتباط، حل تعارض و افزایش صمیمیت است.",
+    date: "2023-06-30",
+    author: "دکتر نرگس محمدی",
+    category: "روابط",
+    readTime: "۸ دقیقه مطالعه",
+    image: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 4,
+    title: "پرورش فرزندان در عصر دیجیتال: هم‌پای مادر",
+    excerpt: "در این مقاله اهمیت کمک هوش مصنوعی برای والدین و پرورش فرزندان با محصول هم‌پای مادر را بررسی می‌کنیم. هم‌پای مادر به مادران کمک می‌کند تا در مسیر پرچالش تربیت فرزندان، حمایت لازم را دریافت کنند. این سیستم با ارائه راهکارهای تخصصی، محتوای آموزشی متنوع و پشتیبانی روانشناسی، به والدین کمک می‌کند تا تصمیمات بهتری بگیرند و روابط سالم‌تری با فرزندان خود داشته باشند.",
+    date: "2023-05-18",
+    author: "دکتر زهرا کریمی",
+    category: "پرورش فرزندان",
+    readTime: "۶ دقیقه مطالعه",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 5,
+    title: "تشخیص روانشناختی با استفاده از هوش مصنوعی: درمانا",
+    excerpt: "در این راهنمای جامع نحوه استفاده از هوش مصنوعی برای تشخیص اختلالات روانی با استانداردهای DSM-5 و PDM-2 را بررسی می‌کنیم. درمانا با استفاده از الگوریتم‌های پیشرفته و استانداردهای تشخیصی بین‌المللی، به شناسایی اختلالات روانی کمک می‌کند. این سیستم می‌تواند به عنوان ابزار کمکی برای روانشناسان یا به عنوان یک ابزار خودارزیابی برای افراد استفاده شود و راهنمایی‌های اولیه برای درمان ارائه می‌دهد.",
+    date: "2023-04-25",
+    author: "دکتر امیر حسینی",
+    category: "تشخیص روانشناختی",
+    readTime: "۹ دقیقه مطالعه",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  },
+  {
+    id: 6,
+    title: "یادگیری مهارت‌های روان‌درمانی با کاناپه",
+    excerpt: "در این مقاله تأثیر محیط نقش‌آفرینی هوش مصنوعی در یادگیری مهارت‌های روان‌درمانی برای متخصصان را بررسی می‌کنیم. کاناپه محیطی ایمن و کنترل‌شده برای تمرین مهارت‌های روان‌درمانی فراهم می‌کند. دانشجویان روان‌شناسی و روان‌درمانگران می‌توانند با شخصیت‌های مصنوعی هوشمند در قالب‌های مختلف تعامل کرده و مهارت‌های خود را تقویت کنند. این سیستم بازخورد فوری و تحلیلی از عملکرد کاربر ارائه می‌دهد.",
+    date: "2023-03-12",
+    author: "دکتر محسن رستمی",
+    category: "روان‌درمانی",
+    readTime: "۷ دقیقه مطالعه",
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"
+  }
+];
+
+// Separate featured post from regular posts
+const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0];
+const regularPosts = blogPosts.filter(post => !post.featured);
+---
+
+<MainLayout title="بلاگ - ذهنا" lang={lang} dir={dir}>
+  <!-- Hero Section with Background Image -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/90 to-secondary-dark/90"></div>
+    <div class="absolute inset-0 pattern-bg opacity-30"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">بلاگ ذهنا</h1>
+        <p class="text-xl text-indigo-100 max-w-2xl mx-auto mb-10">
+          آخرین بینش‌ها و کشف‌های دنیای سلامت روان و هوش مصنوعی را کاوش کنید. در اینجا مقالات تخصصی، راهنمایی‌های عملی و تحلیل‌های عمیق درباره محصولات ذهنا و کاربردهای آن‌ها در زندگی روزمره ارائه می‌شود.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">بینش‌های روانشناختی</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">کاربردهای هوش مصنوعی</span>
+          <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-indigo-100 border border-white/20">سلامت روان</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zehna Products Showcase Section -->
+  <section class="py-12 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">محصولات ذهنا</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          مجموعه جامع ابزارهای هوش مصنوعی برای هر جنبه از زندگی روانی و اجتماعی شما. هر محصول با هدف بهبود کیفیت زندگی، افزایش خوشبختی و دسترسی آسان به خدمات روانشناختی طراحی شده است.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Hamdel -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">❤️</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">همدل</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی برای حمایت عاطفی و روانی در مواقع بحران و استرس. همدل به شما کمک می‌کند تا در لحظات سخت زندگی، حمایت فوری و راهنمایی تخصصی دریافت کنید. این سیستم با استفاده از الگوریتم‌های پیشرفته قادر است احساسات شما را تشخیص داده و راهکارهای مناسب برای کاهش استرس و بهبود خلق و خو ارائه دهد.
+          </p>
+        </div>
+        
+        <!-- Hammasir -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">💍</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">هم‌مسیر</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی و حمایت روانشناس برای روابط عاشقانه و ازدواج. هم‌مسیر با ترکیب تکنولوژی پیشرفته هوش مصنوعی و تخصص روانشناسان، به شما کمک می‌کند تا روابط خود را تقویت کرده و چالش‌های زناشویی را بهتر مدیریت کنید. این محصول شامل ابزارهایی برای بهبود ارتباط، حل تعارض و افزایش صمیمیت است.
+          </p>
+        </div>
+        
+        <!-- TogetherMama -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🤱</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">هم‌پای مادر</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی و حمایت روانشناس برای والدین و پرورش فرزندان. هم‌پای مادر به مادران کمک می‌کند تا در مسیر پرچالش تربیت فرزندان، حمایت لازم را دریافت کنند. این سیستم با ارائه راهکارهای تخصصی، محتوای آموزشی متنوع و پشتیبانی روانشناسی، به والدین کمک می‌کند تا تصمیمات بهتری بگیرند و روابط سالم‌تری با فرزندان خود داشته باشند.
+          </p>
+        </div>
+        
+        <!-- Baham -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🛒</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">با هم</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            پلتفرم برای خرید گروهی و کاهش هزینه‌های روزمره. با هم با ایجاد شبکه‌ای از خریداران، به شما کمک می‌کند تا با همکاری دیگران، هزینه‌های خرید کالاهای روزمره را کاهش دهید. این پلتفرم هوشمند با تحلیل نیازهای جمعی و مذاکره با تأمین‌کنندگان، قیمت‌های منصفانه‌تری برای کالاها ارائه می‌دهد.
+          </p>
+        </div>
+        
+        <!-- Darmana -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🏥</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">درمانا</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی برای تشخیص روان‌شناسی بر اساس DSM-5 و PDM-2. درمانا با استفاده از الگوریتم‌های پیشرفته و استانداردهای تشخیصی بین‌المللی، به شناسایی اختلالات روانی کمک می‌کند. این سیستم می‌تواند به عنوان ابزار کمکی برای روانشناسان یا به عنوان یک ابزار خودارزیابی برای افراد استفاده شود و راهنمایی‌های اولیه برای درمان ارائه می‌دهد.
+          </p>
+        </div>
+        
+        <!-- Kanape -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🎭</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">کاناپه</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی به عنوان نقش‌آفرینی برای یادگیری مهارت‌های روان‌درمانی. کاناپه محیطی ایمن و کنترل‌شده برای تمرین مهارت‌های روان‌درمانی فراهم می‌کند. دانشجویان روان‌شناسی و روان‌درمانگران می‌توانند با شخصیت‌های مصنوعی هوشمند در قالب‌های مختلف تعامل کرده و مهارت‌های خود را تقویت کنند. این سیستم بازخورد فوری و تحلیلی از عملکرد کاربر ارائه می‌دهد.
+          </p>
+        </div>
+        
+        <!-- Synapse -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">🏢</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">سیناپس</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی برای کمک به منابع انسانی و استخدام. سیناپس با تحلیل رزومه‌ها، مصاحبه‌های هوشمند و ارزیابی مهارت‌ها، به سازمان‌ها کمک می‌کند تا بهترین متقاضیان را شناسایی کنند. این سیستم همچنین می‌تواند به بهینه‌سازی تیم‌های موجود، شناسایی نیازهای آموزشی و بهبود محیط کاری کمک کند.
+          </p>
+        </div>
+        
+        <!-- Khebreh -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-4">
+            <span class="text-xl">📰</span>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">خبره</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm">
+            هوش مصنوعی برای جمع‌آوری اخبار، بینش‌ها و تأثیرات اجتماعی. خبره با تحلیل حجم عظیمی از اخبار، مقالات و شبکه‌های اجتماعی، الگوها و روندهای اجتماعی را شناسایی می‌کند. این سیستم به سیاست‌گذاران، محققان و سازمان‌ها کمک می‌کند تا تأثیرات اجتماعی تصمیمات و رویدادها را بهتر درک کرده و برنامه‌ریزی بهتری داشته باشند.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Custom Development CTA -->
+      <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white mb-16">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold mb-4">ایده‌ای برای بهبود زندگی دارید؟</h2>
+          <p class="text-lg md:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+            تیم ذهنا تخصص طراحی و توسعه راهکارهای سفارشی هوش مصنوعی را دارد. اگر ایده‌ای برای بهبود زندگی خود، خانواده‌تان یا سازمان‌تان دارید، با ما تماس بگیرید. ما می‌توانیم راهکارهایی متناسب با نیازهای خاص شما توسعه دهیم. از کمک به تصمیم‌گیری‌های روانشناسی گرفته تا اتوماسیون فرآیندهای سازمانی، همه چیز امکان‌پذیر است.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/fa/contact" class="bg-white text-indigo-900 font-medium px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors duration-300 shadow-lg inline-block">
+              تماس با ما
+            </a>
+            <a href="/fa/features" class="bg-transparent border-2 border-white text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300 inline-block">
+              مشاهده همه محصولات
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <!-- Featured Post -->
+      <div class="mb-16">
+        <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 card-hover">
+          <div class="md:flex">
+            <div class="md:w-1/2 flex justify-start">
+              <div class="h-64 md:h-full w-full overflow-hidden flex items-center">
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title} 
+                  class="w-full h-auto object-contain transition-transform duration-700 hover:scale-105"
+                  onerror="this.src='/images/placeholder-blog.jpg'"
+                />
+              </div>
+            </div>
+            <div class="md:w-1/2 p-8">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-sm font-medium text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 dark:text-indigo-300 px-3 py-1 rounded-full">{featuredPost.category}</span>
+                <span class="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full">ویژه</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 dark:text-white mb-4 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">
+                <a href={`/fa/blog/${featuredPost.id}`}>{featuredPost.title}</a>
+              </h2>
+              <p class="text-gray-600 dark:text-gray-300 mb-6">{featuredPost.excerpt}</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mx-3">
+                    <span class="text-sm font-bold text-white">{featuredPost.author.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <p class="font-medium text-gray-900 dark:text-white">{featuredPost.author}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{new Date(featuredPost.date).toLocaleDateString('fa-IR', { year: 'numeric', month: 'short', day: 'numeric' })} · {featuredPost.readTime}</p>
+                  </div>
+                </div>
+                <a href={`/fa/blog/${featuredPost.id}`} class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium flex items-center transition-colors duration-200">
+                  ادامه مطلب
+                  <svg class="w-4 h-4 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-8">
+        <div class="lg:w-2/3">
+          <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6">آخرین مقالات</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {regularPosts.map(post => (
+              <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-hover">
+                <!-- Featured Image -->
+                <div class="h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    onerror="this.src='/images/placeholder-blog.jpg'"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-medium text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 dark:text-indigo-300 px-3 py-1 rounded-full">{post.category}</span>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{post.readTime}</span>
+                  </div>
+                  <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">
+                    <a href={`/fa/blog/${post.id}`}>{post.title}</a>
+                  </h2>
+                  <p class="text-gray-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mx-2">
+                        <span class="text-xs font-bold text-white">{post.author.charAt(0)}</span>
+                      </div>
+                      <span class="text-sm text-gray-700 dark:text-gray-300">{post.author}</span>
+                    </div>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">{new Date(post.date).toLocaleDateString('fa-IR', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          
+          <!-- Pagination -->
+          <div class="flex justify-center mt-12">
+            <nav class="flex items-center space-x-2">
+              <a href="#" class="px-4 py-2 rounded-md bg-gradient-to-r from-primary to-secondary text-white shadow-md hover:shadow-lg transition-all duration-300">۱</a>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">۲</a>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">۳</a>
+              <span class="px-4 py-2 text-gray-500 dark:text-gray-400">...</span>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">۱۰</a>
+              <a href="#" class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/3">
+          <!-- Categories -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 mb-8 card">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">دسته‌بندی‌ها</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mx-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    حمایت عاطفی
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(۱۲)</span>
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mx-7">مقالات و راهنمایی‌های مربوط به استفاده از هوش مصنوعی برای حمایت عاطفی در مواقع بحران و استرس</p>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mx-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    خدمات روانشناسی
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(۸)</span>
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mx-7">تحلیل تأثیر محصولات ذهنا در کاهش هزینه‌های مشاوره و افزایش دسترسی به خدمات روانشناختی</p>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mx-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    روابط
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(۶)</span>
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mx-7">راهنمایی‌ها و تکنیک‌های استفاده از هوش مصنوعی برای تقویت روابط عاشقانه و زناشویی</p>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mx-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    پرورش فرزندان
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(۱۰)</span>
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mx-7">راهکارهای هوش مصنوعی برای کمک به والدین و پرورش فرزندان با محصول هم‌پای مادر</p>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mx-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    تشخیص روانشناختی
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(۷)</span>
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mx-7">راهنمای جامع نحوه استفاده از هوش مصنوعی برای تشخیص اختلالات روانی با استانداردهای DSM-5 و PDM-2</p>
+              </li>
+              <li>
+                <a href="#" class="flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 group">
+                  <span class="flex items-center">
+                    <svg class="w-5 h-5 mx-2 text-indigo-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    روان‌درمانی
+                  </span>
+                  <span class="text-gray-500 dark:text-gray-400">(۵)</span>
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 mx-7">تأثیر محیط نقش‌آفرینی هوش مصنوعی در یادگیری مهارت‌های روان‌درمانی برای متخصصان</p>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Popular Posts -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 mb-8 card">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">پست‌های محبوب</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="group flex items-start">
+                  <div class="w-16 h-16 rounded-lg overflow-hidden mx-4 flex-shrink-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
+                      alt="راهنمای کامل حمایت عاطفی با هوش مصنوعی" 
+                      class="w-full h-full object-cover"
+                      onerror="this.src='/images/placeholder-blog.jpg'"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">راهنمای کامل حمایت عاطفی با هوش مصنوعی</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">در این راهنمای جامع، نحوه استفاده از هوش مصنوعی برای دریافت حمایت عاطفی در مواقع بحران و استرس را بررسی می‌کنیم. این مقاله شامل راهکارهای عملی و مثال‌های واقعی است.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">۱۵ خرداد ۱۴۰۲ · ۱۰ دقیقه مطالعه</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-start">
+                  <div class="w-16 h-16 rounded-lg overflow-hidden mx-4 flex-shrink-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
+                      alt="چگونه روابط خود را با هم‌مسیر بهبود بخشیم" 
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">چگونه روابط خود را با هم‌مسیر بهبود بخشیم</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">در این مقاله بررسی می‌کنیم که چگونه محصول هم‌مسیر می‌تواند به شما کمک کند تا روابط عاشقانه و زناشویی خود را تقویت کنید. این مقاله شامل تکنیک‌های عملی برای بهبود ارتباط و حل تعارض است.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">۸ اردیبهشت ۱۴۰۲ · ۸ دقیقه مطالعه</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="group flex items-start">
+                  <div class="w-16 h-16 rounded-lg overflow-hidden mx-4 flex-shrink-0">
+                    <img 
+                      src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" 
+                      alt="پرورش فرزندان با هم‌پای مادر" 
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200">پرورش فرزندان با هم‌پای مادر</h4>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">در این مقاله بررسی می‌کنیم که چگونه محصول هم‌پای مادر می‌تواند به والدین کمک کند تا در مسیر پرچالش تربیت فرزندان، حمایت لازم را دریافت کنند. این مقاله شامل راهکارهای عملی و محتوای آموزشی است.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">۲۰ دی ۱۴۰۱ · ۶ دقیقه مطالعه</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Newsletter Signup - Full Width Row -->
+      <div class="mt-12">
+        <NewsletterSignup lang={lang} />
+      </div>
+    </div>
+  </section>
+</MainLayout>

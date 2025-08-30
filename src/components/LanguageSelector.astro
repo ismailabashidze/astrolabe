@@ -42,7 +42,7 @@ const languages = [
       {languages.map((language) => (
         <a
           href={language.code === "en" ? "/" : `/${language.code}/`}
-          class={`flex items-center px-4 py-2 text-sm ${currentLang === language.code ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'} transition-colors duration-150`}
+          class={`flex items-center px-4 py-2 text-sm ${currentLang === language.code ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'} transition-colors duration-150 ${language.code === 'fa' ? 'persian-text' : ''}`}
           role="menuitem"
           @click="open = false"
         >
@@ -65,6 +65,7 @@ const languages = [
           <option 
             value={language.code === "en" ? "/" : `/${language.code}/`} 
             selected={currentLang === language.code}
+            class={language.code === 'fa' ? 'persian-text' : ''}
           >
             {language.name}
           </option>

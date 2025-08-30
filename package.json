@@ -1,5 +1,5 @@
 {
-  "name": "astrolabe",
+  "name": "Zehna",
   "version": "1.0.0",
   "description": "An open-source astrology tool",
   "main": "index.js",
@@ -15,7 +15,7 @@
     "astro",
     "open-source"
   ],
-  "author": "Astrolabe Team",
+  "author": "Zehna Team",
   "license": "MIT",
   "type": "module",
   "dependencies": {

@@ -1,70 +1,63 @@
 ---
 // src/pages/index.astro
 import MainLayout from '../layouts/MainLayout.astro';
-import AstroChart from '../components/AstroChart.astro';
-import ZodiacSigns from '../components/ZodiacSigns.astro';
-import Testimonials from '../components/Testimonials.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
-import Statistics from '../components/Statistics.astro';
-import { getTranslation, isRTL } from '../utils/i18n.js';
+import Testimonials from '@components/Testimonials.astro';
+import NewsletterSignup from '@components/NewsletterSignup.astro';
+import Statistics from '@components/Statistics.astro';
+import TestPathAlias from '@components/TestPathAlias.astro';
+import TestPathAliasComponent from '@components/TestPathAliasComponent.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 import { Image } from 'astro:assets';
 
 // Import images directly
-import heroImage from '.../../public/images/8.jpg';
-import natalChartImage from '.../../public/images/1.jpg';
-import transitsImage from '.../../public/images/6.jpg';
-import synastryImage from '.../../public/images/4.jpg';
-import progressionsImage from '.../../public/images/7.jpg';
+import heroImage from '@public/images/8.jpg';
+import hamdelImage from '@public/images/1.jpg';
+import hammasirImage from '@public/images/6.jpg';
+import hampayeMadarImage from '@public/images/4.jpg';
+import bahamImage from '@public/images/7.jpg';
+import darmanaImage from '@public/images/2.jpg';
+import kanapeImage from '@public/images/3.jpg';
+import synapseImage from '@public/images/11.jpg';
+import khebrehImage from '@public/images/10.jpg';
 
 const lang = "en";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
-
-// Sample chart data
-const chartData = {
-  planets: [
-    { name: "Sun", position: "15° Leo", house: "5th" },
-    { name: "Moon", position: "22° Scorpio", house: "8th" },
-    { name: "Mercury", position: "8° Virgo", house: "6th" },
-    { name: "Venus", position: "3° Leo", house: "5th" },
-    { name: "Mars", position: "27° Cancer", house: "4th" }
-  ]
-};
 ---
 
-<MainLayout title={t('welcome')} lang={lang} dir={dir}>
+<MainLayout title="Zehna - AI-Powered Psychological Super App with Custom Solution Development" lang={lang} dir={dir}>
   <!-- Hero Section -->
-  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 text-white mb-20 shadow-2xl">
+  <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3CAC88] via-[#99D2B4] to-[#3CAC88] text-white mb-20 shadow-2xl">
     <div class="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat opacity-5"></div>
     <!-- Enhanced animated background elements -->
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
-      <div class="absolute -top-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
+      <div class="absolute -top-40 -left-40 w-80 h-80 bg-[#3CAC88] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+      <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-[#99D2B4] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-[#5AC5A0] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-1000"></div>
     </div>
     <div class="relative container mx-auto px-4 lg:pl-12 py-16 md:py-24">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="text-center lg:text-left">
           <div class="flex items-center justify-center lg:justify-start mb-6">
-            <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mr-4 shadow-xl">
-              <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-16 h-16" />
+            <div class="w-15 h-15 rounded-full bg-white flex items-center justify-center mr-4 shadow-xl">
+              <img src="/images/logo.svg" alt="Zehna Logo" class="w-16 h-16" />
             </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-['Cinzel'] font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200 rtl:lg:text-right ltr:lg:text-left">
-              {lang === "en" ? "Astrolabe" : t('welcome')}
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-['Cinzel'] font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80 rtl:lg:text-right ltr:lg:text-left">
+              Zehna
             </h1>
           </div>
-          <p class="text-xl md:text-2xl text-indigo-100 mb-6 max-w-2xl mx-auto lg:mx-0">
-            {lang === "en" ? "Your open-source astrology tool for exploring the cosmos" : t('description')}
+          <p class="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl mx-auto lg:mx-0">
+            AI-Powered Psychological Super App for a Better Life
           </p>
-          <p class="text-lg text-indigo-200 mb-10 max-w-2xl mx-auto lg:mx-0">
-            Unlock the secrets of the universe with precise celestial calculations and ancient wisdom
+          <p class="text-lg text-white/80 mb-10 max-w-2xl mx-auto lg:mx-0">
+            A comprehensive suite of AI tools for emotional support, relationships, parenting, mental health, and more - with custom solution development capabilities for your specific needs
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group">
+            <button class="bg-white text-[#3CAC88] font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group">
               <span class="relative z-10">Get Started</span>
               <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>
-            <button class="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
+            <button class="bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-4 rounded-xl hover:from-primary-dark hover:to-secondary-dark transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group">
               <span class="relative z-10">Learn More</span>
               <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>
@@ -73,13 +66,13 @@ const chartData = {
         <div class="flex justify-center">
           <div class="relative">
             <!-- Enhanced floating animation elements -->
-            <div class="absolute -top-8 -left-8 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob"></div>
-            <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-indigo-500 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob animation-delay-2000"></div>
+            <div class="absolute -top-8 -left-8 w-40 h-40 bg-[#3CAC88] rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob"></div>
+            <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-[#99D2B4] rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-blob animation-delay-2000"></div>
             <div class="relative rounded-3xl overflow-hidden border-8 border-white/20 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
               <Image 
                 src={heroImage} 
-                alt="Astrological Chart" 
+                alt="Zehna" 
                 class="w-full h-auto object-cover relative z-10"
                 width={600} 
                 height={400}
@@ -88,13 +81,13 @@ const chartData = {
               />
               <!-- Decorative elements -->
               <div class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-6 h-6" />
+                <img src="/images/logo.svg" alt="Zehna Logo" class="w-6 h-6" />
               </div>
               <!-- Floating elements -->
               <div class="absolute bottom-6 left-6 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center animate-pulse shadow-lg">
                 <div class="w-2 h-2 rounded-full bg-white"></div>
               </div>
-              <div class="absolute top-1/3 left-1/4 w-6 h-6 rounded-full bg-purple-300/40 backdrop-blur-sm flex items-center justify-center animate-ping shadow-lg">
+              <div class="absolute top-1/3 left-1/4 w-6 h-6 rounded-full bg-[#99D2B4]/40 backdrop-blur-sm flex items-center justify-center animate-ping shadow-lg">
                 <div class="w-1 h-1 rounded-full bg-white"></div>
               </div>
             </div>
@@ -110,18 +103,18 @@ const chartData = {
     <div class="absolute bottom-10 right-10 w-2 h-2 rounded-full bg-white animate-pulse animation-delay-500"></div>
   </section>
 
-  <!-- What is Astrolabe Section -->
+  <!-- About Zehna Section -->
   <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl mb-20">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div class="flex items-center justify-center mb-6">
           <div class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center mr-4 shadow-lg">
-            <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-12 h-12" />
+            <img src="/images/logo.svg" alt="Zehna Logo" class="w-12 h-12" />
           </div>
-          <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900 dark:text-white">What is Astrolabe?</h2>
+          <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900 dark:text-white">What is Zehna?</h2>
         </div>
         <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          Astrolabe is an open-source astrology platform that combines ancient wisdom with modern technology to provide accurate and insightful astrological interpretations.
+          Zehna is an AI-powered psychological super app that combines modern psychological wisdom with the power of artificial intelligence to provide accurate and insightful tools for improving your daily life. It's Iran's first comprehensive platform for mental wellness, combining psychological insights with modern technology.
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -131,83 +124,279 @@ const chartData = {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Precision Calculations</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Emotional Support</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              We use the Swiss Ephemeris, the gold standard in astronomical calculations, to ensure the highest accuracy in all our astrological computations.
+              24/7 access to AI-powered emotional support for help during crises and stress with scientifically-backed approaches.
             </p>
           </div>
           
           <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-4 mx-auto">
               <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Open Source</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Relationships</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              As an open-source project, our code is transparent and community-driven, allowing for continuous improvement and peer review.
+              Improve romantic and marital relationships with specialized tools for better understanding and scientific matchmaking.
             </p>
           </div>
           
           <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
             <div class="w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 mx-auto">
               <svg class="w-6 h-6 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Community Focused</h3>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Personal Growth</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              We're building a community of astrology enthusiasts, professionals, and developers working together to advance astrological understanding.
+              Personal development tools to enhance life skills, stress management, and mental health with AI-driven insights.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Parenting Support</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Comprehensive support for mothers and parents in child-rearing with AI assistance and human psychologist monitoring.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Addiction Recovery</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Smart monitoring and support systems for addiction recovery with potential to reduce relapse by 40%.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Community & Crisis</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              24/7 crisis intervention capabilities with smart detection of critical situations and immediate support.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Employment & HR</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              AI-powered HR assistance for organizations including smart recruitment, team optimization, and cultural compatibility.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Data Insights</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Advanced behavioral pattern analysis and psychological insights for researchers and healthcare professionals.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+            <div class="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-4 mx-auto">
+              <svg class="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Custom Solutions</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Tailored AI psychological solutions for organizations, researchers, and specific use cases with full customization.
             </p>
           </div>
         </div>
         
-        <div class="mt-12 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 max-w-3xl mx-auto">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
-            Astrolabe aims to make high-quality astrological tools accessible to everyone, regardless of their experience level. 
-            We believe that understanding the cosmos can provide valuable insights into our personalities, relationships, and life paths.
-          </p>
-          <p class="text-gray-700 dark:text-gray-300">
-            By combining the precision of modern astronomy with the wisdom of traditional astrology, we create a bridge between 
-            ancient knowledge and contemporary technology, empowering individuals to explore their celestial blueprint with confidence.
-          </p>
+        <div class="mt-12 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-gray-700">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
+            <div class="w-20 h-1 bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] mx-auto rounded-full"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Left Column -->
+            <div class="space-y-6">
+              <div class="bg-gradient-to-br from-[#3CAC88]/20 to-[#99D2B4]/20 dark:from-[#3CAC88]/20 dark:to-[#99D2B4]/20 p-6 rounded-xl border border-[#3CAC88]/20 dark:border-[#3CAC88]/30">
+                <h4 class="font-bold text-lg text-[#3CAC88] dark:text-[#99D2B4] mb-3 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  Core Mission
+                </h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  Zehna aims to make high-quality psychological tools accessible to everyone, regardless of income level or geographic location. We're addressing the critical gap in mental health services in Iran by providing affordable, culturally adapted solutions.
+                </p>
+                <div class="bg-white dark:bg-gray-700/50 p-4 rounded-lg border border-[#3CAC88]/20 dark:border-[#99D2B4]/30">
+                  <p class="text-gray-700 dark:text-gray-300 italic text-sm">
+                    "By combining the power of artificial intelligence with scientific psychological approaches, we create a bridge between modern psychological knowledge and everyday human needs, empowering individuals to confidently shape their life path."
+                  </p>
+                </div>
+              </div>
+              
+              <div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 p-6 rounded-xl border border-cyan-100 dark:border-cyan-900/30">
+                <h4 class="font-bold text-lg text-cyan-800 dark:text-cyan-200 mb-3 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  Key Differentiators
+                </h4>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">✓</span>
+                    <span>Built on scientific psychological standards (DSM-5, PDM-2)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">✓</span>
+                    <span>Infrastructure with all servers located in Iran</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">✓</span>
+                    <span>Culturally adapted for Iranian-Islamic society</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-cyan-500 mr-2">✓</span>
+                    <span>Privacy protection and data security</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="space-y-6">
+              <div class="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-6 rounded-xl border border-amber-100 dark:border-amber-900/30">
+                <h4 class="font-bold text-lg text-amber-800 dark:text-amber-200 mb-3 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                  </svg>
+                  Vision & Impact
+                </h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                  To become the most trusted and comprehensive digital mental health platform in the Persian-speaking world, providing accessible, affordable, and culturally relevant psychological services.
+                </p>
+                <div class="space-y-3">
+                  <div class="flex items-center p-3 bg-white dark:bg-gray-700/50 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
+                      <span class="text-white text-xs font-bold">12T</span>
+                    </div>
+                    <p class="ml-3 text-gray-700 dark:text-gray-300 text-sm">
+                      <span class="font-semibold">12,000 billion tomans</span> healthcare cost reduction over 5 years
+                    </p>
+                  </div>
+                  <div class="flex items-center p-3 bg-white dark:bg-gray-700/50 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center">
+                      <span class="text-white text-xs font-bold">100K</span>
+                    </div>
+                    <p class="ml-3 text-gray-700 dark:text-gray-300 text-sm">
+                      <span class="font-semibold">100,000 users</span> fair access in first year
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 p-6 rounded-xl border border-emerald-100 dark:border-emerald-900/30">
+                <h4 class="font-bold text-lg text-emerald-800 dark:text-emerald-200 mb-3 flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                  </svg>
+                  Innovation & Technology
+                </h4>
+                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2">✓</span>
+                    <span>Advanced AI models trained on Persian language and culture</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2">✓</span>
+                    <span>Integration with government systems (Welfare, Ministry of Health)</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2">✓</span>
+                    <span>Smart crisis management with 24/7 monitoring</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-emerald-500 mr-2">✓</span>
+                    <span>Custom solution development capabilities</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 bg-gradient-to-r from-primary to-secondary rounded-xl p-5 text-white text-center">
+            <p class="text-sm font-medium">
+              Our platform is built entirely on Iranian soil, eliminating dependence on foreign cloud services and ensuring user data security. 
+              We've already demonstrated significant impact with our "HamTavan" module, which has reduced addiction relapse costs by 40%.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Statistics Section -->
-  <Statistics lang={lang} />
-
-  <!-- Features Section -->
+  <!-- Zehna Products Section -->
   <section class="mb-24">
     <div class="text-center mb-20">
       <div class="flex items-center justify-center mb-4">
         <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mr-3">
-          <span class="text-3xl">🔮</span>
+          <span class="text-3l">🧠</span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900">Powerful Astrological Insights</h2>
+        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900">Zehna Products & Services</h2>
       </div>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-        Discover the ancient wisdom of astrology with modern precision
+        A comprehensive suite of AI tools for every aspect of your psychological and social life, plus custom solution development for your specific needs
       </p>
-      <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+      <div class="w-24 h-1 bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] mx-auto rounded-full"></div>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Hamdel -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🌟</span>
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <img src="/images/product-logos/hamdel.png" alt="Hamdel Logo" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Natal Charts</h3>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Hamdel</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          Detailed birth chart calculations with precise planetary positions
+          AI for emotional support and psychological assistance during crises and stress
         </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>24/7 access to AI-powered emotional support</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Therapy sessions based on scientific psychological approaches</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Analysis of behavioral and emotional patterns</span>
+          </li>
+        </ul>
         <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
           <Image 
-            src={natalChartImage} 
-            alt="Natal Chart" 
+            src={hamdelImage} 
+            alt="Hamdel" 
             class="w-full h-auto object-cover"
             width={300} 
             height={200}
@@ -217,18 +406,33 @@ const chartData = {
         </div>
       </div>
       
+      <!-- Hammasir -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🌑</span>
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <img src="/images/product-logos/hammasir.webp" alt="Hammasir Logo" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Transits</h3>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Hammasir</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          Track current planetary movements and their influences on your life
+          AI and psychologist support for romantic relationships, marriage, and scientific matchmaking
         </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Comprehensive psychological evaluation before marriage</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Marital life skills training</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Scientific matchmaking based on personality and value compatibility</span>
+          </li>
+        </ul>
         <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
           <Image 
-            src={transitsImage} 
-            alt="Transits" 
+            src={hammasirImage} 
+            alt="Hammasir" 
             class="w-full h-auto object-cover"
             width={300} 
             height={200}
@@ -238,18 +442,33 @@ const chartData = {
         </div>
       </div>
       
+      <!-- TogetherMama (TogetherMama) -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">❤️</span>
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <img src="/images/product-logos/togetherMama.png" alt="TogetherMama Logo" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Synastry</h3>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">TogetherMama</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          Compare charts to understand relationships and compatibility
+          Hybrid AI and psychology platform for comprehensive support of mothers in child-rearing issues
         </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>24/7 support with AI virtual assistant</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Human psychologist monitoring child and mother progress</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Personalized educational content based on specific challenges</span>
+          </li>
+        </ul>
         <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
           <Image 
-            src={synastryImage} 
-            alt="Synastry" 
+            src={hampayeMadarImage} 
+            alt="TogetherMama" 
             class="w-full h-auto object-cover"
             width={300} 
             height={200}
@@ -259,18 +478,33 @@ const chartData = {
         </div>
       </div>
       
+      <!-- Baham -->
       <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-        <div class="w-20 h-20 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">📈</span>
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <img src="/images/product-logos/baham.png" alt="Baham Logo" class="w-12 h-12 object-contain" />
         </div>
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Progressions</h3>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Baham</h3>
         <p class="text-gray-600 dark:text-gray-300 mb-6">
-          Explore your personal growth through secondary progressions
+          Platform for group buying to reduce everyday expenses
         </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Aggregating similar purchases to reduce prices</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Access to quality goods at affordable prices</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Secure platform for family and neighborhood group purchases</span>
+          </li>
+        </ul>
         <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
           <Image 
-            src={progressionsImage} 
-            alt="Progressions" 
+            src={bahamImage} 
+            alt="Baham" 
             class="w-full h-auto object-cover"
             width={300} 
             height={200}
@@ -279,240 +513,353 @@ const chartData = {
           />
         </div>
       </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- Sample Chart Section -->
-  <section class="mb-20">
-    <div class="text-center mb-12">
-      <div class="flex items-center justify-center mb-4">
-        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-3">
-          <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-8 h-8" />
+      
+      <!-- Darmana -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🏥</span>
         </div>
-        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900 dark:text-white">Sample Natal Chart</h2>
-      </div>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        Explore the comprehensive astrological analysis provided by Astrolabe
-      </p>
-      <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-6"></div>
-    </div>
-    
-    <div class="max-w-6xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-700">
-      <div class="px-6 py-5 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30">
-        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Natal Chart Analysis</h3>
-      </div>
-      <div class="p-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="flex justify-center items-center min-h-[400px] bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl relative overflow-hidden">
-            <!-- Decorative elements -->
-            <div class="absolute inset-0 opacity-10 dark:opacity-5">
-              <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-indigo-500"></div>
-              <div class="absolute bottom-1/3 right-1/3 w-24 h-24 rounded-full bg-purple-500"></div>
-              <div class="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-pink-500"></div>
-            </div>
-            
-            <!-- Chart visualization placeholder -->
-            <div class="text-center z-10 relative">
-              <div class="inline-flex items-center justify-center w-32 h-32 rounded-full bg-white dark:bg-gray-700 shadow-lg mb-6">
-                <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center">
-                  <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-12 h-12" />
-                </div>
-              </div>
-              <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Celestial Map</h4>
-              <p class="text-gray-600 dark:text-gray-300 max-w-md">
-                Your personalized natal chart based on birth date, time, and location
-              </p>
-            </div>
-          </div>
-          
-          <div>
-            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Chart Details</h4>
-            <div class="space-y-4">
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">Sun Sign</span>
-                <span class="font-medium text-gray-900 dark:text-white">Leo ♌</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">Moon Sign</span>
-                <span class="font-medium text-gray-900 dark:text-white">Scorpio ♏</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">Rising Sign (Ascendant)</span>
-                <span class="font-medium text-gray-900 dark:text-white">Libra ♎</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">Mercury</span>
-                <span class="font-medium text-gray-900 dark:text-white">Virgo ♍</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-700">
-                <span class="text-gray-600 dark:text-gray-300">Venus</span>
-                <span class="font-medium text-gray-900 dark:text-white">Leo ♌</span>
-              </div>
-              <div class="flex justify-between items-center">
-                <span class="text-gray-600 dark:text-gray-300">Mars</span>
-                <span class="font-medium text-gray-900 dark:text-white">Cancer ♋</span>
-              </div>
-            </div>
-            
-            <div class="mt-8">
-              <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Key Aspects</h4>
-              <ul class="space-y-2">
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-600 dark:text-gray-300">Sun in Leo trine Moon in Scorpio - Creative emotional expression</span>
-                </li>
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-600 dark:text-gray-300">Mercury in Virgo square Mars in Cancer - Analytical yet sensitive communication</span>
-                </li>
-                <li class="flex items-start">
-                  <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span class="text-gray-600 dark:text-gray-300">Venus in Leo conjunct Sun - Warm, generous affection</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div class="mt-8 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-xl p-6">
-          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Interpretation Summary</h4>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
-            This chart shows a person with a Leo Sun and Scorpio Moon, creating a fascinating blend of outward confidence and 
-            deep emotional intensity. The Libra Ascendant adds a diplomatic, harmony-seeking veneer that mediates between these 
-            powerful forces.
-          </p>
-          <p class="text-gray-700 dark:text-gray-300">
-            With Venus conjunct the Sun in Leo, this individual expresses affection generously and seeks admiration in relationships. 
-            The Virgo Mercury suggests a precise, analytical mind, while Mars in Cancer indicates protective instincts and emotional 
-            reactions to conflict.
-          </p>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Darmana</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          AI for psychological diagnosis based on DSM-5, PDM-2, and psychotherapeutic approaches
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Diagnosis based on global standards DSM-5 and PDM-2</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Comprehensive analysis of behavioral and emotional patterns</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Personalized treatment recommendations</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={darmanaImage} 
+            alt="Darmana" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
         </div>
       </div>
-    </div>
-    
-    <div class="mt-12 text-center">
-      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        This detailed analysis is just a preview of what you'll receive with a full natal chart reading from Astrolabe. 
-        Our comprehensive reports include interpretations for all planets, houses, aspects, and more.
-      </p>
-      <div class="mt-8">
-        <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 dark:hover:from-indigo-500 dark:hover:to-purple-500">
-          Generate Your Complete Chart
-        </button>
+      
+      <!-- Kanape -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🎭</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Kanape</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          AI as role play for learning psychotherapeutic skills
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Practice therapeutic skills in a safe and controlled environment</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Immediate personalized feedback from sessions</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Training based on real therapeutic scenarios</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={kanapeImage} 
+            alt="Kanape" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      
+      <!-- Synapse -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">🏢</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Synapse</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          AI for HR assistance in organizations and recruitment
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Smart resume analysis and intelligent interviews</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Evaluation of cultural and skill compatibility</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Team optimization recommendations</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={synapseImage} 
+            alt="Synapse" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      
+      <!-- Khebreh -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+        <div class="w-15 h-15 rounded-2xl bg-white dark:bg-gray-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <span class="text-3xl">📰</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Khebreh</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          AI for collecting news, insights, and social impact
+        </p>
+        <ul class="text-gray-600 dark:text-gray-400 text-sm mb-4 space-y-2">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Intelligent news and media analysis</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Identification of social patterns and psychological impacts</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-2">✓</span>
+            <span>Personalized insights based on user interests</span>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-xl overflow-hidden transform group-hover:scale-110 transition-transform duration-500">
+          <Image 
+            src={khebrehImage} 
+            alt="Khebreh" 
+            class="w-full h-auto object-cover"
+            width={300} 
+            height={200}
+            format="webp"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials Section -->
   <Testimonials locale="en" />
-
-  <!-- FAQ Section -->
-  <section class="mb-24">
-    <div class="text-center mb-20">
-      <div class="flex items-center justify-center mb-4">
-        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-3">
-          <img src="/images/logo.svg" alt="Astrolabe Logo" class="w-10 h-10" />
-        </div>
-        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-gray-900">Frequently Asked Questions</h2>
+  
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] rounded-3xl p-12 md:p-16 text-white mb-20 shadow-2xl">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="flex items-center justify-center mb-6">
+        <h2 class="text-3xl md:text-5xl font-['Cinzel'] font-extrabold">Begin Your Journey to a Better Life</h2>
       </div>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-        Everything you need to know about Astrolabe
+      <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto">
+        Join thousands of users who have transformed their mental wellness with Zehna's AI-powered tools
       </p>
-      <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-    </div>
-    
-    <div x-data="faqAccordion()" class="max-w-3xl mx-auto">
-      <div class="space-y-6">
-        <div class="faq-item bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl">
-          <div @click="toggle(0)" class="faq-question flex justify-between items-center p-8 cursor-pointer">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">What is a natal chart?</h3>
-            <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" :class="{ 'rotate-180': openIndex === 0 }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-          <div x-show="openIndex === 0" x-transition class="faq-answer px-8 pb-8">
-            <p class="text-gray-600 dark:text-gray-300 text-lg">
-              A natal chart, also known as a birth chart, is a map of the sky at the exact moment and location of your birth. 
-              It shows the positions of the Sun, Moon, and planets in the zodiac signs and houses, which astrologers use to 
-              understand your personality, strengths, challenges, and life path.
-            </p>
-          </div>
+      
+      <!-- Trust Indicators -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+          <span class="text-white font-medium">Clinically Validated</span>
         </div>
-        
-        <div class="faq-item bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl">
-          <div @click="toggle(1)" class="faq-question flex justify-between items-center p-8 cursor-pointer">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">How accurate are your calculations?</h3>
-            <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" :class="{ 'rotate-180': openIndex === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-          <div x-show="openIndex === 1" x-transition class="faq-answer px-8 pb-8">
-            <p class="text-gray-600 dark:text-gray-300 text-lg">
-              Our calculations use the Swiss Ephemeris, one of the most accurate astronomical algorithms available. 
-              We account for precession, nutation, and other astronomical factors to provide precise planetary positions. 
-              For the most accurate chart, we recommend using your exact birth time and location.
-            </p>
-          </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+          <span class="text-white font-medium">Bank-Level Security</span>
         </div>
-        
-        <div class="faq-item bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl">
-          <div @click="toggle(2)" class="faq-question flex justify-between items-center p-8 cursor-pointer">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Is astrology scientifically proven?</h3>
-            <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 transform transition-transform duration-200" :class="{ 'rotate-180': openIndex === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </div>
-          <div x-show="openIndex === 2" x-transition class="faq-answer px-8 pb-8">
-            <p class="text-gray-600 dark:text-gray-300 text-lg">
-              Astrology is not considered a science by the scientific community, as it doesn't follow the scientific method 
-              and its predictions haven't been consistently validated through controlled studies. However, many people find 
-              value in astrology as a tool for self-reflection, understanding patterns, and gaining insights into their 
-              personality and relationships.
-            </p>
-          </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+          <span class="text-white font-medium">100K+ Active Users</span>
         </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <button class="bg-white text-[#3CAC88] font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+          <span class="relative z-10">Get Started with Zehna</span>
+          <svg class="w-5 h-5 ml-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+        </button>
+        <button class="bg-transparent border-2 border-white text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+          <span class="relative z-10">View Demo</span>
+          <svg class="w-5 h-5 ml-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+        </button>
+      </div>
+      
+      <div class="mt-8 flex flex-wrap justify-center gap-6">
+        <p class="text-white/80 text-sm flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Free 14-day trial
+        </p>
+        <p class="text-white/80 text-sm flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+          </svg>
+          No credit card required
+        </p>
+        <p class="text-white/80 text-sm flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+          Cancel anytime
+        </p>
       </div>
     </div>
   </section>
 
-  <script is:inline>
-    function faqAccordion() {
-      return {
-        openIndex: null,
-        toggle(index) {
-          if (this.openIndex === index) {
-            this.openIndex = null;
-          } else {
-            this.openIndex = index;
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- CTA Section -->
-  <section class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-12 md:p-16 text-white mb-20 shadow-2xl">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="flex items-center justify-center mb-6">
-        <h2 class="text-3xl md:text-5xl font-['Cinzel'] font-extrabold">Begin Your Astrological Journey</h2>
-      </div>
-      <p class="text-xl md:text-2xl text-indigo-100 mb-12 max-w-2xl mx-auto">
-        Unlock the secrets of the cosmos with Astrolabe's powerful tools
-      </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <button class="bg-white text-indigo-900 font-bold px-10 py-4 rounded-xl hover:bg-indigo-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-          Create Your Chart
-        </button>
-        <button class="bg-transparent border-2 border-white text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-          View Demo
-        </button>
+  <!-- Custom Solutions CTA -->
+  <section class="py-16 bg-gradient-to-br from-[#3CAC88] to-[#99D2B4] rounded-3xl mb-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-['Cinzel'] font-bold text-white mb-6">
+          Need Custom Solutions?
+        </h2>
+        <p class="text-xl text-white mb-6 max-w-3xl mx-auto">
+          Zehna can develop AI solutions tailored to your specific needs. Let's turn your ideas into reality.
+        </p>
+        
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-10 mb-12">
+          <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30">
+            <div class="flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl text-white mb-2">50+</h3>
+            <p class="text-white/90">Custom Projects Delivered</p>
+          </div>
+          
+          <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30">
+            <div class="flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl text-white mb-2">200+</h3>
+            <p class="text-white/90">Enterprise Clients</p>
+          </div>
+          
+          <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30">
+            <div class="flex items-center justify-center mb-4">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-2xl text-white mb-2">98%</h3>
+            <p class="text-white/90">Client Satisfaction</p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10">
+          <div class="bg-white/90 dark:bg-gray-800/90 p-6 rounded-xl shadow-md border border-white/20 dark:border-gray-700 text-right">
+            <div class="flex items-center mb-4">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white mr-2">Who Can Benefit From Our Custom Solutions?</h3>
+              <svg class="w-6 h-6 text-[#3CAC88]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-3">
+              <li class="flex items-start">
+                <span class="text-green-500 ml-2 mt-1">✓</span>
+                <span>Organizations and companies needing psychological solutions</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 ml-2 mt-1">✓</span>
+                <span>Psychology professionals for developing educational tools</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 ml-2 mt-1">✓</span>
+                <span>Researchers in mental health for data analysis</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 ml-2 mt-1">✓</span>
+                <span>Software developers for integrating psychological solutions</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 text-right">
+            <div class="flex items-center mb-4">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-white mr-2">Custom Solution Development Process</h3>
+              <svg class="w-6 h-6 text-[#3CAC88]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+            </div>
+            <ul class="text-gray-600 dark:text-gray-400 space-y-3">
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] ml-2 mt-1 font-bold">1</span>
+                <span>Assessing your needs and project analysis</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] ml-2 mt-1 font-bold">2</span>
+                <span>Designing solution architecture and determining required technologies</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] ml-2 mt-1 font-bold">3</span>
+                <span>Development and testing with your participation</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-[#3CAC88] ml-2 mt-1 font-bold">4</span>
+                <span>Delivery, training, and post-deployment support</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <button class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] text-white font-bold px-8 py-4 rounded-xl hover:from-[#99D2B4] hover:to-[#3CAC88] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+            <span class="relative z-10">Request Custom Solution</span>
+            <svg class="w-5 h-5 ml-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+          </button>
+          <button class="bg-white dark:bg-gray-800 border-2 border-[#3CAC88] text-[#3CAC88] dark:text-[#99D2B4] font-bold px-8 py-4 rounded-xl hover:bg-[#3CAC88]/10 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group flex items-center">
+            <span class="relative z-10">View Sample Projects</span>
+            <svg class="w-5 h-5 ml-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+          </button>
+        </div>
+        
+        <div class="mt-10 p-4 bg-white/20 backdrop-blur-sm rounded-xl border border-white/30 inline-flex items-center">
+          <svg class="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+          </svg>
+          <p class="text-white font-medium">
+            🚀 Special Offer: 20% discount on custom solutions for educational institutions
+          </p>
+        </div>
       </div>
     </div>
   </section>

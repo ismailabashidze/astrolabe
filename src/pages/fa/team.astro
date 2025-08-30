@@ -1,29 +1,40 @@
 ---
 // src/pages/fa/team.astro
-import MainLayout from '../../layouts/MainLayout.astro';
-import { getTranslation, isRTL } from '../../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 
 const lang = "fa";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 
-// Team members data
+// Team members data - Zehna Platform Team
 const teamMembers = [
   {
-    name: "دکتر الکس مورگان",
-    role: "منجم ارشد",
-    bio: "دکتری در منجمی با بیش از ۲۰ سال تجربه. در تفسیر جدول ناتال و منجمی روابط تخصص دارد.",
-    image: "/images/team/elena.jpg",
+    name: "دکتر هادی بهرامی احسان",
+    role: "بنیان‌گذار و دانشمند ارشد",
+    bio: "استاد تمام دانشگاه تهران. متخصص در ترکیب هوش مصنوعی با علوم روانشناختی برای ایجاد راهکارهای دسترسی‌پذیر سلامت روان.",
+    image: "/images/team/hadi.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/",
+      medium: "#"
+    }
+  },
+  {
+    name: "الکس مورگان",
+    role: "رهبر تحقیقات هوش مصنوعی",
+    bio: "دکترای هوش مصنوعی با تمرکز بر شناسایی الگوهای روانشناختی. مهندس سابق ناسا با تخصص در تحلیل داده‌های پیچیده.",
+    image: "/images/team/alex.jpg",
     social: {
       twitter: "#",
+      github: "#",
       linkedin: "#"
     }
   },
   {
     name: "سام ریورا",
     role: "توسعه‌دهنده ارشد",
-    bio: "مهندس سابق ناسا که به منجمی تبدیل شده است. دقت و صحت را به محاسبات نجومی ما می‌آورد.",
-    image: "/images/team/michael.jpg",
+    bio: "مهندس نرم‌افزار ارشد با تجربه در ساخت پلتفرم‌های مقیاس‌پذیر سلامت روان. متخصص در مدیریت امن داده‌ها و حفاظت از حریم خصوصی.",
+    image: "/images/team/sam.jpg",
     social: {
       twitter: "#",
       github: "#"
@@ -31,9 +42,9 @@ const teamMembers = [
   },
   {
     name: "جردن پاتل",
-    role: "طراح UX",
-    bio: "رابط‌های بصری ایجاد می‌کند که مفاهیم منجمی پیچیده را برای همه قابل دسترس می‌سازد.",
-    image: "/images/team/sophia.jpg",
+    role: "طراح تجربه کاربری",
+    bio: "رابط‌های بصری ایجاد می‌کند که مفاهیم روانشناختی پیچیده را برای همه قابل دسترس می‌سازد. تمرکز بر طراحی فراگیر برای نیازهای متنوع کاربران.",
+    image: "/images/team/jordan.jpg",
     social: {
       twitter: "#",
       dribbble: "#"
@@ -41,9 +52,9 @@ const teamMembers = [
   },
   {
     name: "تیلور کیم",
-    role: "استراتژیست محتوا",
-    bio: "نویسنده و معلم منجمی با اشتیاق به با relevance کردن حکمت باستانی با زندگی مدرن.",
-    image: "/images/team/james.jpg",
+    role: "رهبر استراتژی محتوا",
+    bio: "معلم و نویسنده روانشناسی با اشتیاق به دسترسی‌پذیر کردن منابع سلامت روان مبتنی بر شواهد. استاد سابق دانشگاه.",
+    image: "/images/team/taylor.jpg",
     social: {
       twitter: "#",
       medium: "#"
@@ -52,7 +63,7 @@ const teamMembers = [
   {
     name: "آمارا جانسون",
     role: "مدیر انجمن",
-    bio: "جامعه پرشور ما از علاقه‌مندان و متخصصان منجمی را ایجاد و پرورش می‌دهد.",
+    bio: "جامعه پرشور ما از علاقه‌مندان و متخصصان سلامت روان را ایجاد و پرورش می‌دهد. تمرکز بر تعامل کاربران و پشتیبانی.",
     image: "/images/team/amara.jpg",
     social: {
       twitter: "#",
@@ -62,7 +73,7 @@ const teamMembers = [
   {
     name: "دیوید چن",
     role: "دانشمند داده",
-    bio: "یادگیری ماشین را برای کشف الگوها در داده‌های منجمی و بهبود پیش‌بینی‌های ما به کار می‌برد.",
+    bio: "یادگیری ماشین را برای کشف الگوها در داده‌های روانشناختی و بهبود پیش‌بینی‌ها و مداخلات سلامت روان ما به کار می‌برد.",
     image: "/images/team/david.jpg",
     social: {
       twitter: "#",
@@ -72,13 +83,13 @@ const teamMembers = [
 ];
 ---
 
-<MainLayout title="تیم ما - اسطرلاب" lang={lang} dir={dir}>
+<MainLayout title="تیم ما - ذهنا" lang={lang} dir={dir}>
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">تیم ما</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          متخصصان متعهدی که حکمت باستانی را با فناوری مدرن ترکیب می‌کنند تا بهترین ابزارهای منجمی را برای شما فراهم کنند
+          متخصصان متعهدی که علوم روانشناختی را با فناوری مدرن ترکیب می‌کنند تا بهترین ابزارهای سلامت روان را برای شما فراهم کنند
         </p>
       </div>
       
@@ -88,7 +99,7 @@ const teamMembers = [
             <div class="card-content">
               <div class="relative mx-auto mb-6">
                 <div class="w-24 h-24 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center mx-auto">
-                  <span class="text-2xl font-bold text-white">{member.avatar}</span>
+                  <span class="text-2xl font-bold text-white">{member.name.charAt(0)}</span>
                 </div>
                 <div class="absolute inset-0 rounded-full overflow-hidden">
                   <img 
@@ -110,7 +121,7 @@ const teamMembers = [
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">به ماموریت ما بپیوندید</h2>
           <p class="text-xl text-indigo-100 mb-8">
-            همیشه به دنبال افراد متعهدی هستیم که به تیم ما بپیوندند. اگر چشمان ما را در مورد قابل دسترس کردن منجمی برای همه دارید، دوست داریم از شما بشنویم.
+            همیشه به دنبال افراد متعهدی هستیم که به تیم ما بپیوندند. اگر چشمان ما را در مورد دسترسی‌پذیر کردن سلامت روان برای همه دارید، دوست داریم از شما بشنویم.
           </p>
           <button class="bg-white text-indigo-900 font-medium px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors duration-300 shadow-lg">
             مشاهده موقعیت‌های شغلی

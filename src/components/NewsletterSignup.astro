@@ -1,6 +1,6 @@
 ---
 // src/components/NewsletterSignup.astro
-import { getTranslation } from '../utils/i18n.js';
+import { getTranslation } from '@utils/i18n.js';
 
 interface Props {
   lang?: string;
@@ -11,14 +11,14 @@ const t = (key) => getTranslation(lang, key);
 ---
 
 <section class="my-20">
-  <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
+  <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
     <div class="absolute inset-0 pattern-bg opacity-20"></div>
     <div class="relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <div class="flex items-center mb-4">
             <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mr-4">
-              <img src="/images/logo.svg" alt={lang === "fa" ? "نشان اسطرلاب" : "Astrolabe Logo"} class="w-12 h-12" />
+              <img src="/images/logo.svg" alt={lang === "fa" ? "نشان ذهنا" : "Zehna Logo"} class="w-12 h-12" />
             </div>
             <h2 class="text-3xl md:text-4xl font-serif font-bold">{t('stayConnectedTitle')}</h2>
           </div>

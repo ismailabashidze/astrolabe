@@ -1,0 +1,11 @@
+---
+// src/components/TestPathAlias.astro
+import MainLayout from '@layouts/MainLayout.astro';
+
+const { lang = "en", dir = "ltr" } = Astro.props;
+---
+
+<div>
+  <h2>Test Path Alias Component</h2>
+  <p>This component imports MainLayout using a path alias.</p>
+</div>

@@ -8,26 +8,26 @@ const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 ---
 
-<MainLayout title="قیمت‌گذاری - اسطرلاب" lang={lang} dir={dir}>
+<MainLayout title="قیمت‌گذاری - ذهنا" lang={lang} dir={dir}>
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">قیمت‌گذاری ساده و شفاف</h1>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">راهکارهای هوشمند سلامت روان</h1>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          طرحی را که برای شما مناسب‌تر است انتخاب کنید. تمام طرح‌ها شامل ویژگی‌های اصلی منجمی ما هستند.
+          مجموعه‌ای از اپلیکیشن‌های هوش مصنوعی برای سلامت روان و زندگی بهتر. طرحی را که برای شما مناسب‌تر است انتخاب کنید.
         </p>
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <!-- Basic Plan -->
+        <!-- Hamdel Plan -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
           <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">پایه</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">هم‌دل</h2>
             <div class="mb-4">
               <span class="text-4xl font-bold text-gray-900 dark:text-white">۰</span>
               <span class="text-gray-600 dark:text-gray-300">تومان/ماه</span>
             </div>
-            <p class="text-gray-600 dark:text-gray-300">برای مبتدیانی که دارند با منجمی آشنا می‌شوند</p>
+            <p class="text-gray-600 dark:text-gray-300">پشتیبانی هیجانی 24 ساعته با هوش مصنوعی</p>
           </div>
           
           <ul class="space-y-4 mb-8">
@@ -35,37 +35,31 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">تولید چرت ناتال</span>
+              <span class="text-gray-900 dark:text-white">گفت‌وگوی 24 ساعته با هوش مصنوعی مبتنی بر درمان شناختی-رفتاری (CBT)</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">تفسیر چرت پایه</span>
+              <span class="text-gray-900 dark:text-white">تمرینات خودآگاهی، تنفس آگاهانه و مدیتیشن هدایت‌شده</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">فال هفتگی</span>
+              <span class="text-gray-900 dark:text-white">ردیابی خلق‌وخو، کیفیت خواب، میزان استرس و انرژی روزانه</span>
             </li>
             <li class="flex items-start opacity-50">
               <svg class="w-5 h-5 text-gray-400 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
-              <span class="text-gray-400 dark:text-gray-500">تحلیل گذرها</span>
+              <span class="text-gray-400 dark:text-gray-500">جلسات با روانشناس حرفه‌ای (در طرح‌های پولی)</span>
             </li>
             <li class="flex items-start opacity-50">
               <svg class="w-5 h-5 text-gray-400 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
-              <span class="text-gray-400 dark:text-gray-500">مقایسات سناستری</span>
-            </li>
-            <li class="flex items-start opacity-50">
-              <svg class="w-5 h-5 text-gray-400 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-              <span class="text-gray-400 dark:text-gray-500">چرتهای پیشرفت یافته</span>
+              <span class="text-gray-400 dark:text-gray-500">تحلیل الگوهای رفتاری و هیجانی شخصی‌سازی‌شده</span>
             </li>
           </ul>
           
@@ -74,18 +68,18 @@ const t = (key) => getTranslation(lang, key);
           </button>
         </div>
         
-        <!-- Pro Plan (Featured) -->
-        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white relative transform scale-105">
+        <!-- Hammasir Plan (Featured) -->
+        <div class="bg-gradient-to-br from-[#3CAC88] to-[#99D2B4] rounded-2xl shadow-xl p-8 text-white relative transform scale-105">
           <div class="absolute top-0 left-0 bg-yellow-400 text-gray-900 text-xs font-bold px-4 py-1 rounded-br-lg rounded-tl-2xl">
             محبوب‌ترین
           </div>
           <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold mb-2">حرفه‌ای</h2>
+            <h2 class="text-2xl font-bold mb-2">هم‌مسیر</h2>
             <div class="mb-4">
               <span class="text-4xl font-bold">۴۹۰٬۰۰۰</span>
               <span class="text-indigo-100">تومان/ماه</span>
             </div>
-            <p class="text-indigo-100">برای علاقه‌مندان جدی به منجمی</p>
+            <p class="text-indigo-100">راهکار هوشمند ازدواج و همسان‌سازی</p>
           </div>
           
           <ul class="space-y-4 mb-8">
@@ -93,37 +87,31 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>همه چیز در طرح پایه</span>
+              <span>همه چیز در طرح هم‌دل</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>تحلیل گذرها</span>
+              <span>ارزیابی روانشناختی پیشرفته (شخصیت، دلبستگی، هوش هیجانی)</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>مقایسات سناستری</span>
+              <span>آموزش مهارت‌های زندگی مشترک (مدیریت هیجان، ارتباط مؤثر)</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>چرتهای پیشرفت یافته</span>
+              <span>همسان‌سازی علمی با الگوریتم پیشرفته</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>فال ماهانه</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-white ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>ذخیره چرت (۵ چرت)</span>
+              <span>جلسات مشاوره زوجین با روانشناس (۱ جلسه در ماه)</span>
             </li>
           </ul>
           
@@ -132,15 +120,15 @@ const t = (key) => getTranslation(lang, key);
           </button>
         </div>
         
-        <!-- Premium Plan -->
+        <!-- TogetherMama Plan -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-100 dark:border-gray-700">
           <div class="text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">پیشرفته</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">هم‌پای مادر</h2>
             <div class="mb-4">
-              <span class="text-4xl font-bold text-gray-900 dark:text-white">۹۹۰٬۰۰۰</span>
+              <span class="text-4xl font-bold text-gray-900 dark:text-white">۱٬۴۹۰٬۰۰۰</span>
               <span class="text-gray-600 dark:text-gray-300">تومان/ماه</span>
             </div>
-            <p class="text-gray-600 dark:text-gray-300">برای منجمان حرفه‌ای و علاقه‌مندان پیشرفته</p>
+            <p class="text-gray-600 dark:text-gray-300">پشتیبانی روانشناسی برای مادران</p>
           </div>
           
           <ul class="space-y-4 mb-8">
@@ -148,42 +136,69 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">همه چیز در طرح حرفه‌ای</span>
+              <span class="text-gray-900 dark:text-white">همه چیز در طرح هم‌مسیر</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">ذخیره نامحدود چرت</span>
+              <span class="text-gray-900 dark:text-white">پشتیبانی 24/7 تخصصی مادران</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">ابزارهای پیشرفته مقایسه چرت</span>
+              <span class="text-gray-900 dark:text-white">آموزش تربیت کودکان 0 تا 12 سال</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">دسترسی به داده‌های اپمیریس</span>
+              <span class="text-gray-900 dark:text-white">برنامه‌های شخصی‌سازی‌شده تربیتی</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-900 dark:text-white">پشتیبانی مشتریان با اولویت</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-gray-900 dark:text-white">دسترسی زودهنگام به ویژگی‌های جدید</span>
+              <span class="text-gray-900 dark:text-white">دفترچه ثبت دیجیتال رشد کودک</span>
             </li>
           </ul>
           
-          <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium py-3 px-4 rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
+          <button class="w-full bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] text-white font-medium py-3 px-4 rounded-lg hover:from-[#3CAC88] hover:to-[#99D2B4] transition-all duration-200 shadow-md hover:shadow-lg">
             شروع دوره آزمایشی
+          </button>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">راهکارهای تخصصی دیگر</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">درمان</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">تشخیص روانشناختی با استانداردهای جهانی DSM-5 و PDM-2</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">کاناپه</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">آموزش مهارت‌های روانشناسی با هوش مصنوعی در قالب نقش‌آفرینی</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">سیناپس</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">هوش مصنوعی برای منابع انسانی سازمان‌ها و استخدام</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700">
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">خبره</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">تحلیل اخبار و روانشناسی جمعی برای درک تأثیرات اجتماعی</p>
+          </div>
+        </div>
+        
+        <div class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-800 rounded-2xl p-8 max-w-4xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">راهکاری سفارشی برای نیازهای شما؟</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            ما می‌توانیم برای سازمان، شرکت یا نیازهای خاص شما راهکارهای سفارشی هوش مصنوعی توسعه دهیم. 
+            همچنین امکان توسعه راهکارهایی برای کمک به اعتیادیان (هم‌توان)، دانشجویان و پزشکان (مداخله فوری خودکشی) و معلمان (همیار معلم) وجود دارد.
+          </p>
+          <button class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] text-white font-medium py-3 px-6 rounded-lg hover:from-[#3CAC88] hover:to-[#99D2B4] transition-all duration-200 shadow-md hover:shadow-lg">
+            تماس برای همکاری
           </button>
         </div>
       </div>

@@ -1,14 +1,14 @@
-# Astrolabe 🌟
+# Zehna 🌟
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Astro](https://img.shields.io/badge/Astro-5.13.4-ff6e43?logo=astro)](https://astro.build/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.10-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 
-A modern, responsive theme built with [Astro](https://astro.build/), featuring a comprehensive design system, multi-language support, and advanced UI components.
+A modern, responsive AI-powered mental health and wellness platform built with [Astro](https://astro.build/), featuring a comprehensive design system, multi-language support, and advanced UI components.
 
-![Astrolabe Preview](public/images/8.jpg)
+![Zehna Preview](public/images/8.jpg)
 
-## 🌟 Key Features
+## 🌟 Key Products
 
 - **Multi-language Support**: Full i18n with RTL/LTR layout support (English & Persian)
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
@@ -26,7 +26,7 @@ A modern, responsive theme built with [Astro](https://astro.build/), featuring a
 
 ## 🎨 Design System
 
-Astrolabe includes a comprehensive design system with:
+Zehna includes a comprehensive design system with:
 
 ### Tailwind CSS
 
@@ -34,8 +34,8 @@ Utility-first CSS framework for rapid UI development with custom configurations.
 
 ### Color Palette
 
-- **Primary**: Indigo (#6366f1) - Main accents and interactive elements
-- **Secondary**: Purple (#8b5cf6) - Secondary accents
+- **Primary**: Teal (#3CAC88) - Main accents and interactive elements
+- **Secondary**: Light Teal (#99D2B4) - Secondary accents
 - **Accent**: Pink (#ec4899) - Special highlights
 - **Element Colors**: Fire (Orange/Red), Earth (Green), Air (Blue), Water (Cyan)
 - **Neutrals**: Carefully balanced grays for backgrounds, text, and borders
@@ -51,7 +51,7 @@ Utility-first CSS framework for rapid UI development with custom configurations.
 - Buttons (Primary, Secondary, Outline)
 - Cards with hover effects
 - Form elements
-- Interactive zodiac wheel
+- Interactive mental health tools
 - Animated elements
 
 ### Responsive Design
@@ -73,12 +73,12 @@ Full support for right-to-left languages with proper text alignment and layout a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ismailabashidze/astrolabe.git
+   git clone https://github.com/ismailabashidze/Zehna.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd astrolabe
+   cd Zehna
    ```
 
 3. Install dependencies:
@@ -131,19 +131,16 @@ pnpm preview
 ## 📁 Project Structure
 
 ```
-ostorlab/
+zehna/
 ├── public/
 │   ├── favicon.svg
 │   └── pattern.svg
 ├── src/
 │   ├── components/
-│   │   ├── AstroChart.astro
 │   │   ├── LanguageSwitcher.astro
 │   │   ├── NewsletterSignup.astro
-│   │   ├── PlanetaryPositions.astro
 │   │   ├── Statistics.astro
 │   │   ├── Testimonials.astro
-│   │   └── ZodiacSigns.astro
 │   ├── fonts/
 │   │   └── IRANSans Web Fonts
 │   ├── layouts/
@@ -175,7 +172,7 @@ ostorlab/
 
 ### Theme Components
 
-Astrolabe provides a rich set of reusable components:
+Zehna provides a rich set of reusable components:
 
 - **Interactive Data Visualizations**: Dynamic charts and data displays
 - **Testimonial Carousels**: Animated customer feedback sections
@@ -242,7 +239,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with [Astro](https://astro.build/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Design inspired by [AstroWind](https://astrowind.vercel.app/) and [Screwfast](https://screwfast.uk/)
+- Design inspired by modern mental health applications
 - Design system principles based on modern UI/UX practices
 - Persian font support with IRANSans
 - Images from [Picsum Photos](https://picsum.photos/) for demonstration

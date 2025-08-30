@@ -1,66 +1,66 @@
 {
   "testimonials": {
     "title": "What Our Users Say",
-    "subtitle": "Discover how Astrolabe has helped others on their astrological journey",
+    "subtitle": "Discover how Zehna has helped others improve their lives",
     "testimonial1": {
       "name": "Sarah Johnson",
-      "role": "Astrology Enthusiast",
-      "quote": "Astrolabe has completely transformed how I understand my natal chart. The interpretations are so insightful and have helped me gain clarity on my life path."
+      "role": "Mental Health Advocate",
+      "quote": "Zehna has completely transformed how I understand my emotional patterns. The insights are so helpful and have helped me gain clarity on my personal growth journey."
     },
     "testimonial2": {
       "name": "Michael Rodriguez",
-      "role": "Professional Astrologer",
-      "quote": "As a professional astrologer, I appreciate the accuracy of Astrolabe's calculations. It's become an essential tool in my practice for generating detailed charts for clients."
+      "role": "Psychologist",
+      "quote": "As a professional psychologist, I appreciate the accuracy of Zehna's diagnostic tools. It's become an essential tool in my practice for providing personalized support to clients."
     },
     "testimonial3": {
       "name": "Emma Chen",
-      "role": "Spiritual Seeker",
-      "quote": "The transit analysis feature is incredible! I've been able to understand the timing of major life events and make better decisions aligned with cosmic energies."
+      "role": "Parent",
+      "quote": "The parenting support feature is incredible! I've been able to understand my child's needs better and make better decisions for our family's wellbeing."
     },
     "testimonial4": {
       "name": "David Thompson",
-      "role": "Tarot Reader",
-      "quote": "I use Astrolabe to complement my tarot readings. The planetary hours feature helps me time my sessions for maximum effectiveness. A wonderful addition to my toolkit!"
+      "role": "Relationship Coach",
+      "quote": "I use Zehna to complement my relationship coaching practice. The compatibility analysis helps me guide couples toward better understanding and communication."
     },
     "testimonial5": {
       "name": "Priya Sharma",
-      "role": "Yoga Instructor",
-      "quote": "Astrolabe's moon phase tracking has enhanced my yoga classes. I now align my sessions with lunar energies, and my students have noticed the difference in their practice."
+      "role": "HR Manager",
+      "quote": "Zehna's workplace stress management tools have enhanced our employee wellness program. Our team productivity has improved significantly since implementation."
     },
     "testimonial6": {
       "name": "James Wilson",
-      "role": "Student of Astrology",
-      "quote": "As someone new to astrology, Astrolabe's intuitive interface made learning the complexities of chart interpretation much easier. The guided explanations are invaluable."
+      "role": "University Student",
+      "quote": "As someone new to mental health tools, Zehna's intuitive interface made learning about psychological wellness much easier. The guided exercises are invaluable."
     },
     "testimonial7": {
       "name": "Sophia Williams",
       "role": "Life Coach",
-      "quote": "Astrolabe's synastry reports have revolutionized how I work with couples. Understanding their astrological compatibility has opened up new avenues for meaningful conversations and relationship growth."
+      "quote": "Zehna's relationship tools have revolutionized how I work with clients. Understanding their emotional patterns has opened up new avenues for meaningful conversations and personal growth."
     },
     "testimonial8": {
       "name": "Robert Chen",
       "role": "Software Engineer",
-      "quote": "I was skeptical about astrology, but Astrolabe's progressions feature helped me understand major shifts in my career. It's like having a roadmap for my professional development."
+      "quote": "I was skeptical about AI mental health tools, but Zehna's stress management feature helped me understand major shifts in my work-life balance. It's like having a personal wellness advisor."
     },
     "testimonial9": {
       "name": "Isabella Garcia",
       "role": "Artist",
-      "quote": "The Void of Course Moon indicator has transformed my creative process. I schedule my most important artistic work during the optimal lunar phases, and my productivity has skyrocketed."
+      "quote": "The creative block resolution tool has transformed my creative process. I'm now able to overcome artistic challenges more effectively, and my productivity has increased significantly."
     },
     "testimonial10": {
       "name": "Thomas Okafor",
-      "role": "Financial Advisor",
-      "quote": "Integrating Astrolabe's financial astrology insights into my practice has given my clients a unique perspective on market trends. It's not about predicting the future, but understanding energetic cycles."
+      "role": "Business Owner",
+      "quote": "Integrating Zehna's team psychology insights into my business has given my employees a unique perspective on workplace dynamics. It's not about fixing problems, but understanding human behaviors."
     },
     "testimonial11": {
       "name": "Amelia Rossi",
-      "role": "Healing Practitioner",
-      "quote": "Astrolabe's eclipse reports align perfectly with the energetic shifts I feel in my healing sessions. It's become an essential tool for preparing my clients for transformational periods."
+      "role": "Therapist",
+      "quote": "Zehna's crisis intervention tools align perfectly with the emotional needs I observe in my therapy sessions. It's become an essential resource for supporting my clients through difficult periods."
     },
     "testimonial12": {
       "name": "Daniel Kim",
-      "role": "Academic Researcher",
-      "quote": "As a researcher studying consciousness, I find Astrolabe's data on planetary cycles fascinating. It provides a unique lens through which to examine patterns in human behavior and societal changes."
+      "role": "Researcher",
+      "quote": "As a researcher studying mental health interventions, I find Zehna's data on emotional patterns fascinating. It provides a unique lens through which to examine human behavior and social changes."
     }
   }
 }

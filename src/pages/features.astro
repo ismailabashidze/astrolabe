@@ -1,52 +1,48 @@
 ---
 // src/pages/features.astro
-import MainLayout from '../layouts/MainLayout.astro';
-import { getTranslation, isRTL } from '../utils/i18n.js';
+import MainLayout from '@layouts/MainLayout.astro';
+import { getTranslation, isRTL } from '@utils/i18n.js';
 import { Image } from 'astro:assets';
 
 // Import images
-import image16 from '../../public/images/16.jpg';
-import image17 from '../../public/images/17.jpg';
-import image18 from '../../public/images/18.jpg';
-import image10 from '../../public/images/10.jpg';
-import image2 from '../../public/images/2.jpg';
-import image3 from '../../public/images/3.jpg';
-import image4 from '../../public/images/4.jpg';
-import image11 from '../../public/images/11.jpg';
-import image6 from '../../public/images/6.jpg';
-import image7 from '../../public/images/7.jpg';
-import image8 from '../../public/images/8.jpg';
-import image9 from '../../public/images/9.jpg';
-import image1 from '../../public/images/1.jpg';
+import hamdelImage from '@public/images/1.jpg';
+import hammasirImage from '@public/images/6.jpg';
+import hampayeMadarImage from '@public/images/4.jpg';
+import bahamImage from '@public/images/7.jpg';
+import darmanaImage from '@public/images/2.jpg';
+import kanapeImage from '@public/images/3.jpg';
+import synapseImage from '@public/images/11.jpg';
+import khebrehImage from '@public/images/10.jpg';
 
 const lang = "en";
 const dir = isRTL(lang) ? "rtl" : "ltr";
 const t = (key) => getTranslation(lang, key);
 ---
 
-<MainLayout title="Features - Astrolabe" lang={lang} dir={dir}>
+<MainLayout title="Zehna Products" lang={lang} dir={dir}>
   <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">Powerful Astrological Features</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Discover the comprehensive set of tools and features that make Astrolabe the ultimate astrology platform
+        <h1 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white mb-6">Zehna Products</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          A comprehensive suite of AI tools for every aspect of your psychological and social life
         </p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Hamdel -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center mb-5">
-            <span class="text-2xl">🌟</span>
+          <div class="w-16 h-16 rounded-full bg-red-50 dark:bg-gray-700 flex items-center justify-center mb-5">
+            <span class="text-2xl">❤️</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Natal Chart Calculations</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Hamdel</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Precise calculations of planetary positions at birth with detailed interpretations for all twelve houses.
+            AI for emotional support and psychological assistance during crises and stress
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image16} 
-              alt="Natal Chart" 
+              src={hamdelImage} 
+              alt="Hamdel" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -59,209 +55,68 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Accurate planetary positions</span>
+              <span>24/7 crisis support</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>House system calculations</span>
+              <span>Emotion and feeling detection</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Aspect analysis</span>
+              <span>Stress management techniques</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Detection of maladaptive behavioral patterns</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Personalized solution recommendations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>User psychological progress tracking</span>
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+            <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">Key Products</h4>
+            <p class="text-blue-700 dark:text-blue-300 text-sm">
+              Hamdel uses advanced AI algorithms to provide 24/7 emotional support. The system can detect behavioral and emotional patterns of users and offer personalized solutions based on their specific needs. With machine learning capabilities, Hamdel continuously improves its understanding of each user's unique psychological profile.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/hamdel" class="inline-block bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
         </div>
         
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Transit Analysis</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Track current planetary movements and understand their influences on your daily life and long-term cycles.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image17} 
-              alt="Transit Analysis" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Real-time planetary positions</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Transit aspect analysis</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Significant transit alerts</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Synastry Comparisons</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Compare charts to understand relationships, compatibility, and interpersonal dynamics with detailed insights.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image18} 
-              alt="Synastry Comparisons" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Relationship compatibility</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Aspect comparison</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Relationship dynamics</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Progressed Charts</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Explore your personal growth and development through secondary progressions and their interpretations.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image11} 
-              alt="Progressed Charts" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Secondary progressions</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Solar return charts</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Lunar return charts</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Horoscope Interpretations</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Daily, weekly, and monthly horoscopes with personalized insights based on your unique chart.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image2} 
-              alt="Horoscope Interpretations" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Daily horoscopes</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Weekly and monthly forecasts</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Personalized insights</span>
-            </li>
-          </ul>
-        </div>
-        
+        <!-- Hammasir -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
+            <span class="text-2xl">💍</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Advanced Tools</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Hammasir</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Professional-grade tools for astrologers including ephemeris, chart comparison, and more.
+            AI and psychologist support for romantic relationships, marriage and matchmaking
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image1} 
-              alt="Advanced Tools" 
+              src={hammasirImage} 
+              alt="Hammasir" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -274,38 +129,364 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Ephemeris data</span>
+              <span>Marital compatibility analysis</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Chart comparison tools</span>
+              <span>Relationship conflict resolution</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Customizable reports</span>
+              <span>Scientific matchmaking</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Personality and life values assessment</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Effective communication skills training</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Pre-marriage counseling</span>
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+            <h4 class="font-bold text-green-800 dark:text-green-200 mb-2">Key Benefits</h4>
+            <p class="text-green-700 dark:text-green-300 text-sm">
+              Hammasir combines AI and psychological expertise to transform the process of meeting and marriage into a structured, scientific journey. Instead of focusing solely on external attractiveness, this system emphasizes deep psychological and value compatibility. The platform includes pre-marital counseling modules and ongoing relationship support tools to ensure long-term success.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-[#3CAC88] hover:bg-[#99D2B4] text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/hammasir" class="inline-block bg-white hover:bg-gray-100 text-[#3CAC88] border border-[#3CAC88] font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
         </div>
         
+        <!-- TogetherMama (TogetherMama) -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🤱</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">TogetherMama</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            AI and psychologist support for parents and child-rearing
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={hampayeMadarImage} 
+              alt="TogetherMama" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Child-rearing guidance</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Parenting challenge resolution</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Psychological support for mothers</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Early screening of developmental issues</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Personalized program recommendations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Progress tracking for child and mother</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-pink-50 dark:bg-pink-900/20 rounded-lg">
+            <h4 class="font-bold text-pink-800 dark:text-pink-200 mb-2">Unique Benefits</h4>
+            <p class="text-pink-700 dark:text-pink-300 text-sm">
+              TogetherMama combines 24/7 AI with human psychologist support to accompany mothers on their child-rearing journey. This system can identify developmental issues in children at early stages and provide practical solutions. The platform also offers community support products where parents can connect with others facing similar challenges, creating a supportive network for modern parenting.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/hampaye-madar" class="inline-block bg-white hover:bg-gray-100 text-pink-600 border border-pink-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
+        </div>
+        
+        <!-- Baham -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🛒</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Baham</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Platform for group buying to reduce everyday expenses
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={bahamImage} 
+              alt="Baham" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Group purchasing of goods</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Reducing cost of living</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Social network of buyers</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Consumption pattern analysis</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Personalized recommendations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Family budget management</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+            <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">Economic Benefits</h4>
+            <p class="text-blue-700 dark:text-blue-300 text-sm">
+              Baham leverages collective bargaining power to reduce product prices by creating a network of buyers. This platform can analyze user consumption patterns and provide personalized recommendations. With products like price tracking and deal alerts, users can maximize their savings while building a community of like-minded individuals focused on smart consumption.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/baham" class="inline-block bg-white hover:bg-gray-100 text-blue-600 border border-blue-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
+        </div>
+        
+        <!-- Darmana -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🏥</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Darmana</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            AI for psychological diagnosis based on DSM-5 and PDM-2
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={darmanaImage} 
+              alt="Darmana" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Diagnosis of mental disorders</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Treatment recommendations</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Tracking treatment progress</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Behavioral pattern analysis</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Disorder onset prediction</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Medication suggestions (with physician supervision)</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+            <h4 class="font-bold text-yellow-800 dark:text-yellow-200 mb-2">Diagnostic Accuracy</h4>
+            <p class="text-yellow-700 dark:text-yellow-300 text-sm">
+              Darmana provides accurate psychological diagnoses using international standards DSM-5 and PDM-2. This system can analyze user behavioral patterns and predict disorder onset times. With its comprehensive assessment tools and progress tracking products, Darmana serves as a valuable resource for both mental health professionals and individuals seeking to understand their psychological well-being.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/darmana" class="inline-block bg-white hover:bg-gray-100 text-yellow-600 border border-yellow-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
+        </div>
+        
+        <!-- Kanape -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-5">
+            <span class="text-2xl">🎭</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Kanape</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            AI as role play for learning psychotherapeutic skills
+          </p>
+          <div class="rounded-lg overflow-hidden mb-4">
+            <Image 
+              src={kanapeImage} 
+              alt="Kanape" 
+              class="w-full h-auto object-cover"
+              width={400} 
+              height={250}
+              format="webp"
+              loading="lazy"
+            />
+          </div>
+          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Practicing therapeutic skills</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Simulating therapy sessions</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>AI-powered feedback</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Body language and tone analysis</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Diverse therapeutic scenario provision</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Skill progress tracking</span>
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+            <h4 class="font-bold text-green-800 dark:text-green-200 mb-2">Interactive Learning</h4>
+            <p class="text-green-700 dark:text-green-300 text-sm">
+              Kanape uses diverse therapeutic scenarios to teach psychotherapeutic skills interactively. This system can analyze body language and tone of voice, providing accurate feedback on user performance. With its advanced AI modeling, Kanape offers a safe environment for practitioners to hone their skills before working with real clients, significantly improving therapeutic outcomes.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/kanape" class="inline-block bg-white hover:bg-gray-100 text-green-600 border border-green-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
+        </div>
+        
+        <!-- Synapse -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path>
-            </svg>
+            <span class="text-2xl">🏢</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Lunar Phases & Moon Tracking</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Synapse</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Detailed lunar phase tracking with personalized insights based on your moon sign and current transits.
+            AI for HR assistance in organizations and recruitment
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image4} 
-              alt="Lunar Phases" 
+              src={synapseImage} 
+              alt="Synapse" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -318,37 +499,68 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Current moon phase information</span>
+              <span>Applicant personality analysis</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Moon sign interpretations</span>
+              <span>Hiring recommendations</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Void of course moon times</span>
+              <span>Team optimization</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Team compatibility analysis</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Psychometric report generation</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Employee performance prediction</span>
             </li>
           </ul>
+          <div class="mt-6 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg">
+            <h4 class="font-bold text-red-800 dark:text-red-200 mb-2">Human Resource Management</h4>
+            <p class="text-red-700 dark:text-red-300 text-sm">
+              Synapse improves the hiring process by analyzing applicant psychometrics. This system can analyze team compatibility and provide detailed reports on employee performance potential. With products like retention prediction and cultural fit analysis, Synapse helps organizations build stronger, more cohesive teams while reducing turnover costs.
+            </p>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/synapse" class="inline-block bg-white hover:bg-gray-100 text-red-600 border border-red-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
+          </div>
         </div>
         
+        <!-- Khebreh -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
-            </svg>
+            <span class="text-2xl">📰</span>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Electional Astrology</h3>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Khebreh</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Choose the most astrologically favorable times for important events like weddings, business launches, and more.
+            AI for collecting news, insights, and social impact
           </p>
           <div class="rounded-lg overflow-hidden mb-4">
             <Image 
-              src={image10} 
-              alt="Electional Astrology" 
+              src={khebrehImage} 
+              alt="Khebreh" 
               class="w-full h-auto object-cover"
               width={400} 
               height={250}
@@ -361,209 +573,97 @@ const t = (key) => getTranslation(lang, key);
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Event timing recommendations</span>
+              <span>Psychological news analysis</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Customizable selection criteria</span>
+              <span>Identifying social trends</span>
             </li>
             <li class="flex items-start">
               <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              <span>Calendar integration</span>
+              <span>Predicting social impacts</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Collective sentiment analysis</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Media pattern identification</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Analytical report generation</span>
             </li>
           </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-            </svg>
+          <div class="mt-6 p-4 bg-teal-50 dark:bg-teal-900/20 rounded-lg">
+            <h4 class="font-bold text-teal-800 dark:text-teal-200 mb-2">Media Analysis</h4>
+            <p class="text-teal-700 dark:text-teal-300 text-sm">
+              Khebreh provides deep insights into social trends by analyzing media patterns and collective sentiments. This system can predict social impacts of various events and generate comprehensive analytical reports. With real-time monitoring capabilities and customizable alert systems, Khebreh helps organizations stay ahead of public opinion shifts and respond proactively to emerging trends.
+            </p>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Astrological Reports</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Comprehensive, customizable astrological reports that you can save, share, or print for your clients or personal use.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image6} 
-              alt="Astrological Reports" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
+          <div class="mt-4 flex gap-3">
+            <a href="#" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              Visit Project
+            </a>
+            <a href="/khebreh" class="inline-block bg-white hover:bg-gray-100 text-teal-600 border border-teal-600 font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+              More Details
+            </a>
           </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Professional-quality reports</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>PDF export functionality</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Customizable templates</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Astro-Mapping</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Explore how planetary energies influence different locations around the world with our relocation astrology tool.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image7} 
-              alt="Astro-Mapping" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Relocation chart calculations</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Interactive world map</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Location-based interpretations</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Timing Techniques</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Advanced timing methods including progressions, directions, and solar arcs to predict future trends and events.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image8} 
-              alt="Timing Techniques" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Solar arc directions</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Primary directions</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Firdaria and other timing systems</span>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-          <div class="w-16 h-16 rounded-full bg-lime-100 dark:bg-lime-900/30 flex items-center justify-center mb-5">
-            <svg class="w-8 h-8 text-lime-600 dark:text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Chart Collections</h3>
-          <p class="text-gray-600 dark:text-gray-300 mb-4">
-            Save and organize multiple charts for yourself, family, clients, or public figures in personalized collections.
-          </p>
-          <div class="rounded-lg overflow-hidden mb-4">
-            <Image 
-              src={image9} 
-              alt="Chart Collections" 
-              class="w-full h-auto object-cover"
-              width={400} 
-              height={250}
-              format="webp"
-              loading="lazy"
-            />
-          </div>
-          <ul class="text-gray-600 dark:text-gray-300 space-y-2">
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Unlimited chart storage</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Custom folder organization</span>
-            </li>
-            <li class="flex items-start">
-              <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Quick comparison views</span>
-            </li>
-          </ul>
         </div>
       </div>
       
-      <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white">
+      <div class="bg-gradient-to-r from-[#3CAC88] to-[#99D2B4] rounded-2xl p-8 md:p-12 text-white mb-16">
         <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Ready to Explore Your Cosmic Blueprint?</h2>
-          <p class="text-xl text-indigo-100 mb-8">
-            Join thousands of astrology enthusiasts who have already discovered the power of Astrolabe
+          <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Have an idea to develop?</h2>
+          <p class="text-xl text-white/90 mb-8">
+            We can build AI tools for you too. Contact us to turn your idea into reality.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-white text-indigo-900 font-medium px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors duration-300 shadow-lg">
-              Create Your Chart
+            <button class="bg-white text-[#3CAC88] font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+              Contact Us
             </button>
             <button class="bg-transparent border-2 border-white text-white font-medium px-8 py-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-              View Demo
+              About Zehna
             </button>
+          </div>
+          <div class="mt-12 p-6 bg-white/10 rounded-xl backdrop-blur-sm">
+            <h3 class="text-2xl font-bold mb-4">Custom Solution Development</h3>
+            <p class="text-white/90 mb-4">
+              The Zehna team has the capability to design and implement custom AI tools for your specific needs. 
+              From decision support systems to data analysis platforms, we can provide innovative solutions 
+              for your unique challenges.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div class="bg-white/10 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">Needs Analysis</h4>
+                <p class="text-white/90 text-sm">
+                  Thorough analysis of your business needs and designing tailored solutions
+                </p>
+              </div>
+              <div class="bg-white/10 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">Implementation</h4>
+                <p class="text-white/90 text-sm">
+                  Rapid development and deployment using cutting-edge technologies
+                </p>
+              </div>
+              <div class="bg-white/10 p-4 rounded-lg">
+                <h4 class="font-bold mb-2">Support</h4>
+                <p class="text-white/90 text-sm">
+                  Continuous support and ongoing updates
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
