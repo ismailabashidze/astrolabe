@@ -50,9 +50,9 @@ const { title, lang = "en", dir = "ltr" } = Astro.props;
           <div class="hidden md:flex items-center space-x-4">
             <ThemeSwitcher />
             <LanguageSelector currentLang={lang} lang={lang} dir={dir} />
-            <button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-primary-dark hover:to-secondary-dark transition-all duration-200 shadow-md hover:shadow-lg">
+            <a href="https://panel.zehna.ir" class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-primary-dark hover:to-secondary-dark transition-all duration-200 shadow-md hover:shadow-lg inline-flex items-center">
               Get Started
-            </button>
+            </a>
           </div>
           
           <!-- Mobile Menu Button -->
@@ -73,9 +73,9 @@ const { title, lang = "en", dir = "ltr" } = Astro.props;
             <div class="px-4 pt-2 border-t border-gray-200 mt-2 flex items-center space-x-4 dark:border-gray-700">
               <ThemeSwitcher />
               <LanguageSelector currentLang={lang} lang={lang} dir={dir} />
-              <button class="w-full mt-3 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-primary-dark hover:to-secondary-dark transition-all duration-200">
+              <a href="https://panel.zehna.ir" class="w-full mt-3 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-primary-dark hover:to-secondary-dark transition-all duration-200 inline-flex items-center justify-center">
                 Get Started
-              </button>
+              </a>
             </div>
           </div>
         </div>

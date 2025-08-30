@@ -3,7 +3,7 @@
 import MainLayout from '@layouts/MainLayout.astro';
 import NewsletterSignup from '@components/NewsletterSignup.astro';
 import { getTranslation, isRTL } from '@utils/i18n.js';
-import { Image } from 'astro:assets';
+import { img } from 'astro:assets';
 import { persianBlogPosts as blogPosts } from '@utils/blogData.js';
 
 const lang = "fa";
@@ -16,7 +16,7 @@ const regularPosts = blogPosts.filter(post => !post.featured);
 ---
 
 <MainLayout title="بلاگ - ذهنا" lang={lang} dir={dir}>
-  <!-- Hero Section with Background Image -->
+  <!-- Hero Section with Background img -->
   <section class="relative py-20 md:py-28 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/90 to-purple-900/90"></div>
     <div class="absolute inset-0 pattern-bg opacity-30"></div>
@@ -43,12 +43,13 @@ const regularPosts = blogPosts.filter(post => !post.featured);
           <div class="md:flex">
             <div class="md:w-1/2 flex justify-start">
               <div class="h-64 md:h-full w-full overflow-hidden flex items-center">
-                <Image 
-                  src={featuredPost.image} 
+                <img 
+                  src={featuredPost.img} 
                   alt={featuredPost.title} 
                   class="w-full h-auto object-contain"
-                  format="webp"
+                  
                   loading="lazy"
+                  
                 />
               </div>
             </div>
@@ -89,14 +90,15 @@ const regularPosts = blogPosts.filter(post => !post.featured);
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             {regularPosts.map(post => (
               <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-hover">
-                <!-- Featured Image -->
+                <!-- Featured img -->
                 <div class="h-48 overflow-hidden">
-                  <Image 
-                    src={post.image} 
+                  <img 
+                    src={post.img} 
                     alt={post.title} 
                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    format="webp"
+                    
                     loading="lazy"
+                    
                   />
                 </div>
                 <div class="p-6">
@@ -209,14 +211,15 @@ const regularPosts = blogPosts.filter(post => !post.featured);
               <li>
                 <a href="#" class="group flex items-start">
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
-                    <Image 
-                      src="/images/8.jpg" 
+                    <img 
+                      src="/imgs/8.jpg" 
                       alt="راهنمای کامل چارت تولد شما" 
                       class="w-full h-full object-cover"
                       width={200}
                       height={150}
-                      format="webp"
+                      
                       loading="lazy"
+                      
                     />
                   </div>
                   <div>
@@ -228,14 +231,15 @@ const regularPosts = blogPosts.filter(post => !post.featured);
               <li>
                 <a href="#" class="group flex items-start">
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
-                    <Image 
-                      src="/images/4.jpg" 
+                    <img 
+                      src="/imgs/4.jpg" 
                       alt="چگونه چارت عبور خود را بخوانید" 
                       class="w-full h-full object-cover"
                       width={200}
                       height={150}
-                      format="webp"
+                      
                       loading="lazy"
+                      
                     />
                   </div>
                   <div>
@@ -247,14 +251,15 @@ const regularPosts = blogPosts.filter(post => !post.featured);
               <li>
                 <a href="#" class="group flex items-start">
                   <div class="w-16 h-16 rounded-lg overflow-hidden mr-4 flex-shrink-0">
-                    <Image 
-                      src="/images/6.png" 
+                    <img 
+                      src="/imgs/6.png" 
                       alt="تأثیر ماه در زندگی شما" 
                       class="w-full h-full object-cover"
                       width={200}
                       height={150}
-                      format="webp"
+                      
                       loading="lazy"
+                      
                     />
                   </div>
                   <div>
